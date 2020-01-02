@@ -1,5 +1,6 @@
 unit Base.View;
 
+//Herança
 //Todos os formulários descendem deste formulário.
 
 interface

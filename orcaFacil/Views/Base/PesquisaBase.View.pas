@@ -1,5 +1,6 @@
 unit PesquisaBase.View;
 
+//Herança
 //Todos os formulários de pesquisa descendem deste formulário.
 
 interface
