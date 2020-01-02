@@ -1,5 +1,7 @@
 unit Base.View;
 
+//Todos os formulários descendem deste formulário.
+
 interface
 
 uses
@@ -11,11 +13,11 @@ uses
 type
   TFBaseView = class(TForm)
     PnBotoes: TPanel;
-    BvVisual: TdxBevel;
-    PnSair: TPanel;
-    CbSair: TcxButton;
+    PnDivisor: TPanel;
+    SbEncerrar: TcxButton;
+    PnContainer: TPanel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure CbSairClick(Sender: TObject);
+    procedure SbEncerrarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,14 +31,14 @@ implementation
 
 {$R *.dfm}
 
-procedure TFBaseView.CbSairClick(Sender: TObject);
-begin
- Close;
-end;
-
 procedure TFBaseView.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   action := caFree;
+end;
+
+procedure TFBaseView.SbEncerrarClick(Sender: TObject);
+begin
+  Close;
 end;
 
 end.

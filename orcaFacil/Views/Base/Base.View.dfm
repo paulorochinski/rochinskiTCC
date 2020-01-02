@@ -6,7 +6,7 @@ object FBaseView: TFBaseView
   Caption = 'FBaseView'
   ClientHeight = 221
   ClientWidth = 428
-  Color = 16316664
+  Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -18,22 +18,6 @@ object FBaseView: TFBaseView
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
-  object BvVisual: TdxBevel
-    AlignWithMargins = True
-    Left = 1
-    Top = 1
-    Width = 426
-    Height = 178
-    Margins.Left = 1
-    Margins.Top = 1
-    Margins.Right = 1
-    Margins.Bottom = 1
-    Align = alClient
-    ExplicitLeft = 64
-    ExplicitTop = 40
-    ExplicitWidth = 50
-    ExplicitHeight = 50
-  end
   object PnBotoes: TPanel
     Left = 0
     Top = 180
@@ -41,39 +25,56 @@ object FBaseView: TFBaseView
     Height = 41
     Align = alBottom
     BevelOuter = bvNone
+    Color = 16448507
+    ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 80
-    ExplicitTop = 80
-    ExplicitWidth = 185
-    object PnSair: TPanel
+    object SbEncerrar: TcxButton
       AlignWithMargins = True
       Left = 313
       Top = 3
       Width = 112
       Height = 35
       Align = alRight
-      BevelOuter = bvSpace
-      BorderStyle = bsSingle
+      Caption = 'Encerrar'
+      LookAndFeel.Kind = lfFlat
+      LookAndFeel.NativeStyle = True
+      SpeedButtonOptions.CanBeFocused = False
       TabOrder = 0
-      object CbSair: TcxButton
-        Left = -5
-        Top = 1
-        Width = 112
-        Height = 29
-        Align = alRight
-        Caption = 'Sair'
-        LookAndFeel.Kind = lfFlat
-        LookAndFeel.NativeStyle = False
-        SpeedButtonOptions.CanBeFocused = False
-        TabOrder = 0
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -12
-        Font.Name = 'Open Sans'
-        Font.Style = []
-        ParentFont = False
-        OnClick = CbSairClick
-      end
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = SbEncerrarClick
+      ExplicitLeft = 353
+      ExplicitTop = 0
+      ExplicitHeight = 41
     end
+  end
+  object PnDivisor: TPanel
+    Left = 0
+    Top = 179
+    Width = 428
+    Height = 1
+    Align = alBottom
+    BevelOuter = bvNone
+    Color = 15658734
+    ParentBackground = False
+    TabOrder = 1
+    ExplicitTop = 178
+  end
+  object PnContainer: TPanel
+    Left = 0
+    Top = 0
+    Width = 428
+    Height = 179
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 2
+    ExplicitLeft = 120
+    ExplicitTop = 48
+    ExplicitWidth = 185
+    ExplicitHeight = 41
   end
 end
