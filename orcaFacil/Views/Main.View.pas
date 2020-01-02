@@ -11,11 +11,11 @@ uses
 
 type
   TForm1 = class(TForm)
-    BManager: TdxBarManager;
-    AMenu: TdxBarApplicationMenu;
+    BmMenu: TdxBarManager;
+    BaMenu: TdxBarApplicationMenu;
     TbPrincipal: TdxRibbonTab;
     RbMenu: TdxRibbon;
-    dxRibbonStatusBar1: TdxRibbonStatusBar;
+    SbMenu: TdxRibbonStatusBar;
     MBPrincipal: TdxBar;
     LBProdutos: TdxBarLargeButton;
     LBFornecedores: TdxBarLargeButton;

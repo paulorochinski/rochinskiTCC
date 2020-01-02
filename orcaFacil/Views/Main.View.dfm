@@ -21,8 +21,8 @@ object Form1: TForm1
     Top = 0
     Width = 577
     Height = 126
-    ApplicationButton.Menu = AMenu
-    BarManager = BManager
+    ApplicationButton.Menu = BaMenu
+    BarManager = BmMenu
     ColorSchemeAccent = rcsaBlue
     ColorSchemeName = 'Blue'
     Contexts = <>
@@ -38,7 +38,7 @@ object Form1: TForm1
       Index = 0
     end
   end
-  object dxRibbonStatusBar1: TdxRibbonStatusBar
+  object SbMenu: TdxRibbonStatusBar
     Left = 0
     Top = 443
     Width = 577
@@ -53,7 +53,7 @@ object Form1: TForm1
     ExplicitTop = 32000
     ExplicitWidth = 703
   end
-  object BManager: TdxBarManager
+  object BmMenu: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -303,8 +303,8 @@ object Form1: TForm1
         4E44AE426082}
     end
   end
-  object AMenu: TdxBarApplicationMenu
-    BarManager = BManager
+  object BaMenu: TdxBarApplicationMenu
+    BarManager = BmMenu
     Buttons = <>
     ExtraPane.Items = <>
     ItemLinks = <>
