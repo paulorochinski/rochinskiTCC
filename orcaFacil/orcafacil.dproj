@@ -103,7 +103,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="Views\Main.View.pas">
-            <Form>Form1</Form>
+            <Form>FPrincipalView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Views\Base\Base.View.pas">

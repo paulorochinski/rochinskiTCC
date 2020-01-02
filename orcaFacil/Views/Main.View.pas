@@ -10,7 +10,7 @@ uses
   dxRibbon, dxBar, dxBarApplicationMenu;
 
 type
-  TForm1 = class(TForm)
+  TFPrincipalView = class(TForm)
     BmMenu: TdxBarManager;
     BaMenu: TdxBarApplicationMenu;
     TbPrincipal: TdxRibbonTab;
@@ -27,7 +27,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FPrincipalView: TFPrincipalView;
 
 implementation
 

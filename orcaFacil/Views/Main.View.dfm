@@ -1,4 +1,4 @@
-object Form1: TForm1
+object FPrincipalView: TFPrincipalView
   Left = 0
   Top = 0
   BorderStyle = bsSingle
@@ -50,8 +50,6 @@ object Form1: TForm1
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    ExplicitTop = 32000
-    ExplicitWidth = 703
   end
   object BmMenu: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
