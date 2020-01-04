@@ -20,9 +20,10 @@ object FPrincipalView: TFPrincipalView
     Left = 0
     Top = 0
     Width = 577
-    Height = 126
+    Height = 127
     ApplicationButton.Menu = BaMenu
     BarManager = BmMenu
+    Style = rs2010
     ColorSchemeAccent = rcsaBlue
     ColorSchemeName = 'Blue'
     Contexts = <>
@@ -65,8 +66,8 @@ object FPrincipalView: TFPrincipalView
       True)
     PopupMenuLinks = <>
     UseSystemFont = True
-    Left = 136
-    Top = 120
+    Left = 296
+    Top = 48
     PixelsPerInch = 96
     object MBPrincipal: TdxBar
       CaptionButtons = <>
@@ -307,8 +308,8 @@ object FPrincipalView: TFPrincipalView
     ExtraPane.Items = <>
     ItemLinks = <>
     UseOwnFont = False
-    Left = 216
-    Top = 136
+    Left = 336
+    Top = 72
     PixelsPerInch = 96
   end
 end

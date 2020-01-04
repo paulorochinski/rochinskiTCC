@@ -114,6 +114,28 @@
             <Form>FPesquisaView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Base\CadastroBase.View.pas">
+            <Form>FCadastroView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Models\Conexao\Conexao\Conexao.Model.Interf.pas"/>
+        <DCCReference Include="Models\Conexao\Firebird\DataMFirebird.Model.pas">
+            <Form>FDataMFirebird</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Models\Configuracoes\Conexao\ConfiguracoesConexao.Model.pas"/>
+        <DCCReference Include="Models\Configuracoes\Conexao\ConfiguracoesConexao.Model.interf.pas"/>
+        <DCCReference Include="Models\Configuracoes\ConfiguracoesFactory.Model.interf.pas"/>
+        <DCCReference Include="Models\Configuracoes\ConfiguracoesFactory.Model.pas"/>
+        <DCCReference Include="Models\FacadeModel.interf.pas"/>
+        <DCCReference Include="Models\FacadeModel.pas"/>
+        <DCCReference Include="Models\Conexao\ConexaoFactory.Model.Interf.pas"/>
+        <DCCReference Include="Models\Conexao\ConexaoFactory.Model.pas"/>
+        <DCCReference Include="Controllers\Conexao\Conexao.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Conexao\Conexao.Controller.pas"/>
+        <DCCReference Include="Controllers\FacadeController.interf.pas"/>
+        <DCCReference Include="Controllers\FacadeController.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
