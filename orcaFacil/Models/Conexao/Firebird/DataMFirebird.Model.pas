@@ -44,7 +44,7 @@ uses FacadeModel;
 
 procedure TFDataMFirebird.conectaNoBancoDeDados;
 begin
-  FConfiguracoes := TFacadeModel.New.configuracoesFactory.Conexao;
+  FConfiguracoes := TFacadeModel.New.configuracoesFactoryModel.Conexao;
 
   try
     FBancoDeDados.Connected := false;

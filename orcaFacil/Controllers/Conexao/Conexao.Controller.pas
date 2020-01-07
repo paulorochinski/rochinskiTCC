@@ -25,11 +25,11 @@ uses FacadeModel, Conexao.Model.Interf;
 function TConexaoController.conexaoAtual: IDBConnection;
 begin
  Result := TFacadeModel.New
-             .conexaoFactory
+             .conexaoFactoryModel
              .conexaoComBancoDeDados(
                TTipoConexao(
                 TFacadeModel.New
-                 .configuracoesFactory
+                 .configuracoesFactoryModel
                  .conexao
                  .tipoBanco
                  )
