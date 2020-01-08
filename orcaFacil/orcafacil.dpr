@@ -34,7 +34,8 @@ uses
   EstoqueFactory.Controller in 'Controllers\Modulos\Estoque\EstoqueFactory.Controller.pas',
   ModulosFacade.Controller.interf in 'Controllers\Modulos\ModulosFacade.Controller.interf.pas',
   ModulosFacade.Controller in 'Controllers\Modulos\ModulosFacade.Controller.pas',
-  ProdutoOperacoesIncluir.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacoesIncluir.Controller.pas';
+  ProdutoOperacoesIncluir.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacoesIncluir.Controller.pas',
+  ProdutoOperacoesAlterar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacoesAlterar.Controller.pas';
 
 {$R *.res}
 

@@ -14,14 +14,23 @@ type
 
     class function New: IProdutoController;
 
-    function Operacao(AValue: TTipoOperacao): IProdutoOperacoesController;
+    function Incluir: IProdutoIncluirController;
+    function Alterar: IProdutoAlterarController;
+    function Excluir: IProdutoExcluirController;
   end;
 
 implementation
 
 { TProdutoController }
 
-uses FacadeModel, ProdutoOperacoesIncluir.Controller;
+uses FacadeModel, ProdutoOperacoesIncluir.Controller,
+  ProdutoOperacoesAlterar.Controller;
+
+function TProdutoController.Alterar: IProdutoAlterarController;
+begin
+  Result := TProdutosOperacoesAlterarController.New.produtoController(Self)
+    .produtoModel(FProdutoModel);
+end;
 
 constructor TProdutoController.Create;
 begin
@@ -35,31 +44,20 @@ begin
   inherited;
 end;
 
-class function TProdutoController.New: IProdutoController;
+function TProdutoController.Excluir: IProdutoExcluirController;
 begin
-  result := Self.Create;
+
 end;
 
-function TProdutoController.Operacao(AValue: TTipoOperacao)
-  : IProdutoOperacoesController;
+function TProdutoController.Incluir: IProdutoIncluirController;
 begin
-  case AValue of
-    toIncluir:
-      result := TProdutoOperacoesIncluirController.New.produtoController(Self)
-        .produtoModel(FProdutoModel);
+  Result := TProdutoOperacoesIncluirController.New.produtoController(Self)
+    .produtoModel(FProdutoModel);
+end;
 
-    toAlterar:
-      ;
-
-    toConsultar:
-      ;
-
-    toExcluir:
-      ;
-
-    toDuplicar:
-      ;
-  end;
+class function TProdutoController.New: IProdutoController;
+begin
+  Result := Self.Create;
 end;
 
 end.

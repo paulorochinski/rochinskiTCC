@@ -7,47 +7,42 @@ uses Produto.Controller.interf, Produto.Model.interf, system.SysUtils,
 
 type
   TProdutoOperacoesIncluirController = class(TInterfacedObject,
-    IProdutoOperacoesController)
+    IProdutoIncluirController)
   private
     FProdutoController: IProdutoController;
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
 
-    FCodigo: string;
     FCodigoSinapi: Integer;
     FDescricao: string;
     FUnidMedida: string;
     FPrMedioSinap: Currency;
   public
     constructor Create;
-    destructor destroy; override;
+    destructor Destroy; override;
 
-    class function New: IProdutoOperacoesController;
+    class function New: IProdutoIncluirController;
 
     function produtoController(AValue: IProdutoController)
-      : IProdutoOperacoesController;
-    function produtoModel(AValue: IProdutoModel): IProdutoOperacoesController;
-
-    function localizar(AValue: string): IProdutoOperacoesController;
-
-    function codigo(AValue: string): IProdutoOperacoesController;
+      : IProdutoIncluirController;
+    function produtoModel(AValue: IProdutoModel): IProdutoIncluirController;
 
     function codigoSinapi(AValue: Integer)
-      : IProdutoOperacoesController; overload;
-    function codigoSinapi(AValue: string): IProdutoOperacoesController;
+      : IProdutoIncluirController; overload;
+    function codigoSinapi(AValue: string): IProdutoIncluirController;
       overload;
     function codigoSinapi: string; overload;
 
-    function descricao(AValue: string): IProdutoOperacoesController; overload;
+    function descricao(AValue: string): IProdutoIncluirController; overload;
     function descricao: string; overload;
 
-    function unidMedida(AValue: string): IProdutoOperacoesController; overload;
+    function unidMedida(AValue: string): IProdutoIncluirController; overload;
     function unidMedida: string; overload;
 
     function prMedioSinapi(AValue: Currency)
-      : IProdutoOperacoesController; overload;
+      : IProdutoIncluirController; overload;
     function prMedioSinapi(AValue: string)
-      : IProdutoOperacoesController; overload;
+      : IProdutoIncluirController; overload;
     function prMedioSinapi: string; overload;
 
     function &end: IProdutoController;
@@ -57,27 +52,20 @@ implementation
 
 { TProdutoOperacoesIncluirController }
 
-function TProdutoOperacoesIncluirController.codigo(AValue: string)
-  : IProdutoOperacoesController;
-begin
-  Result := Self;
-  FCodigo := AValue;
-end;
-
 function TProdutoOperacoesIncluirController.codigoSinapi: string;
 begin
-  Result := IntToStr(FCodigoSinapi);
+  Result := IntToStr(FRegistro.CODIGO_SINAPI);
 end;
 
 function TProdutoOperacoesIncluirController.codigoSinapi(AValue: string)
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self;
   FCodigoSinapi := StrToInt(AValue);
 end;
 
 function TProdutoOperacoesIncluirController.codigoSinapi(AValue: Integer)
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self;
   FCodigoSinapi := AValue;
@@ -88,10 +76,12 @@ begin
   Result := FProdutoController;
 
   FProdutoModel.Entidade(TTESTPRODUTO.Create);
+
   FProdutoModel.Entidade.CODIGO_SINAPI := FCodigoSinapi;
   FProdutoModel.Entidade.DESCRICAO := FDescricao;
   FProdutoModel.Entidade.UNIDMEDIDA := FUnidMedida;
   FProdutoModel.Entidade.PRMEDIO_SINAPI := FPrMedioSinap;
+
   FProdutoModel.DAO.Insert(FProdutoModel.Entidade);
 end;
 
@@ -102,64 +92,56 @@ end;
 
 function TProdutoOperacoesIncluirController.descricao: string;
 begin
-  Result := FDescricao;
+  Result := FRegistro.DESCRICAO;
 end;
 
 function TProdutoOperacoesIncluirController.descricao(AValue: string)
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self;
   FDescricao := AValue;
 end;
 
-destructor TProdutoOperacoesIncluirController.destroy;
+destructor TProdutoOperacoesIncluirController.Destroy;
 begin
 
   inherited;
 end;
 
-function TProdutoOperacoesIncluirController.localizar(AValue: string)
-  : IProdutoOperacoesController;
-begin
-  Result := Self;
-  FRegistro := FProdutoModel.DAO.FindWhere('CODIGO=' + QuotedStr(AValue),
-    'DESCRIÇÃO').Items[0];
-end;
-
 class function TProdutoOperacoesIncluirController.New
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self.Create;
 end;
 
 function TProdutoOperacoesIncluirController.prMedioSinapi: string;
 begin
-  Result := CurrToStr(FPrMedioSinap);
+  Result := CurrToStr(FRegistro.PRMEDIO_SINAPI);
 end;
 
 function TProdutoOperacoesIncluirController.prMedioSinapi(AValue: string)
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self;
   FPrMedioSinap := StrToCurr(AValue);
 end;
 
 function TProdutoOperacoesIncluirController.prMedioSinapi(AValue: Currency)
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self;
   FPrMedioSinap := AValue;
 end;
 
 function TProdutoOperacoesIncluirController.produtoController
-  (AValue: IProdutoController): IProdutoOperacoesController;
+  (AValue: IProdutoController): IProdutoIncluirController;
 begin
   Result := Self;
   FProdutoController := AValue;
 end;
 
 function TProdutoOperacoesIncluirController.produtoModel(AValue: IProdutoModel)
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self;
   FProdutoModel := AValue;
@@ -167,11 +149,11 @@ end;
 
 function TProdutoOperacoesIncluirController.unidMedida: string;
 begin
-  Result := FUnidMedida;
+  Result := FRegistro.UNIDMEDIDA;
 end;
 
 function TProdutoOperacoesIncluirController.unidMedida(AValue: string)
-  : IProdutoOperacoesController;
+  : IProdutoIncluirController;
 begin
   Result := Self;
   FUnidMedida := AValue;
