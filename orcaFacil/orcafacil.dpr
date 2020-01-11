@@ -34,8 +34,19 @@ uses
   EstoqueFactory.Controller in 'Controllers\Modulos\Estoque\EstoqueFactory.Controller.pas',
   ModulosFacade.Controller.interf in 'Controllers\Modulos\ModulosFacade.Controller.interf.pas',
   ModulosFacade.Controller in 'Controllers\Modulos\ModulosFacade.Controller.pas',
-  ProdutoOperacoesIncluir.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacoesIncluir.Controller.pas',
-  ProdutoOperacoesAlterar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacoesAlterar.Controller.pas';
+  ProdutoOperacaoAlterar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoAlterar.Controller.pas',
+  ProdutoOperacaoConsultar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoConsultar.Controller.pas',
+  ProdutoOperacaoIncluir.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoIncluir.Controller.pas',
+  ProdutoOperacaoExcluir.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoExcluir.Controller.pas',
+  ProdutoOperacaoDuplicar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoDuplicar.Controller.pas',
+  EST0001P.View in 'Views\Modulos\Estoque\Produto\EST0001P.View.pas' {FEST0001PView},
+  Base.View.Interf in 'Views\Base\Base.View.Interf.pas',
+  EstoqueFactory.View.interf in 'Views\Modulos\Estoque\EstoqueFactory.View.interf.pas',
+  EstoqueFactory.View in 'Views\Modulos\Estoque\EstoqueFactory.View.pas',
+  ModulosFacade.View.Interf in 'Views\Modulos\ModulosFacade.View.Interf.pas',
+  ModulosFacade.View in 'Views\Modulos\ModulosFacade.View.pas',
+  FacadeView.Interf in 'Views\FacadeView.Interf.pas',
+  FacadeView in 'Views\FacadeView.pas';
 
 {$R *.res}
 

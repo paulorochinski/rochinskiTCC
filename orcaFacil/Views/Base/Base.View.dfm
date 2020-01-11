@@ -13,9 +13,12 @@ object FBaseView: TFBaseView
   Font.Name = 'Tahoma'
   Font.Style = []
   FormStyle = fsMDIChild
+  KeyPreview = True
   OldCreateOrder = False
   Visible = True
   OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object PnBotoes: TPanel
@@ -47,9 +50,6 @@ object FBaseView: TFBaseView
       Font.Style = [fsBold]
       ParentFont = False
       OnClick = SbEncerrarClick
-      ExplicitLeft = 353
-      ExplicitTop = 0
-      ExplicitHeight = 41
     end
   end
   object PnDivisor: TPanel
@@ -62,7 +62,6 @@ object FBaseView: TFBaseView
     Color = 15658734
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 178
   end
   object PnContainer: TPanel
     Left = 0
@@ -72,9 +71,5 @@ object FBaseView: TFBaseView
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitLeft = 120
-    ExplicitTop = 48
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end

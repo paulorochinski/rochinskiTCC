@@ -136,6 +136,7 @@ object FPrincipalView: TFPrincipalView
         2D17D3EF94319A6E96B655DA3DFB44BBEE9F8DBBAD33CAAEB47969531236DE6E
         FEA43BFC2B81D4923B5ACF931BAEE0F53DF01B561D2DE87CFF0B760000000049
         454E44AE426082}
+      OnClick = LBProdutosClick
     end
     object LBFornecedores: TdxBarLargeButton
       Caption = 'Fornecedores'
@@ -310,5 +311,11 @@ object FPrincipalView: TFPrincipalView
     Left = 336
     Top = 72
     PixelsPerInch = 96
+  end
+  object TimerJanelas: TTimer
+    Interval = 150
+    OnTimer = TimerJanelasTimer
+    Left = 288
+    Top = 280
   end
 end

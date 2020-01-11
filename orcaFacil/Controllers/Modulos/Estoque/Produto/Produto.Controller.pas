@@ -14,22 +14,31 @@ type
 
     class function New: IProdutoController;
 
-    function Incluir: IProdutoIncluirController;
-    function Alterar: IProdutoAlterarController;
-    function Excluir: IProdutoExcluirController;
+    function Incluir: IProdutoOperacaoIncluirController;
+    function Alterar: IProdutoOperacaoAlterarController;
+    function Consultar: IProdutoOperacaoConsultarController;
+    function Excluir: IProdutoOperacaoExcluirController;
+    function Duplicar: IProdutoOperacaoDuplicarController;
   end;
 
 implementation
 
 { TProdutoController }
 
-uses FacadeModel, ProdutoOperacoesIncluir.Controller,
-  ProdutoOperacoesAlterar.Controller;
+uses FacadeModel, ProdutoOperacaoIncluir.Controller,
+  ProdutoOperacaoAlterar.Controller, ProdutoOperacaoConsultar.Controller,
+  ProdutoOperacaoDuplicar.Controller, ProdutoOperacaoExcluir.Controller;
 
-function TProdutoController.Alterar: IProdutoAlterarController;
+function TProdutoController.Alterar: IProdutoOperacaoAlterarController;
 begin
   Result := TProdutosOperacoesAlterarController.New.produtoController(Self)
     .produtoModel(FProdutoModel);
+end;
+
+function TProdutoController.Consultar: IProdutoOperacaoConsultarController;
+begin
+  Result := TProdutoOperacaoConsultarController.New.produtoController(Self)
+    .produtoModel(FProdutoModel)
 end;
 
 constructor TProdutoController.Create;
@@ -44,14 +53,21 @@ begin
   inherited;
 end;
 
-function TProdutoController.Excluir: IProdutoExcluirController;
+function TProdutoController.Duplicar: IProdutoOperacaoDuplicarController;
 begin
-
+  Result := TProdutosOperacoesDuplicarController.New.produtoController(Self)
+    .produtoModel(FProdutoModel)
 end;
 
-function TProdutoController.Incluir: IProdutoIncluirController;
+function TProdutoController.Excluir: IProdutoOperacaoExcluirController;
 begin
-  Result := TProdutoOperacoesIncluirController.New.produtoController(Self)
+  Result := TProdutoOperacaoExcluirController.New.produtoController(Self)
+    .produtoModel(FProdutoModel)
+end;
+
+function TProdutoController.Incluir: IProdutoOperacaoIncluirController;
+begin
+  Result := TProdutoOperacaoIncluirController.New.produtoController(Self)
     .produtoModel(FProdutoModel);
 end;
 

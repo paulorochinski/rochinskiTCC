@@ -1,4 +1,4 @@
-unit ProdutoOperacoesAlterar.Controller;
+unit ProdutoOperacaoAlterar.Controller;
 
 interface
 
@@ -7,7 +7,7 @@ uses Produto.Controller.interf, Produto.Model.interf,
 
 type
   TProdutosOperacoesAlterarController = class(TInterfacedObject,
-    IProdutoAlterarController)
+    IProdutoOperacaoAlterarController)
   private
     FProdutoController: IProdutoController;
     FProdutoModel: IProdutoModel;
@@ -21,30 +21,30 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    class function New: IProdutoAlterarController;
+    class function New: IProdutoOperacaoAlterarController;
 
     function produtoController(AValue: IProdutoController)
-      : IProdutoAlterarController;
-    function produtoModel(AValue: IProdutoModel): IProdutoAlterarController;
+      : IProdutoOperacaoAlterarController;
+    function produtoModel(AValue: IProdutoModel): IProdutoOperacaoAlterarController;
 
-    function localizar(AValue: string): IProdutoAlterarController;
+    function localizar(AValue: string): IProdutoOperacaoAlterarController;
 
     function codigoSinapi(AValue: Integer)
-      : IProdutoAlterarController; overload;
-    function codigoSinapi(AValue: string): IProdutoAlterarController;
+      : IProdutoOperacaoAlterarController; overload;
+    function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController;
       overload;
     function codigoSinapi: string; overload;
 
-    function descricao(AValue: string): IProdutoAlterarController; overload;
+    function descricao(AValue: string): IProdutoOperacaoAlterarController; overload;
     function descricao: string; overload;
 
-    function unidMedida(AValue: string): IProdutoAlterarController; overload;
+    function unidMedida(AValue: string): IProdutoOperacaoAlterarController; overload;
     function unidMedida: string; overload;
 
     function prMedioSinapi(AValue: Currency)
-      : IProdutoAlterarController; overload;
+      : IProdutoOperacaoAlterarController; overload;
     function prMedioSinapi(AValue: string)
-      : IProdutoAlterarController; overload;
+      : IProdutoOperacaoAlterarController; overload;
     function prMedioSinapi: string; overload;
 
     function &end: IProdutoController;
@@ -61,14 +61,14 @@ begin
 end;
 
 function TProdutosOperacoesAlterarController.codigoSinapi(AValue: string)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FCodigoSinapi := StrToInt(AValue);
 end;
 
 function TProdutosOperacoesAlterarController.codigoSinapi(AValue: Integer)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FCodigoSinapi := AValue;
@@ -99,7 +99,7 @@ begin
 end;
 
 function TProdutosOperacoesAlterarController.descricao(AValue: string)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FDescricao := AValue;
@@ -112,7 +112,7 @@ begin
 end;
 
 function TProdutosOperacoesAlterarController.localizar(AValue: string)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FRegistro := FProdutoModel.DAO.FindWhere('CODIGO=' + QuotedStr(AValue),
@@ -120,7 +120,7 @@ begin
 end;
 
 class function TProdutosOperacoesAlterarController.New
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self.Create;
 end;
@@ -131,28 +131,28 @@ begin
 end;
 
 function TProdutosOperacoesAlterarController.prMedioSinapi(AValue: string)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FPrMedioSinap := StrToCurr(AValue);
 end;
 
 function TProdutosOperacoesAlterarController.prMedioSinapi(AValue: Currency)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FPrMedioSinap := AValue;
 end;
 
 function TProdutosOperacoesAlterarController.produtoController
-  (AValue: IProdutoController): IProdutoAlterarController;
+  (AValue: IProdutoController): IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FProdutoController := AValue;
 end;
 
 function TProdutosOperacoesAlterarController.produtoModel(AValue: IProdutoModel)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FProdutoModel := AValue;
@@ -164,7 +164,7 @@ begin
 end;
 
 function TProdutosOperacoesAlterarController.unidMedida(AValue: string)
-  : IProdutoAlterarController;
+  : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
   FUnidMedida := AValue;

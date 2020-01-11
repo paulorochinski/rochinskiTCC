@@ -8,7 +8,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, dxSkinsCore, cxGraphics, cxControls,
   cxLookAndFeels, cxLookAndFeelPainters, dxRibbonSkins,
   dxRibbonCustomizationForm, dxStatusBar, dxRibbonStatusBar, cxClasses,
-  dxRibbon, dxBar, dxBarApplicationMenu;
+  dxRibbon, dxBar, dxBarApplicationMenu, Vcl.ExtCtrls;
 
 type
   TFPrincipalView = class(TForm)
@@ -21,6 +21,9 @@ type
     LBProdutos: TdxBarLargeButton;
     LBFornecedores: TdxBarLargeButton;
     LBOrcamentos: TdxBarLargeButton;
+    TimerJanelas: TTimer;
+    procedure TimerJanelasTimer(Sender: TObject);
+    procedure LBProdutosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,5 +37,23 @@ implementation
 
 {$R *.dfm}
 
+uses FacadeView, Tipos.Controller.Interf;
+
+procedure TFPrincipalView.LBProdutosClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaListagem(tlProduto)
+       .executar;
+end;
+
+procedure TFPrincipalView.TimerJanelasTimer(Sender: TObject);
+begin
+  if Self.MDIChildCount <= 0 then
+    RbMenu.ShowTabGroups := True
+  else
+    RbMenu.ShowTabGroups := False
+end;
 
 end.
