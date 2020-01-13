@@ -6,7 +6,7 @@ object FBaseView: TFBaseView
   Caption = 'FBaseView'
   ClientHeight = 221
   ClientWidth = 428
-  Color = clWhite
+  Color = 15658986
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -21,55 +21,151 @@ object FBaseView: TFBaseView
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
-  object PnBotoes: TPanel
-    Left = 0
-    Top = 180
-    Width = 428
-    Height = 41
-    Align = alBottom
-    BevelOuter = bvNone
-    Color = 16448507
-    ParentBackground = False
-    TabOrder = 0
-    object SbEncerrar: TcxButton
-      AlignWithMargins = True
-      Left = 313
-      Top = 3
-      Width = 112
-      Height = 35
-      Align = alRight
-      Caption = 'Encerrar'
-      LookAndFeel.Kind = lfFlat
-      LookAndFeel.NativeStyle = True
-      SpeedButtonOptions.CanBeFocused = False
-      TabOrder = 0
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Open Sans SemiBold'
-      Font.Style = [fsBold]
-      ParentFont = False
-      OnClick = SbEncerrarClick
-    end
-  end
-  object PnDivisor: TPanel
-    Left = 0
-    Top = 179
-    Width = 428
-    Height = 1
-    Align = alBottom
-    BevelOuter = bvNone
-    Color = 15658734
-    ParentBackground = False
-    TabOrder = 1
-  end
-  object PnContainer: TPanel
-    Left = 0
-    Top = 0
-    Width = 428
-    Height = 179
+  object Panel1: TPanel
+    AlignWithMargins = True
+    Left = 1
+    Top = 1
+    Width = 426
+    Height = 219
+    Margins.Left = 1
+    Margins.Top = 1
+    Margins.Right = 1
+    Margins.Bottom = 1
     Align = alClient
     BevelOuter = bvNone
-    TabOrder = 2
+    Color = 12500670
+    ParentBackground = False
+    TabOrder = 0
+    object Panel2: TPanel
+      AlignWithMargins = True
+      Left = 1
+      Top = 1
+      Width = 424
+      Height = 217
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 1
+      Align = alClient
+      BevelOuter = bvNone
+      Color = 15658986
+      ParentBackground = False
+      TabOrder = 0
+      object PnBotoes: TPanel
+        AlignWithMargins = True
+        Left = 0
+        Top = 171
+        Width = 424
+        Height = 46
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alBottom
+        BevelOuter = bvNone
+        Color = 14537936
+        ParentBackground = False
+        TabOrder = 0
+        object BtEncerrar: TcxButton
+          AlignWithMargins = True
+          Left = 304
+          Top = 1
+          Width = 120
+          Height = 44
+          Margins.Left = 0
+          Margins.Top = 1
+          Margins.Right = 0
+          Margins.Bottom = 1
+          Align = alRight
+          Caption = 'E&ncerrar'
+          OptionsImage.Glyph.SourceDPI = 96
+          OptionsImage.Glyph.Data = {
+            89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+            F400000011744558745469746C6500436C6F73653B457869743B0519FF850000
+            00CC49444154785EEDD6410AC2301484E1ACBC8FA2548A4B6FE2F90A9A45CEE2
+            2114BD401A675102F29A11798975F116FF2A85F91669A94B292DDA1BC000D7D3
+            31FDA2D600031820B6023CD1010502F0A8470F3D408EEF9043AB02C24F670E6D
+            05420188A89FC69D4088F15C8F46252037E40189F085B373BD3BC0117C5C0FE0
+            0832AE0570041B6F0DF004109A00F8B844B402F82F2E61A80BE0AFDAC0117AC0
+            88F63303970F17B3ABF921BAA3CDDC7801B14637FD1D90884E8C4B4447C6D56F
+            41543CF3BF3F240630C0A219E005D2B236AEE0A7E8530000000049454E44AE42
+            6082}
+          SpeedButtonOptions.CanBeFocused = False
+          TabOrder = 0
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Open Sans'
+          Font.Style = []
+          ParentFont = False
+          OnClick = BtEncerrarClick
+        end
+      end
+      object Panel3: TPanel
+        AlignWithMargins = True
+        Left = 0
+        Top = 0
+        Width = 424
+        Height = 30
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        BevelOuter = bvNone
+        Color = 14935011
+        ParentBackground = False
+        TabOrder = 1
+        object cxLabel1: TcxLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 1
+          Margins.Top = 1
+          Margins.Bottom = 1
+          Align = alLeft
+          Caption = 'BaseView'
+          ParentFont = False
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -19
+          Style.Font.Name = 'Open Sans ExtraBold'
+          Style.Font.Style = [fsBold]
+          Style.TextColor = 6050636
+          Style.IsFontAssigned = True
+        end
+      end
+      object Panel4: TPanel
+        AlignWithMargins = True
+        Left = 1
+        Top = 31
+        Width = 422
+        Height = 139
+        Margins.Left = 1
+        Margins.Top = 1
+        Margins.Right = 1
+        Margins.Bottom = 1
+        Align = alClient
+        BevelOuter = bvNone
+        Color = 14537936
+        ParentBackground = False
+        TabOrder = 2
+        object Panel5: TPanel
+          AlignWithMargins = True
+          Left = 1
+          Top = 1
+          Width = 420
+          Height = 137
+          Margins.Left = 1
+          Margins.Top = 1
+          Margins.Right = 1
+          Margins.Bottom = 1
+          Align = alClient
+          BevelOuter = bvNone
+          Color = 15658986
+          ParentBackground = False
+          TabOrder = 0
+        end
+      end
+    end
   end
 end

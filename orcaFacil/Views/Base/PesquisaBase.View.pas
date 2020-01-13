@@ -19,27 +19,30 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Base.View.Interf, Tipos.Controller.Interf;
+  Base.View.Interf, Tipos.Controller.Interf, cxLabel, dxGDIPlusClasses;
 
 type
   TFPesquisaView = class(TFBaseView, IBasePesquisaView)
-    PnPesquisa: TPanel;
-    PnDivisorPesquisa: TPanel;
-    VwDados: TcxGridDBTableView;
-    LvDados: TcxGridLevel;
-    GdDados: TcxGrid;
     StGrid: TcxStyleRepository;
     StHeader: TcxStyle;
-    LbPesquisa: TLabel;
-    TxPesquisa: TcxTextEdit;
     FdDados: TFDMemTable;
+    DsDados: TDataSource;
     BtDuplicar: TcxButton;
+    BtExcluir: TcxButton;
     BtConsultar: TcxButton;
     BtAlterar: TcxButton;
     BtNovo: TcxButton;
-    BtExcluir: TcxButton;
-    PnGrid: TPanel;
-    DsDados: TDataSource;
+    VwDados: TcxGridDBTableView;
+    LvDados: TcxGridLevel;
+    DbDados: TcxGrid;
+    StBackground: TcxStyle;
+    StContentOdd: TcxStyle;
+    StContentEven: TcxStyle;
+    StSelection: TcxStyle;
+    PnPesquisa: TPanel;
+    ImPesquisa: TImage;
+    TePesquisa: TcxTextEdit;
+    StInactive: TcxStyle;
     procedure FdDadosAfterRefresh(DataSet: TDataSet);
     procedure FormShow(Sender: TObject);
     procedure VwDadosColumnHeaderClick(Sender: TcxGridTableView;
@@ -49,7 +52,7 @@ type
     procedure BtConsultarClick(Sender: TObject);
     procedure BtExcluirClick(Sender: TObject);
     procedure BtDuplicarClick(Sender: TObject);
-    procedure TxPesquisaPropertiesChange(Sender: TObject);
+    procedure TePesquisaPropertiesChange(Sender: TObject);
   private
     procedure listarRegistros;
 
@@ -126,10 +129,10 @@ end;
 
 procedure TFPesquisaView.controlaBotoesAtivos;
 begin
-  BtAlterar.Enabled := not(FDDados.IsEmpty);
-  BtConsultar.Enabled := not(FDDados.IsEmpty);
-  BtExcluir.Enabled := not(FDDados.IsEmpty);
-  BtDuplicar.Enabled := not(FDDados.IsEmpty);
+  BtAlterar.Enabled := not(FdDados.IsEmpty);
+  BtConsultar.Enabled := not(FdDados.IsEmpty);
+  BtExcluir.Enabled := not(FdDados.IsEmpty);
+  BtDuplicar.Enabled := not(FdDados.IsEmpty);
 end;
 
 function TFPesquisaView.duplicarRegistro: IBasePesquisaView;
@@ -157,12 +160,14 @@ end;
 
 procedure TFPesquisaView.filtrarRegistros;
 begin
-  FDDados.Filtered := false;
+  FdDados.Filtered := false;
 
-  if not(TxPesquisa.Text = EmptyStr) then
-    FDDados.Filter := UpperCase(FCampoOrdem) + 'like ''%' +
-      AnsiUpperCase(TxPesquisa.Text) + '%''';
-  FDDados.Filtered := True;
+  if not(TePesquisa.Text = EmptyStr) then
+  begin
+    FdDados.Filter := UpperCase(FCampoOrdem) + ' Like ''%' +
+      AnsiUpperCase(TePesquisa.Text) + '%''';
+    FdDados.Filtered := True;
+  end;
 end;
 
 procedure TFPesquisaView.FormShow(Sender: TObject);
@@ -200,7 +205,7 @@ begin
   Result := AValue;
 end;
 
-procedure TFPesquisaView.TxPesquisaPropertiesChange(Sender: TObject);
+procedure TFPesquisaView.TePesquisaPropertiesChange(Sender: TObject);
 begin
   inherited;
   filtrarRegistros;

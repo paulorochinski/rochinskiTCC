@@ -20,14 +20,25 @@ uses
   FireDAC.Phys.Intf, ormbr.container.DataSet.interfaces,
   ormbr.container.fdmemtable,
   FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  TESTPRODUTO.Entidade.Model;
+  TESTPRODUTO.Entidade.Model, Vcl.Grids, Vcl.DBGrids, dxBevel, cxLabel,
+  dxGDIPlusClasses;
 
 type
   TFEST0001PView = class(TFPesquisaView, IBasePesquisaView)
+    FdDadosCODIGO: TStringField;
     FdDadosIDPRODUTO: TIntegerField;
+    FdDadosCODIGO_SINAPI: TIntegerField;
+    FdDadosDESCRICAO: TStringField;
+    FdDadosUNIDMEDIDA: TStringField;
+    FdDadosPRMEDIO_SINAPI: TCurrencyField;
     VwDadosIDPRODUTO: TcxGridDBColumn;
+    VwDadosCODIGO_SINAPI: TcxGridDBColumn;
+    VwDadosDESCRICAO: TcxGridDBColumn;
+    VwDadosUNIDMEDIDA: TcxGridDBColumn;
+    VwDadosPRMEDIO_SINAPI: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BtNovoClick(Sender: TObject);
   private
     { Private declarations }
     FContainer: IContainerDataSet<TTESTPRODUTO>;
@@ -60,6 +71,12 @@ begin
   Result := Self;
 end;
 
+procedure TFEST0001PView.BtNovoClick(Sender: TObject);
+begin
+  inherited;
+  ShowMessage(FCampoOrdem);
+end;
+
 function TFEST0001PView.consultarRegistro: IBasePesquisaView;
 begin
   inherited;
@@ -86,13 +103,13 @@ end;
 procedure TFEST0001PView.FormCreate(Sender: TObject);
 begin
   inherited;
-  FContainer := TContainerFDMemTable<TTESTPRODUTO>.Create(FConexao, FDDados);
-  FCampoOrdem := 'DESCRICAO';
+  FContainer := TContainerFDMemTable<TTESTPRODUTO>.Create(FConexao, FdDados);
 end;
 
 procedure TFEST0001PView.FormShow(Sender: TObject);
 begin
   inherited;
+  FCampoOrdem := 'DESCRICAO';
   listarRegistros;
 end;
 
@@ -104,7 +121,7 @@ end;
 
 procedure TFEST0001PView.listarRegistros;
 begin
-  FContainer.FindWhere('', FCampoOrdem);
+  FContainer.Open;
   controlaBotoesAtivos;
 end;
 

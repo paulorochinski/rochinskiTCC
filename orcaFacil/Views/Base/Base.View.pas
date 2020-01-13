@@ -10,18 +10,22 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, dxBevel, Vcl.ExtCtrls, cxGraphics,
   cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, Vcl.StdCtrls,
-  cxButtons, ormbr.factory.interfaces;
+  cxButtons, ormbr.factory.interfaces, cxControls, cxContainer, cxEdit, cxLabel;
 
 type
   TFBaseView = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
     PnBotoes: TPanel;
-    PnDivisor: TPanel;
-    SbEncerrar: TcxButton;
-    PnContainer: TPanel;
+    BtEncerrar: TcxButton;
+    Panel3: TPanel;
+    cxLabel1: TcxLabel;
+    Panel4: TPanel;
+    Panel5: TPanel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure SbEncerrarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure BtEncerrarClick(Sender: TObject);
   private
 
   protected
@@ -40,6 +44,11 @@ implementation
 
 uses FacadeController;
 
+procedure TFBaseView.BtEncerrarClick(Sender: TObject);
+begin
+  Close;
+end;
+
 procedure TFBaseView.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
@@ -50,17 +59,15 @@ begin
   FConexao := TFacadeController.New.ConexaoController.conexaoAtual;
 end;
 
-procedure TFBaseView.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TFBaseView.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
   case Key of
-    VK_RETURN : Perform(WM_NEXTDLGCTL, 0 ,0);
-    VK_ESCAPE : Close;
+    VK_RETURN:
+      Perform(WM_NEXTDLGCTL, 0, 0);
+    VK_ESCAPE:
+      Close;
   end;
-end;
-
-procedure TFBaseView.SbEncerrarClick(Sender: TObject);
-begin
-  Close;
 end;
 
 end.
