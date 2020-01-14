@@ -39,6 +39,10 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtNovoClick(Sender: TObject);
+    procedure BtAlterarClick(Sender: TObject);
+    procedure BtConsultarClick(Sender: TObject);
+    procedure BtExcluirClick(Sender: TObject);
+    procedure BtDuplicarClick(Sender: TObject);
   private
     { Private declarations }
     FContainer: IContainerDataSet<TTESTPRODUTO>;
@@ -63,36 +67,99 @@ var
 implementation
 
 {$R *.dfm}
+
+uses FacadeView, Tipos.Controller.Interf;
 { TFEST0001PView }
 
 function TFEST0001PView.alterarRegistro: IBasePesquisaView;
 begin
   inherited;
   Result := Self;
+
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaCadastro(tcProduto)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
+end;
+
+procedure TFEST0001PView.BtAlterarClick(Sender: TObject);
+begin
+  inherited;
+  alterarRegistro;
+  listarRegistros;
+end;
+
+procedure TFEST0001PView.BtConsultarClick(Sender: TObject);
+begin
+  inherited;
+  consultarRegistro;
+  listarRegistros;
+end;
+
+procedure TFEST0001PView.BtDuplicarClick(Sender: TObject);
+begin
+  inherited;
+  duplicarRegistro;
+  listarRegistros;
+end;
+
+procedure TFEST0001PView.BtExcluirClick(Sender: TObject);
+begin
+  inherited;
+  excluirRegistro;
+  listarRegistros;
 end;
 
 procedure TFEST0001PView.BtNovoClick(Sender: TObject);
 begin
   inherited;
-  ShowMessage(FCampoOrdem);
+  incluirRegistro;
+  listarRegistros;
 end;
 
 function TFEST0001PView.consultarRegistro: IBasePesquisaView;
 begin
   inherited;
   Result := Self;
+
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaCadastro(tcProduto)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
 end;
 
 function TFEST0001PView.duplicarRegistro: IBasePesquisaView;
 begin
   inherited;
   Result := Self;
+
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaCadastro(tcProduto)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
 end;
 
 function TFEST0001PView.excluirRegistro: IBasePesquisaView;
 begin
   inherited;
   Result := Self;
+
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaCadastro(tcProduto)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
 end;
 
 procedure TFEST0001PView.executar;
@@ -117,6 +184,13 @@ function TFEST0001PView.incluirRegistro: IBasePesquisaView;
 begin
   inherited;
   Result := Self;
+
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaCadastro(tcProduto)
+       .operacao(FOperacao)
+         .executar;
 end;
 
 procedure TFEST0001PView.listarRegistros;

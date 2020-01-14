@@ -25,6 +25,9 @@ inherited FEST0001PView: TFEST0001PView
           Left = 599
           ExplicitLeft = 599
         end
+        inherited BtAlterar: TcxButton
+          ExplicitTop = 1
+        end
       end
       inherited Panel3: TPanel
         Width = 719

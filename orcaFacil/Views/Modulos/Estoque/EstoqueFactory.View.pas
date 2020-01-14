@@ -14,13 +14,14 @@ type
     class function New: IEstoqueFactoryView;
 
     function exibirTelaListagem(AValue: TTelaListagem): IBasePesquisaView;
+    function exibirTelaCadastro(AValue: TTelaCadastro): IBaseCadastroView;
   end;
 
 implementation
 
 { TEstoqueFactoryView }
 
-uses EST0001P.View;
+uses EST0001P.View, EST0001C.View;
 
 constructor TEstoqueFactoryView.Create;
 begin
@@ -31,6 +32,15 @@ destructor TEstoqueFactoryView.Destroy;
 begin
 
   inherited;
+end;
+
+function TEstoqueFactoryView.exibirTelaCadastro(AValue: TTelaCadastro)
+  : IBaseCadastroView;
+begin
+  case AValue of
+    tcProduto:
+      Result := TFEST0001CView.New;
+  end;
 end;
 
 function TEstoqueFactoryView.exibirTelaListagem(AValue: TTelaListagem)

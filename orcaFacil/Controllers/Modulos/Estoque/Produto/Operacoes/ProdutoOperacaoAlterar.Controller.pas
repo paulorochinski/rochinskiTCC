@@ -23,42 +23,28 @@ type
 
     class function New: IProdutoOperacaoAlterarController;
 
-    function produtoController(AValue: IProdutoController)
-      : IProdutoOperacaoAlterarController;
+    function produtoController(AValue: IProdutoController): IProdutoOperacaoAlterarController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoAlterarController;
 
-    function localizar(AValue: string): IProdutoOperacaoAlterarController;
+    function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoAlterarController;
 
-    function codigoSinapi(AValue: Integer)
-      : IProdutoOperacaoAlterarController; overload;
-    function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController;
-      overload;
-    function codigoSinapi: string; overload;
+    function codigoSinapi(AValue: Integer): IProdutoOperacaoAlterarController; overload;
+    function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
 
     function descricao(AValue: string): IProdutoOperacaoAlterarController; overload;
-    function descricao: string; overload;
 
     function unidMedida(AValue: string): IProdutoOperacaoAlterarController; overload;
-    function unidMedida: string; overload;
 
-    function prMedioSinapi(AValue: Currency)
-      : IProdutoOperacaoAlterarController; overload;
-    function prMedioSinapi(AValue: string)
-      : IProdutoOperacaoAlterarController; overload;
-    function prMedioSinapi: string; overload;
+    function prMedioSinapi(AValue: Currency): IProdutoOperacaoAlterarController; overload;
+    function prMedioSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
 
-    function &end: IProdutoController;
+    function &executar: IProdutoController;
 
   end;
 
 implementation
 
 { TProdutosOperacoesAlterarController }
-
-function TProdutosOperacoesAlterarController.codigoSinapi: string;
-begin
-  Result := IntToStr(FRegistro.CODIGO_SINAPI);
-end;
 
 function TProdutosOperacoesAlterarController.codigoSinapi(AValue: string)
   : IProdutoOperacaoAlterarController;
@@ -74,7 +60,7 @@ begin
   FCodigoSinapi := AValue;
 end;
 
-function TProdutosOperacoesAlterarController.&end: IProdutoController;
+function TProdutosOperacoesAlterarController.&executar: IProdutoController;
 begin
   Result := FProdutoController;
 
@@ -93,11 +79,6 @@ begin
 
 end;
 
-function TProdutosOperacoesAlterarController.descricao: string;
-begin
-  Result := FRegistro.descricao;
-end;
-
 function TProdutosOperacoesAlterarController.descricao(AValue: string)
   : IProdutoOperacaoAlterarController;
 begin
@@ -111,23 +92,10 @@ begin
   inherited;
 end;
 
-function TProdutosOperacoesAlterarController.localizar(AValue: string)
-  : IProdutoOperacaoAlterarController;
-begin
-  Result := Self;
-  FRegistro := FProdutoModel.DAO.FindWhere('CODIGO=' + QuotedStr(AValue),
-    'DESCRICAO').Items[0];
-end;
-
 class function TProdutosOperacoesAlterarController.New
   : IProdutoOperacaoAlterarController;
 begin
   Result := Self.Create;
-end;
-
-function TProdutosOperacoesAlterarController.prMedioSinapi: string;
-begin
-  Result := CurrToStr(FRegistro.PRMEDIO_SINAPI);
 end;
 
 function TProdutosOperacoesAlterarController.prMedioSinapi(AValue: string)
@@ -158,9 +126,11 @@ begin
   FProdutoModel := AValue;
 end;
 
-function TProdutosOperacoesAlterarController.unidMedida: string;
+function TProdutosOperacoesAlterarController.produtoSelecionado(
+  AValue: TTESTPRODUTO): IProdutoOperacaoAlterarController;
 begin
-  Result := FRegistro.unidMedida;
+  Result := Self;
+  FRegistro := AValue;
 end;
 
 function TProdutosOperacoesAlterarController.unidMedida(AValue: string)

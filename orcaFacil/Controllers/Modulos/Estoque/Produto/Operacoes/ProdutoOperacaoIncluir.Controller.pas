@@ -35,7 +35,7 @@ type
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
 
-    function &end: IProdutoController;
+    function &executar: IProdutoController;
   end;
 
 implementation
@@ -56,7 +56,7 @@ begin
   FCodigoSinapi := AValue;
 end;
 
-function TProdutoOperacaoIncluirController.&end: IProdutoController;
+function TProdutoOperacaoIncluirController.&executar: IProdutoController;
 begin
   Result := FProdutoController;
 

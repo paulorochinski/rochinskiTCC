@@ -13,29 +13,18 @@ type
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
 
-    FCodigoSinapi: Integer;
-    FDescricao: string;
-    FUnidMedida: string;
-    FPrMedioSinap: Currency;
   public
     constructor Create;
     destructor Destroy; override;
 
     class function New: IProdutoOperacaoExcluirController;
 
-    function produtoController(AValue: IProdutoController)
-      : IProdutoOperacaoExcluirController;
-    function produtoModel(AValue: IProdutoModel)
-      : IProdutoOperacaoExcluirController;
+    function produtoController(AValue: IProdutoController): IProdutoOperacaoExcluirController;
+    function produtoModel(AValue: IProdutoModel): IProdutoOperacaoExcluirController;
 
-    function localizar(AValue: string): IProdutoOperacaoExcluirController;
+    function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoExcluirController;
 
-    function codigoSinapi: string;
-    function descricao: string;
-    function unidMedida: string;
-    function prMedioSinapi: string;
-
-    function &end: IProdutoController;
+    function &executar: IProdutoController;
 
   end;
 
@@ -43,15 +32,10 @@ implementation
 
 { TProdutoOperacaoExcluirController }
 
-function TProdutoOperacaoExcluirController.codigoSinapi: string;
-begin
-  Result := IntToStr(FRegistro.CODIGO_SINAPI);
-end;
 
-function TProdutoOperacaoExcluirController.&end: IProdutoController;
+function TProdutoOperacaoExcluirController.&executar: IProdutoController;
 begin
   Result := FProdutoController;
-
 
   FProdutoModel.DAO.Delete(FRegistro);
 end;
@@ -61,23 +45,10 @@ begin
 
 end;
 
-function TProdutoOperacaoExcluirController.descricao: string;
-begin
-  Result := FRegistro.descricao;
-end;
-
 destructor TProdutoOperacaoExcluirController.Destroy;
 begin
 
   inherited;
-end;
-
-function TProdutoOperacaoExcluirController.localizar(AValue: string)
-  : IProdutoOperacaoExcluirController;
-begin
-  Result := Self;
-  FRegistro := FProdutoModel.DAO.FindWhere('CODIGO=' + QuotedStr(AValue),
-    'DESCRICAO').Items[0];
 end;
 
 class function TProdutoOperacaoExcluirController.New
@@ -86,10 +57,6 @@ begin
   Result := Self.Create;
 end;
 
-function TProdutoOperacaoExcluirController.prMedioSinapi: string;
-begin
-  Result := CurrToStr(FRegistro.PRMEDIO_SINAPI);
-end;
 
 function TProdutoOperacaoExcluirController.produtoController
   (AValue: IProdutoController): IProdutoOperacaoExcluirController;
@@ -105,9 +72,12 @@ begin
   FProdutoModel := AValue;
 end;
 
-function TProdutoOperacaoExcluirController.unidMedida: string;
+
+function TProdutoOperacaoExcluirController.produtoSelecionado(
+  AValue: TTESTPRODUTO): IProdutoOperacaoExcluirController;
 begin
-  Result := FRegistro.unidMedida;
+  Result := Self;
+  FRegistro := AValue;
 end;
 
 end.

@@ -35,7 +35,6 @@ uses
   ModulosFacade.Controller.interf in 'Controllers\Modulos\ModulosFacade.Controller.interf.pas',
   ModulosFacade.Controller in 'Controllers\Modulos\ModulosFacade.Controller.pas',
   ProdutoOperacaoAlterar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoAlterar.Controller.pas',
-  ProdutoOperacaoConsultar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoConsultar.Controller.pas',
   ProdutoOperacaoIncluir.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoIncluir.Controller.pas',
   ProdutoOperacaoExcluir.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoExcluir.Controller.pas',
   ProdutoOperacaoDuplicar.Controller in 'Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoDuplicar.Controller.pas',
@@ -46,7 +45,8 @@ uses
   ModulosFacade.View.Interf in 'Views\Modulos\ModulosFacade.View.Interf.pas',
   ModulosFacade.View in 'Views\Modulos\ModulosFacade.View.pas',
   FacadeView.Interf in 'Views\FacadeView.Interf.pas',
-  FacadeView in 'Views\FacadeView.pas';
+  FacadeView in 'Views\FacadeView.pas',
+  EST0001C.View in 'Views\Modulos\Estoque\Produto\EST0001C.View.pas' {FEST0001CView};
 
 {$R *.res}
 

@@ -10,7 +10,8 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, dxBevel, Vcl.ExtCtrls, cxGraphics,
   cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, Vcl.StdCtrls,
-  cxButtons, ormbr.factory.interfaces, cxControls, cxContainer, cxEdit, cxLabel;
+  cxButtons, ormbr.factory.interfaces, cxControls, cxContainer, cxEdit, cxLabel,
+  Tipos.Controller.Interf;
 
 type
   TFBaseView = class(TForm)
@@ -30,6 +31,7 @@ type
 
   protected
     FConexao: IDBConnection;
+    FOperacao: TTipoOperacao;
 
   public
 

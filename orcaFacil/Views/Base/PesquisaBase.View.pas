@@ -58,7 +58,6 @@ type
 
   protected
     FCampoOrdem: string;
-    FOperacao: TTipoOperacao;
 
     procedure filtrarRegistros;
     procedure controlaBotoesAtivos;

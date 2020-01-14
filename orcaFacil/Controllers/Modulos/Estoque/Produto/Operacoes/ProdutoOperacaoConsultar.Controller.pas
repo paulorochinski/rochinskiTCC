@@ -13,10 +13,6 @@ type
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
 
-    FCodigoSinapi: Integer;
-    FDescricao: string;
-    FUnidMedida: string;
-    FPrMedioSinap: Currency;
   public
     constructor Create;
     destructor Destroy; override;

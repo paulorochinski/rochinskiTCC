@@ -1,12 +1,13 @@
 inherited FCadastroView: TFCadastroView
   Caption = 'FCadastroView'
   FormStyle = fsNormal
+  Visible = False
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     inherited Panel2: TPanel
       inherited PnBotoes: TPanel
-        object SbSalvar: TcxButton
+        object BtSalvar: TcxButton
           AlignWithMargins = True
           Left = 184
           Top = 1
@@ -17,20 +18,23 @@ inherited FCadastroView: TFCadastroView
           Margins.Right = 0
           Margins.Bottom = 1
           Align = alRight
-          Caption = 'S&alvar'
+          Caption = 'C&onfirmar'
           LookAndFeel.Kind = lfFlat
           LookAndFeel.NativeStyle = True
           OptionsImage.Glyph.SourceDPI = 96
           OptionsImage.Glyph.Data = {
-            89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
-            F40000001974455874536F6674776172650041646F626520496D616765526561
-            647971C9653C00000017744558745469746C65005361766520416C6C3B536176
-            653B416C6C6E14F5A10000009749444154785EEDD5C109C6200C86E16E56E829
-            B3749D0ED239DC43C818F973F92F4149285F554A0EEFA9051F22EA2622535B17
-            709DF7AE154DFE99EF12A9F16FD1F608803541014C3C650B5AD31C3672073062
-            E43E407C800FEC61E1800424C0F675403C00001000908003F0F21D8F01A8E777
-            6540021250BD634880C5A903608DA65C44360BA82F026A04401A230166E45DC0
-            D412F003154A51FE95736EF60000000049454E44AE426082}
+            89504E470D0A1A0A0000000D494844520000002000000020080300000044A48A
+            C60000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C00000015744558745469746C6500436865636B3B4D61726B3B54
+            69636B0B00C7240000004B504C5445FFFFFFFFFFFFFCFDFD9FC2B6E4EEEBB1CD
+            C3E0EBE7FEFFFFA0C2B779A99977A89877A79780AD9E7FAD9EA3C4B97EAC9D76
+            A797D4E3DEDFEBE7A2C3B8A6C6BBD5E4DFE3EDE9E3EDEAE2ECE945FDC6340000
+            000174524E530040E6D8660000008449444154785ED5D3370E03310C44518FE2
+            66E770FF931A368BC11058A9B5D9FE07420575E8CFA9393F0EA60E88656D8218
+            F05C15F80E945981EF61D8DD1061DD03DF05CC6E3FBE9D209F47DF05E48AFBA8
+            EF1370AB80097601C7074CB00BA0F0DD00C5855D0005BB000A760526D2A75F1B
+            07B324848D8980E2B5754E6EFAAF7F41D09D37777D319D27A472A00000000049
+            454E44AE426082}
           SpeedButtonOptions.CanBeFocused = False
           TabOrder = 1
           Font.Charset = ANSI_CHARSET
@@ -39,7 +43,7 @@ inherited FCadastroView: TFCadastroView
           Font.Name = 'Open Sans'
           Font.Style = []
           ParentFont = False
-          ExplicitLeft = 192
+          OnClick = BtSalvarClick
         end
       end
       inherited Panel3: TPanel
@@ -47,6 +51,24 @@ inherited FCadastroView: TFCadastroView
           Caption = 'CadastroView'
           Style.IsFontAssigned = True
           ExplicitWidth = 140
+        end
+        object LbOperacao: TcxLabel
+          AlignWithMargins = True
+          Left = 320
+          Top = 1
+          Margins.Top = 1
+          Margins.Bottom = 1
+          Align = alRight
+          Caption = '(OPERACAO)'
+          ParentFont = False
+          Style.Font.Charset = ANSI_CHARSET
+          Style.Font.Color = clWindowText
+          Style.Font.Height = -16
+          Style.Font.Name = 'Open Sans ExtraBold'
+          Style.Font.Style = [fsBold, fsItalic]
+          Style.TextColor = 6050636
+          Style.IsFontAssigned = True
+          ExplicitLeft = 414
         end
       end
     end

@@ -63,6 +63,7 @@ inherited FPesquisaView: TFPesquisaView
           Font.Style = []
           ParentFont = False
           OnClick = BtAlterarClick
+          ExplicitTop = 2
         end
         object BtConsultar: TcxButton
           AlignWithMargins = True

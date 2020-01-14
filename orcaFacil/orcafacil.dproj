@@ -151,7 +151,6 @@
         <DCCReference Include="Controllers\Modulos\ModulosFacade.Controller.interf.pas"/>
         <DCCReference Include="Controllers\Modulos\ModulosFacade.Controller.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoAlterar.Controller.pas"/>
-        <DCCReference Include="Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoConsultar.Controller.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoIncluir.Controller.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoExcluir.Controller.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoDuplicar.Controller.pas"/>
@@ -166,6 +165,10 @@
         <DCCReference Include="Views\Modulos\ModulosFacade.View.pas"/>
         <DCCReference Include="Views\FacadeView.Interf.pas"/>
         <DCCReference Include="Views\FacadeView.pas"/>
+        <DCCReference Include="Views\Modulos\Estoque\Produto\EST0001C.View.pas">
+            <Form>FEST0001CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
