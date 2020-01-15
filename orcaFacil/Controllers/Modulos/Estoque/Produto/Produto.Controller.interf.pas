@@ -23,6 +23,7 @@ type
     function codigoSinapi: string;
     function descricao: string;
     function unidMedida: string;
+    function origemPreco: string;
     function prMedioSinapi: string;
   end;
 
@@ -37,6 +38,8 @@ type
     function descricao(AValue: string): IProdutoOperacaoIncluirController; overload;
 
     function unidMedida(AValue: string): IProdutoOperacaoIncluirController; overload;
+
+    function origemPreco(AValue: string): IProdutoOperacaoIncluirController; overload;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
@@ -57,6 +60,8 @@ type
     function descricao(AValue: string): IProdutoOperacaoAlterarController; overload;
 
     function unidMedida(AValue: string): IProdutoOperacaoAlterarController; overload;
+
+    function origemPreco(AValue: string): IProdutoOperacaoAlterarController; overload;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoAlterarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
@@ -90,11 +95,15 @@ type
 
     function unidMedida(AValue: string): IProdutoOperacaoDuplicarController; overload;
 
+    function origemPreco(AValue: string): IProdutoOperacaoDuplicarController; overload;
+
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoDuplicarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoDuplicarController; overload;
 
     function &executar: IProdutoController;
   end;
+
+
 
 implementation
 

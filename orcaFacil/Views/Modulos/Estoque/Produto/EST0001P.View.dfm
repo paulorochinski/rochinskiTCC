@@ -1,29 +1,32 @@
 inherited FEST0001PView: TFEST0001PView
   Caption = 'Produtos'
-  ClientHeight = 347
-  ClientWidth = 723
-  ExplicitWidth = 729
-  ExplicitHeight = 376
+  ClientHeight = 359
+  ClientWidth = 818
+  ExplicitWidth = 824
+  ExplicitHeight = 388
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 721
-    Height = 345
-    ExplicitWidth = 721
-    ExplicitHeight = 345
+    Width = 816
+    Height = 357
+    ExplicitWidth = 816
+    ExplicitHeight = 357
     inherited Panel2: TPanel
-      Width = 719
-      Height = 343
-      ExplicitWidth = 719
-      ExplicitHeight = 343
+      Width = 814
+      Height = 355
+      ExplicitWidth = 814
+      ExplicitHeight = 355
       inherited PnBotoes: TPanel
-        Top = 297
-        Width = 719
-        ExplicitTop = 297
-        ExplicitWidth = 719
+        Top = 309
+        Width = 814
+        ExplicitTop = 309
+        ExplicitWidth = 814
         inherited BtEncerrar: TcxButton
-          Left = 599
-          ExplicitLeft = 599
+          Left = 694
+          ExplicitLeft = 694
+        end
+        inherited BtAlterar: TcxButton
+          ExplicitTop = 1
         end
         object BtImportar: TcxButton
           AlignWithMargins = True
@@ -63,36 +66,37 @@ inherited FEST0001PView: TFEST0001PView
         end
       end
       inherited Panel3: TPanel
-        Width = 719
-        ExplicitWidth = 719
+        Width = 814
+        ExplicitWidth = 814
         inherited cxLabel1: TcxLabel
           Caption = 'PRODUTOS'
           Style.IsFontAssigned = True
           ExplicitWidth = 109
         end
         inherited PnPesquisa: TPanel
-          Left = 487
-          ExplicitLeft = 487
+          Left = 582
+          ExplicitLeft = 582
           inherited TePesquisa: TcxTextEdit
             Style.IsFontAssigned = True
+            ExplicitHeight = 26
           end
         end
       end
       inherited Panel4: TPanel
-        Width = 717
-        Height = 265
-        ExplicitWidth = 717
-        ExplicitHeight = 265
+        Width = 812
+        Height = 277
+        ExplicitWidth = 812
+        ExplicitHeight = 277
         inherited Panel5: TPanel
-          Width = 715
-          Height = 263
-          ExplicitWidth = 715
-          ExplicitHeight = 263
+          Width = 810
+          Height = 275
+          ExplicitWidth = 810
+          ExplicitHeight = 275
           inherited DbDados: TcxGrid
-            Width = 715
-            Height = 263
-            ExplicitWidth = 715
-            ExplicitHeight = 263
+            Width = 810
+            Height = 275
+            ExplicitWidth = 810
+            ExplicitHeight = 275
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsDados
               OptionsBehavior.CopyCaptionsToClipboard = False
@@ -127,6 +131,11 @@ inherited FEST0001PView: TFEST0001PView
                 Caption = 'Unid. Medida'
                 DataBinding.FieldName = 'UNIDMEDIDA'
                 Width = 55
+              end
+              object VwDadosORIGEM_PRECO: TcxGridDBColumn
+                Caption = 'Origem Pre'#231'o'
+                DataBinding.FieldName = 'ORIGEM_PRECO'
+                Width = 70
               end
               object VwDadosPRMEDIO_SINAPI: TcxGridDBColumn
                 Caption = 'Pre'#231'o M'#233'dio SINAPI'
@@ -164,6 +173,10 @@ inherited FEST0001PView: TFEST0001PView
     end
     object FdDadosPRMEDIO_SINAPI: TCurrencyField
       FieldName = 'PRMEDIO_SINAPI'
+    end
+    object FdDadosORIGEM_PRECO: TStringField
+      FieldName = 'ORIGEM_PRECO'
+      Size = 10
     end
   end
   inherited DsDados: TDataSource

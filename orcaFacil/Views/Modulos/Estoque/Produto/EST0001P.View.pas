@@ -37,6 +37,8 @@ type
     VwDadosUNIDMEDIDA: TcxGridDBColumn;
     VwDadosPRMEDIO_SINAPI: TcxGridDBColumn;
     BtImportar: TcxButton;
+    FdDadosORIGEM_PRECO: TStringField;
+    VwDadosORIGEM_PRECO: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtNovoClick(Sender: TObject);
@@ -124,6 +126,8 @@ begin
      .EstoqueFactoryView
       .exibirTelaImportacao(tiProduto)
        .executar;
+
+  listarRegistros;
 end;
 
 procedure TFEST0001PView.BtNovoClick(Sender: TObject);

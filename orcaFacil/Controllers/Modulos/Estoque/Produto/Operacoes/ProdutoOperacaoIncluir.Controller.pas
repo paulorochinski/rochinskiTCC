@@ -15,6 +15,7 @@ type
     FCodigoSinapi: Integer;
     FDescricao: string;
     FUnidMedida: string;
+    FOrigemPreco: string;
     FPrMedioSinap: Currency;
   public
     constructor Create;
@@ -31,6 +32,8 @@ type
     function descricao(AValue: string): IProdutoOperacaoIncluirController; overload;
 
     function unidMedida(AValue: string): IProdutoOperacaoIncluirController; overload;
+
+    function origemPreco(AValue: string): IProdutoOperacaoIncluirController; overload;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
@@ -65,6 +68,7 @@ begin
   FProdutoModel.Entidade.CODIGO_SINAPI := FCodigoSinapi;
   FProdutoModel.Entidade.DESCRICAO := FDescricao;
   FProdutoModel.Entidade.UNIDMEDIDA := FUnidMedida;
+  FProdutoModel.Entidade.ORIGEM_PRECO := FOrigemPreco;
   FProdutoModel.Entidade.PRMEDIO_SINAPI := FPrMedioSinap;
 
   FProdutoModel.DAO.Insert(FProdutoModel.Entidade);
@@ -92,6 +96,13 @@ class function TProdutoOperacaoIncluirController.New
   : IProdutoOperacaoIncluirController;
 begin
   Result := Self.Create;
+end;
+
+function TProdutoOperacaoIncluirController.origemPreco(
+  AValue: string): IProdutoOperacaoIncluirController;
+begin
+   Result := Self;
+   FOrigemPreco := AValue;
 end;
 
 function TProdutoOperacaoIncluirController.prMedioSinapi(AValue: string)

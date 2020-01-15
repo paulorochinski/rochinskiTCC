@@ -34,6 +34,7 @@ type
     StSelection: TcxStyle;
     StInactive: TcxStyle;
     CdDados: TClientDataSet;
+    procedure BtSalvarClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -51,6 +52,12 @@ implementation
 
 {$R *.dfm}
 { TFImportarView }
+
+procedure TFImportarView.BtSalvarClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
 
 function TFImportarView.formatarTextoEmValor(AValue: string): string;
 begin

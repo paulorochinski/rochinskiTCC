@@ -24,6 +24,8 @@ type
     cxLabel5: TcxLabel;
     cxLabel6: TcxLabel;
     TeIdProduto: TcxTextEdit;
+    TeOrigemPreco: TcxTextEdit;
+    cxLabel7: TcxLabel;
     procedure FormCreate(Sender: TObject);
     procedure BtSalvarClick(Sender: TObject);
     procedure TeCodigoSinapiKeyPress(Sender: TObject; var Key: Char);
@@ -65,6 +67,7 @@ begin
     TeCodigoSinapi.Enabled := False;
     TeDescricao.Enabled := False;
     TeUnidMedida.Enabled := False;
+    TeOrigemPreco.Enabled := False;
     TePrMedioSinapi.Enabled := False;
   end;
 end;
@@ -89,6 +92,7 @@ begin
   TeCodigoSinapi.Text := FProduto.codigoSinapi;
   TeDescricao.Text := FProduto.descricao;
   TeUnidMedida.Text := FProduto.unidMedida;
+  TeOrigemPreco.Text := FProduto.origemPreco;
   TePrMedioSinapi.Text := FProduto.prMedioSinapi;
 end;
 
@@ -126,6 +130,7 @@ begin
           .codigoSinapi(TeCodigoSinapi.Text)
           .descricao(TeDescricao.Text)
           .unidMedida(TeUnidMedida.Text)
+          .origemPreco(TeOrigemPreco.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
          .&executar;
 
@@ -138,6 +143,7 @@ begin
           .codigoSinapi(TeCodigoSinapi.Text)
           .descricao(TeDescricao.Text)
           .unidMedida(TeUnidMedida.Text)
+          .origemPreco(TeOrigemPreco.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
          .&executar;
 
@@ -160,6 +166,7 @@ begin
           .codigoSinapi(TeCodigoSinapi.Text)
           .descricao(TeDescricao.Text)
           .unidMedida(TeUnidMedida.Text)
+          .origemPreco(TeOrigemPreco.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
          .&executar;
 
@@ -171,9 +178,7 @@ end;
 procedure TFEST0001CView.TeCodigoSinapiKeyPress(Sender: TObject; var Key: Char);
 begin
   inherited;
-
- if (not (Key in ['0'..'9'])) and (Key <> #8) then
-   Key := #0;
+ if not (CharInSet(Key,['0'..'9', #8])) then key := #0;
 end;
 
 end.

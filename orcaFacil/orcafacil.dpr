@@ -48,7 +48,10 @@ uses
   FacadeView in 'Views\FacadeView.pas',
   EST0001C.View in 'Views\Modulos\Estoque\Produto\EST0001C.View.pas' {FEST0001CView},
   ImportarBase.View in 'Views\Base\ImportarBase.View.pas' {FImportarView},
-  EST0001I.View in 'Views\Modulos\Estoque\Produto\EST0001I.View.pas' {FEST0001IView};
+  EST0001I.View in 'Views\Modulos\Estoque\Produto\EST0001I.View.pas' {FEST0001IView},
+  ImportarProduto.Controller.interf in 'Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.interf.pas',
+  ImportarProduto.Controller in 'Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.pas',
+  ImportarProdutoOperacao.Controller in 'Controllers\Modulos\Estoque\ImportarProduto\Operacoes\ImportarProdutoOperacao.Controller.pas';
 
 {$R *.res}
 

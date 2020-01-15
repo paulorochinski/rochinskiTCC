@@ -63,6 +63,7 @@ inherited FImportarView: TFImportarView
           Font.Name = 'Open Sans'
           Font.Style = []
           ParentFont = False
+          OnClick = BtSalvarClick
         end
         object BtBuscar: TcxButton
           AlignWithMargins = True

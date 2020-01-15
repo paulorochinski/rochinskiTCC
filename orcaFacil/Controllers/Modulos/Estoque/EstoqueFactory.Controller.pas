@@ -2,7 +2,7 @@ unit EstoqueFactory.Controller;
 
 interface
 
-uses EstoqueFactory.Controller.interf, Produto.Controller.interf;
+uses EstoqueFactory.Controller.interf, Produto.Controller.interf, ImportarProduto.Controller.interf;
 
 type
   TEstoqueFactory = class(TInterfacedObject, IEstoqueFactoryController)
@@ -14,13 +14,15 @@ type
     class function New: IEstoqueFactoryController;
 
     function Produto: IProdutoController;
+    function importarProduto: IImportarProdutoController;
+
   end;
 
 implementation
 
 { TEstoqueFactory }
 
-uses Produto.Controller;
+uses Produto.Controller, ImportarProduto.Controller;
 
 constructor TEstoqueFactory.Create;
 begin
@@ -31,6 +33,11 @@ destructor TEstoqueFactory.Destroy;
 begin
 
   inherited;
+end;
+
+function TEstoqueFactory.importarProduto: IImportarProdutoController;
+begin
+ Result := TImportarProdutoController.New;
 end;
 
 class function TEstoqueFactory.New: IEstoqueFactoryController;

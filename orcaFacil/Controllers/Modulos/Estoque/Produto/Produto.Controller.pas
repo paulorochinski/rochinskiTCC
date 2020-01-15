@@ -10,6 +10,7 @@ type
   private
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
+    FprodutoEncontrado: Boolean;
   public
     constructor Create;
     destructor Destroy; override;
@@ -27,6 +28,7 @@ type
     function codigoSinapi: string;
     function descricao: string;
     function unidMedida: string;
+    function origemPreco: string;
     function prMedioSinapi: string;
   end;
 
@@ -99,6 +101,11 @@ end;
 class function TProdutoController.New: IProdutoController;
 begin
   Result := Self.Create;
+end;
+
+function TProdutoController.origemPreco: string;
+begin
+  Result := FRegistro.ORIGEM_PRECO;
 end;
 
 function TProdutoController.prMedioSinapi: string;

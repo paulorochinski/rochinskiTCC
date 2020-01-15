@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>orcafacil.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -177,6 +177,9 @@
             <Form>FEST0001IView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.pas"/>
+        <DCCReference Include="Controllers\Modulos\Estoque\ImportarProduto\Operacoes\ImportarProdutoOperacao.Controller.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

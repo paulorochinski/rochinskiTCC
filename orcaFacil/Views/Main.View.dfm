@@ -24,7 +24,7 @@ object FPrincipalView: TFPrincipalView
     ApplicationButton.Menu = BaMenu
     BarManager = BmMenu
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'Silver'
     QuickAccessToolbar.Toolbar = MbAtalhos
     Contexts = <>
     TabOrder = 0

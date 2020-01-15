@@ -10,18 +10,26 @@ inherited FEST0001IView: TFEST0001IView
   inherited Panel1: TPanel
     Width = 808
     Height = 362
+    ExplicitWidth = 808
+    ExplicitHeight = 362
     inherited Panel2: TPanel
       Width = 806
       Height = 360
+      ExplicitWidth = 806
+      ExplicitHeight = 360
       inherited PnBotoes: TPanel
         Top = 314
         Width = 806
+        ExplicitTop = 314
+        ExplicitWidth = 806
         inherited BtEncerrar: TcxButton
           Left = 686
+          ExplicitLeft = 686
         end
         inherited BtSalvar: TcxButton
           Left = 566
           Enabled = False
+          ExplicitLeft = 566
         end
         inherited BtBuscar: TcxButton
           OnClick = BtBuscarClick
@@ -29,6 +37,7 @@ inherited FEST0001IView: TFEST0001IView
       end
       inherited Panel3: TPanel
         Width = 806
+        ExplicitWidth = 806
         inherited cxLabel1: TcxLabel
           Caption = 'IMPORTAR PRODUTOS'
           Style.IsFontAssigned = True
@@ -38,17 +47,25 @@ inherited FEST0001IView: TFEST0001IView
       inherited Panel4: TPanel
         Width = 804
         Height = 282
+        ExplicitWidth = 804
+        ExplicitHeight = 282
         inherited Panel5: TPanel
           Width = 802
           Height = 280
+          ExplicitWidth = 802
+          ExplicitHeight = 280
           inherited PbProgresso: TProgressBar
             Top = 263
             Width = 802
             Visible = False
+            ExplicitTop = 263
+            ExplicitWidth = 802
           end
           inherited DbDados: TcxGrid
             Width = 802
             Height = 263
+            ExplicitWidth = 802
+            ExplicitHeight = 263
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsDados
               object VwDadosCODIGO: TcxGridDBColumn

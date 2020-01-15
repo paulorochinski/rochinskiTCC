@@ -29,6 +29,7 @@ type
     FCODIGO_SINAPI: Nullable<Integer>;
     FDESCRICAO: Nullable<String>;
     FUNIDMEDIDA: Nullable<String>;
+    FORIGEM_PRECO: Nullable<String>;
     FPRMEDIO_SINAPI: Nullable<Double>;
     FDATA_CADASTRO: TDateTime;
     FULTIMA_ATUALIZACAO: TDateTime;
@@ -51,13 +52,17 @@ type
     [Dictionary('CODIGO_SINAPI', 'Mensagem de validação', '', '', '', taCenter)]
     property CODIGO_SINAPI: Nullable<Integer> read FCODIGO_SINAPI write FCODIGO_SINAPI;
 
-    [Column('DESCRICAO', ftString, 190)]
+    [Column('DESCRICAO', ftString, 550)]
     [Dictionary('DESCRICAO', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property DESCRICAO: Nullable<String> read FDESCRICAO write FDESCRICAO;
 
     [Column('UNIDMEDIDA', ftString, 10)]
     [Dictionary('UNIDMEDIDA', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property UNIDMEDIDA: Nullable<String> read FUNIDMEDIDA write FUNIDMEDIDA;
+
+    [Column('ORIGEM_PRECO', ftString, 10)]
+    [Dictionary('UNIDMEDIDA', 'Mensagem de validação', '', '', '', taLeftJustify)]
+    property ORIGEM_PRECO: Nullable<String> read FORIGEM_PRECO write FORIGEM_PRECO;
 
     [Column('PRMEDIO_SINAPI', ftBCD, 18, 4)]
     [Dictionary('PRMEDIO_SINAPI', 'Mensagem de validação', '0', '', '', taRightJustify)]

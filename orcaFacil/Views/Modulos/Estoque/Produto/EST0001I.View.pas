@@ -16,7 +16,7 @@ uses
   cxGridTableView,
   cxGridDBTableView, cxGrid, Vcl.ComCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
   Vcl.ExtCtrls,
-  Base.View.Interf;
+  Base.View.Interf, ImportarProduto.Controller.Interf;
 
 type
   TFEST0001IView = class(TFImportarView, IBaseImportarView)
@@ -32,7 +32,9 @@ type
     VwDadosPRMEDIOSINAPI: TcxGridDBColumn;
     procedure CdDadosBeforeRefresh(DataSet: TDataSet);
     procedure BtBuscarClick(Sender: TObject);
+    procedure BtSalvarClick(Sender: TObject);
   private
+    FImportarProduto: IImportarProdutoController;
     procedure habilitaControles;
     procedure importarArquivoCSV(AArquivo: string);
     { Private declarations }
@@ -52,12 +54,20 @@ var
 implementation
 
 {$R *.dfm}
+
+uses FacadeController;
 { TFEST0001IView }
 
 procedure TFEST0001IView.BtBuscarClick(Sender: TObject);
 begin
   inherited;
   importarArquivo;
+end;
+
+procedure TFEST0001IView.BtSalvarClick(Sender: TObject);
+begin
+  salvarDados;
+  inherited;
 end;
 
 procedure TFEST0001IView.CdDadosBeforeRefresh(DataSet: TDataSet);
@@ -137,10 +147,12 @@ begin
 
       CdDados.Append;
       CdDadosCODIGO.AsString := MontaValor;
-      CdDadosDESCRICAO.AsString := removerEspacoesExtrasDeUmTexto(AnsiUpperCase(MontaValor));
+      CdDadosDESCRICAO.AsString := removerEspacoesExtrasDeUmTexto
+        (AnsiUpperCase(MontaValor));
       CdDadosUNIDMEDIDA.AsString := AnsiUpperCase(MontaValor);
       CdDadosPRORIGEM.AsString := AnsiUpperCase(MontaValor);
-      CdDadosPRMEDIOSINAPI.AsCurrency := StrToFloat(formatarTextoEmValor(MontaValor));
+      CdDadosPRMEDIOSINAPI.AsCurrency :=
+        StrToFloat(formatarTextoEmValor(MontaValor));
       CdDados.Post;
 
       Application.ProcessMessages;
@@ -159,7 +171,6 @@ begin
     habilitaControles;
   end;
 
-
   PbProgresso.Visible := False;
 end;
 
@@ -170,7 +181,34 @@ end;
 
 procedure TFEST0001IView.salvarDados;
 begin
+  CdDados.First;
 
+  while not(CdDados.Eof) do
+  begin
+    try
+      FImportarProduto := TFacadeController.New
+                             .ModulosFacadeController
+                             .EstoqueFactoryController
+                             .ImportarProduto;
+
+      FImportarProduto
+       .localizar(CdDadosCODIGO.AsInteger)
+        .Importar
+         .produtoSelecionado(FImportarProduto.produtoSelecionado)
+          .codigoSinapi(CdDadosCODIGO.AsInteger)
+          .descricao(CdDadosDESCRICAO.AsString)
+          .unidMedida(CdDadosUNIDMEDIDA.AsString)
+          .origemPreco(CdDadosPRORIGEM.AsString)
+          .prMedioSinapi(CdDadosPRMEDIOSINAPI.AsCurrency)
+         .executar;
+
+    finally
+
+    end;
+
+    CdDados.Next;
+    Application.ProcessMessages;
+  end;
 end;
 
 end.
