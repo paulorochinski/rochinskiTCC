@@ -106,7 +106,7 @@ object FBaseView: TFBaseView
         Left = 0
         Top = 0
         Width = 424
-        Height = 30
+        Height = 32
         Margins.Left = 0
         Margins.Top = 0
         Margins.Right = 0
@@ -118,7 +118,7 @@ object FBaseView: TFBaseView
         TabOrder = 1
         object cxLabel1: TcxLabel
           AlignWithMargins = True
-          Left = 3
+          Left = 39
           Top = 1
           Margins.Top = 1
           Margins.Bottom = 1
@@ -132,14 +132,42 @@ object FBaseView: TFBaseView
           Style.Font.Style = [fsBold]
           Style.TextColor = 6050636
           Style.IsFontAssigned = True
+          ExplicitLeft = 155
+          ExplicitTop = -2
+        end
+        object PnIconeTitulo: TPanel
+          Left = 0
+          Top = 0
+          Width = 36
+          Height = 32
+          Align = alLeft
+          BevelOuter = bvNone
+          Color = 14935011
+          ParentBackground = False
+          TabOrder = 1
+          object ImIconeTitulo: TImage
+            Left = 0
+            Top = 0
+            Width = 36
+            Height = 32
+            Align = alLeft
+            Center = True
+            Picture.Data = {
+              0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
+              000000200806000000737A7AF40000000C744558745469746C65005072696E74
+              3BC83632EA0000005749444154785EED97310A00200800FB609F0A1FD5EACB6C
+              726AA8A050E8821B0287E306C16266A1E41310117BC996C0A3772E8080AADEE0
+              9F0214A00005EE0BB08A6BEB8EFF67D633A90B50800214A00002F1A719D7F100
+              110550187A97BD6B0000000049454E44AE426082}
+          end
         end
       end
       object Panel4: TPanel
         AlignWithMargins = True
         Left = 1
-        Top = 31
+        Top = 33
         Width = 422
-        Height = 139
+        Height = 137
         Margins.Left = 1
         Margins.Top = 1
         Margins.Right = 1
@@ -149,12 +177,14 @@ object FBaseView: TFBaseView
         Color = 14537936
         ParentBackground = False
         TabOrder = 2
+        ExplicitTop = 31
+        ExplicitHeight = 139
         object Panel5: TPanel
           AlignWithMargins = True
           Left = 1
           Top = 1
           Width = 420
-          Height = 137
+          Height = 135
           Margins.Left = 1
           Margins.Top = 1
           Margins.Right = 1
@@ -164,6 +194,7 @@ object FBaseView: TFBaseView
           Color = 15658986
           ParentBackground = False
           TabOrder = 0
+          ExplicitHeight = 137
         end
       end
     end

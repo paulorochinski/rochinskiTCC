@@ -43,29 +43,46 @@ inherited FEST0001IView: TFEST0001IView
           Style.IsFontAssigned = True
           ExplicitWidth = 217
         end
+        inherited PnIconeTitulo: TPanel
+          inherited ImIconeTitulo: TImage
+            Picture.Data = {
+              0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
+              000000200806000000737A7AF40000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000015744558745469746C6500
+              446F776E6C6F61643B4172726F773BEC8F1AD0000000B949444154785EEDD331
+              0EC2300C85E18E88BB6503C4C8CA3550CEC38CC4D5488D070F564DB0FA64C98B
+              877FE990F7455516224A0D0214A000EDF1A26DF23D0750006991D2000580CE9A
+              0D3435F0E40E7B008C39726F856B7B015BC4E0AEFF000A77E23E7A9CC37E8146
+              C8A137E7199E056B6E8E027E21EE0AA0BB383787003304D9EC380EF011C31B8F
+              0758C4AA00663C186011CE780CA0F72E0053C3C66DB3611280FF44FDA726E7E1
+              00A02000970788CC03A456800214E00B87DB40073BCDC3180000000049454E44
+              AE426082}
+          end
+        end
       end
       inherited Panel4: TPanel
         Width = 804
-        Height = 282
+        Height = 280
+        ExplicitTop = 33
         ExplicitWidth = 804
-        ExplicitHeight = 282
+        ExplicitHeight = 280
         inherited Panel5: TPanel
           Width = 802
-          Height = 280
+          Height = 278
           ExplicitWidth = 802
-          ExplicitHeight = 280
+          ExplicitHeight = 278
           inherited PbProgresso: TProgressBar
-            Top = 263
+            Top = 261
             Width = 802
             Visible = False
-            ExplicitTop = 263
+            ExplicitTop = 261
             ExplicitWidth = 802
           end
           inherited DbDados: TcxGrid
             Width = 802
-            Height = 263
+            Height = 261
             ExplicitWidth = 802
-            ExplicitHeight = 263
+            ExplicitHeight = 261
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsDados
               object VwDadosCODIGO: TcxGridDBColumn

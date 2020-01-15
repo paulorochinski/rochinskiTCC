@@ -11,7 +11,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, dxBevel, Vcl.ExtCtrls, cxGraphics,
   cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, Vcl.StdCtrls,
   cxButtons, ormbr.factory.interfaces, cxControls, cxContainer, cxEdit, cxLabel,
-  Tipos.Controller.Interf;
+  Tipos.Controller.Interf, dxGDIPlusClasses;
 
 type
   TFBaseView = class(TForm)
@@ -23,6 +23,8 @@ type
     cxLabel1: TcxLabel;
     Panel4: TPanel;
     Panel5: TPanel;
+    PnIconeTitulo: TPanel;
+    ImIconeTitulo: TImage;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);

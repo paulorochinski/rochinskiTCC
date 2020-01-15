@@ -10,12 +10,11 @@ uses
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, cxControls, cxContainer,
   cxEdit, cxLabel,
   Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, Base.View.Interf,
-  Tipos.Controller.Interf, Produto.Controller.Interf, cxTextEdit;
+  Tipos.Controller.Interf, Produto.Controller.Interf, cxTextEdit, cxMemo, dxGDIPlusClasses;
 
 type
   TFEST0001CView = class(TFCadastroView, IBaseCadastroView)
     TeCodigoSinapi: TcxTextEdit;
-    TeDescricao: TcxTextEdit;
     TeUnidMedida: TcxTextEdit;
     TePrMedioSinapi: TcxTextEdit;
     cxLabel2: TcxLabel;
@@ -26,6 +25,7 @@ type
     TeIdProduto: TcxTextEdit;
     TeOrigemPreco: TcxTextEdit;
     cxLabel7: TcxLabel;
+    TeDescricao: TcxMemo;
     procedure FormCreate(Sender: TObject);
     procedure BtSalvarClick(Sender: TObject);
     procedure TeCodigoSinapiKeyPress(Sender: TObject; var Key: Char);

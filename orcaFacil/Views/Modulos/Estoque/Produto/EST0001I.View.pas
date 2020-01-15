@@ -16,7 +16,7 @@ uses
   cxGridTableView,
   cxGridDBTableView, cxGrid, Vcl.ComCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
   Vcl.ExtCtrls,
-  Base.View.Interf, ImportarProduto.Controller.Interf;
+  Base.View.Interf, ImportarProduto.Controller.Interf, dxGDIPlusClasses;
 
 type
   TFEST0001IView = class(TFImportarView, IBaseImportarView)
