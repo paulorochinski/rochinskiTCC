@@ -36,6 +36,7 @@ type
     VwDadosDESCRICAO: TcxGridDBColumn;
     VwDadosUNIDMEDIDA: TcxGridDBColumn;
     VwDadosPRMEDIO_SINAPI: TcxGridDBColumn;
+    BtImportar: TcxButton;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtNovoClick(Sender: TObject);
@@ -43,6 +44,7 @@ type
     procedure BtConsultarClick(Sender: TObject);
     procedure BtExcluirClick(Sender: TObject);
     procedure BtDuplicarClick(Sender: TObject);
+    procedure BtImportarClick(Sender: TObject);
   private
     { Private declarations }
     FContainer: IContainerDataSet<TTESTPRODUTO>;
@@ -111,6 +113,17 @@ begin
   inherited;
   excluirRegistro;
   listarRegistros;
+end;
+
+procedure TFEST0001PView.BtImportarClick(Sender: TObject);
+begin
+  inherited;
+
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaImportacao(tiProduto)
+       .executar;
 end;
 
 procedure TFEST0001PView.BtNovoClick(Sender: TObject);

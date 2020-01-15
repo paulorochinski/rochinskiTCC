@@ -22,6 +22,7 @@ type
     LBFornecedores: TdxBarLargeButton;
     LBOrcamentos: TdxBarLargeButton;
     TimerJanelas: TTimer;
+    MbAtalhos: TdxBar;
     procedure TimerJanelasTimer(Sender: TObject);
     procedure LBProdutosClick(Sender: TObject);
   private

@@ -26,6 +26,13 @@ type
     procedure &executar;
   end;
 
+  IBaseImportarView = interface
+    ['{5FF57410-57EC-4D79-948B-0227720BED55}']
+    procedure salvarDados;
+    procedure importarArquivo;
+    procedure &executar;
+  end;
+
 implementation
 
 end.

@@ -20,11 +20,12 @@ object FPrincipalView: TFPrincipalView
     Left = 0
     Top = 0
     Width = 577
-    Height = 126
+    Height = 159
     ApplicationButton.Menu = BaMenu
     BarManager = BmMenu
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Silver'
+    ColorSchemeName = 'Blue'
+    QuickAccessToolbar.Toolbar = MbAtalhos
     Contexts = <>
     TabOrder = 0
     TabStop = False
@@ -89,6 +90,22 @@ object FPrincipalView: TFPrincipalView
           Visible = True
           ItemName = 'LBOrcamentos'
         end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object MbAtalhos: TdxBar
+      Caption = 'Atalhos'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 595
+      FloatTop = 2
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <>
       OneOnRow = True
       Row = 0
       UseOwnFont = False

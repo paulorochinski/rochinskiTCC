@@ -46,7 +46,9 @@ uses
   ModulosFacade.View in 'Views\Modulos\ModulosFacade.View.pas',
   FacadeView.Interf in 'Views\FacadeView.Interf.pas',
   FacadeView in 'Views\FacadeView.pas',
-  EST0001C.View in 'Views\Modulos\Estoque\Produto\EST0001C.View.pas' {FEST0001CView};
+  EST0001C.View in 'Views\Modulos\Estoque\Produto\EST0001C.View.pas' {FEST0001CView},
+  ImportarBase.View in 'Views\Base\ImportarBase.View.pas' {FImportarView},
+  EST0001I.View in 'Views\Modulos\Estoque\Produto\EST0001I.View.pas' {FEST0001IView};
 
 {$R *.res}
 

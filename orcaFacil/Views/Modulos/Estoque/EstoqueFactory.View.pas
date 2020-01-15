@@ -15,13 +15,15 @@ type
 
     function exibirTelaListagem(AValue: TTelaListagem): IBasePesquisaView;
     function exibirTelaCadastro(AValue: TTelaCadastro): IBaseCadastroView;
+    function exibirTelaImportacao(AValue: TTelaImportacao): IBaseImportarView;
+
   end;
 
 implementation
 
 { TEstoqueFactoryView }
 
-uses EST0001P.View, EST0001C.View;
+uses EST0001P.View, EST0001C.View, EST0001I.View;
 
 constructor TEstoqueFactoryView.Create;
 begin
@@ -40,6 +42,14 @@ begin
   case AValue of
     tcProduto:
       Result := TFEST0001CView.New;
+  end;
+end;
+
+function TEstoqueFactoryView.exibirTelaImportacao(AValue: TTelaImportacao)
+  : IBaseImportarView;
+begin
+  case AValue of
+    tiProduto: Result := TFEST0001IView.New;
   end;
 end;
 

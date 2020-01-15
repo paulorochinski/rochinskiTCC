@@ -169,6 +169,14 @@
             <Form>FEST0001CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Base\ImportarBase.View.pas">
+            <Form>FImportarView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modulos\Estoque\Produto\EST0001I.View.pas">
+            <Form>FEST0001IView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
