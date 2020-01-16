@@ -37,15 +37,12 @@ inherited FEST0001CView: TFEST0001CView
         inherited cxLabel1: TcxLabel
           Caption = 'PRODUTOS'
           Style.IsFontAssigned = True
-          ExplicitLeft = 39
-          ExplicitTop = 1
           ExplicitWidth = 109
         end
         inherited LbOperacao: TcxLabel
           Left = 476
           Style.IsFontAssigned = True
           ExplicitLeft = 476
-          ExplicitHeight = 30
         end
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
@@ -133,7 +130,7 @@ inherited FEST0001CView: TFEST0001CView
             Width = 129
           end
           object TePrMedioSinapi: TcxTextEdit
-            Left = 424
+            Left = 91
             Top = 157
             ParentFont = False
             Properties.CharCase = ecUpperCase
@@ -146,7 +143,7 @@ inherited FEST0001CView: TFEST0001CView
             StyleDisabled.BorderColor = clWindowFrame
             StyleDisabled.Color = 16119539
             StyleDisabled.TextColor = clBlack
-            TabOrder = 4
+            TabOrder = 5
             Width = 129
           end
           object cxLabel2: TcxLabel
@@ -186,7 +183,7 @@ inherited FEST0001CView: TFEST0001CView
             Style.IsFontAssigned = True
           end
           object cxLabel5: TcxLabel
-            Left = 334
+            Left = 1
             Top = 160
             Caption = 'PR. M'#201'DIO SINAPI:'
             ParentFont = False
@@ -228,8 +225,8 @@ inherited FEST0001CView: TFEST0001CView
             Width = 129
           end
           object TeOrigemPreco: TcxTextEdit
-            Left = 91
-            Top = 157
+            Left = 424
+            Top = 128
             ParentFont = False
             Properties.CharCase = ecUpperCase
             Style.Font.Charset = ANSI_CHARSET
@@ -245,8 +242,8 @@ inherited FEST0001CView: TFEST0001CView
             Width = 129
           end
           object cxLabel7: TcxLabel
-            Left = 1
-            Top = 160
+            Left = 334
+            Top = 131
             Caption = 'ORIGEM PRE'#199'O:'
             ParentFont = False
             Style.Font.Charset = ANSI_CHARSET
@@ -259,6 +256,7 @@ inherited FEST0001CView: TFEST0001CView
           object TeDescricao: TcxMemo
             Left = 91
             Top = 33
+            Properties.CharCase = ecUpperCase
             StyleDisabled.BorderColor = clWindowFrame
             StyleDisabled.Color = 16119539
             StyleDisabled.TextColor = clBlack
@@ -269,5 +267,34 @@ inherited FEST0001CView: TFEST0001CView
         end
       end
     end
+  end
+  object cxLabel8: TcxLabel
+    Left = 338
+    Top = 196
+    Caption = 'PRE'#199'O M'#201'DIO:'
+    ParentFont = False
+    Style.Font.Charset = ANSI_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -9
+    Style.Font.Name = 'Open Sans SemiBold'
+    Style.Font.Style = [fsBold]
+    Style.IsFontAssigned = True
+  end
+  object TePrecoMedio: TcxTextEdit
+    Left = 428
+    Top = 193
+    ParentFont = False
+    Properties.CharCase = ecUpperCase
+    Style.Font.Charset = ANSI_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -11
+    Style.Font.Name = 'Open Sans'
+    Style.Font.Style = []
+    Style.IsFontAssigned = True
+    StyleDisabled.BorderColor = clWindowFrame
+    StyleDisabled.Color = 16119539
+    StyleDisabled.TextColor = clBlack
+    TabOrder = 2
+    Width = 129
   end
 end

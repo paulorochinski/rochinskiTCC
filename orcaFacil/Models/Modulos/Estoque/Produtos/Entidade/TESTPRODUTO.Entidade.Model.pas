@@ -13,11 +13,12 @@ uses
   ormbr.types.lazy,
   ormbr.types.mapping,
   ormbr.types.nullable,
-  ormbr.mapping.classes,
+  ormbr.mapping.Classes,
   ormbr.mapping.register,
   ormbr.mapping.attributes;
 
 type
+
   [Entity]
   [Table('TESTPRODUTO', '')]
   [PrimaryKey('CODIGO', NotInc, NoSort, False, 'Chave primária')]
@@ -27,9 +28,10 @@ type
     FCODIGO: String;
     FIDPRODUTO: Integer;
     FCODIGO_SINAPI: string;
-    FDESCRICAO: Nullable<String>;
-    FUNIDMEDIDA: Nullable<String>;
-    FORIGEM_PRECO: Nullable<String>;
+    FDESCRICAO: nullable<String>;
+    FUNIDMEDIDA: nullable<String>;
+    FORIGEM_PRECO: nullable<String>;
+    FPRMEDIO: Double;
     FPRMEDIO_SINAPI: Double;
     FDATA_CADASTRO: TDateTime;
     FULTIMA_ATUALIZACAO: TDateTime;
@@ -53,30 +55,44 @@ type
     property CODIGO_SINAPI: string read FCODIGO_SINAPI write FCODIGO_SINAPI;
 
     [Column('DESCRICAO', ftString, 550)]
-    [Dictionary('DESCRICAO', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property DESCRICAO: Nullable<String> read FDESCRICAO write FDESCRICAO;
+    [Dictionary('DESCRICAO', 'Mensagem de validação', '', '', '',
+      taLeftJustify)]
+    property DESCRICAO: nullable<String> read FDESCRICAO write FDESCRICAO;
 
     [Column('UNIDMEDIDA', ftString, 10)]
-    [Dictionary('UNIDMEDIDA', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property UNIDMEDIDA: Nullable<String> read FUNIDMEDIDA write FUNIDMEDIDA;
+    [Dictionary('UNIDMEDIDA', 'Mensagem de validação', '', '', '',
+      taLeftJustify)]
+    property UNIDMEDIDA: nullable<String> read FUNIDMEDIDA write FUNIDMEDIDA;
 
     [Column('ORIGEM_PRECO', ftString, 10)]
-    [Dictionary('UNIDMEDIDA', 'Mensagem de validação', '', '', '', taLeftJustify)]
-    property ORIGEM_PRECO: Nullable<String> read FORIGEM_PRECO write FORIGEM_PRECO;
+    [Dictionary('UNIDMEDIDA', 'Mensagem de validação', '', '', '',
+      taLeftJustify)]
+    property ORIGEM_PRECO: nullable<String> read FORIGEM_PRECO
+      write FORIGEM_PRECO;
+
+    [Column('PRMEDIO', ftBCD, 18, 4)]
+    [Dictionary('PRMEDIO', 'Mensagem de validação', '0', '', '',
+      taRightJustify)]
+    property PRMEDIO: Double read FPRMEDIO write FPRMEDIO;
 
     [Column('PRMEDIO_SINAPI', ftBCD, 18, 4)]
-    [Dictionary('PRMEDIO_SINAPI', 'Mensagem de validação', '0', '', '', taRightJustify)]
+    [Dictionary('PRMEDIO_SINAPI', 'Mensagem de validação', '0', '', '',
+      taRightJustify)]
     property PRMEDIO_SINAPI: Double read FPRMEDIO_SINAPI write FPRMEDIO_SINAPI;
 
     [Restrictions([NotNull])]
     [Column('DATA_CADASTRO', ftDateTime)]
-    [Dictionary('DATA_CADASTRO', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
-    property DATA_CADASTRO: TDateTime read getData_Cadastro write FDATA_CADASTRO;
+    [Dictionary('DATA_CADASTRO', 'Mensagem de validação', 'Now', '',
+      '!##/##/####;1;_', taCenter)]
+    property DATA_CADASTRO: TDateTime read getData_Cadastro
+      write FDATA_CADASTRO;
 
     [Restrictions([NotNull])]
     [Column('ULTIMA_ATUALIZACAO', ftDateTime)]
-    [Dictionary('ULTIMA_ATUALIZACAO', 'Mensagem de validação', 'Now', '', '!##/##/####;1;_', taCenter)]
-    property ULTIMA_ATUALIZACAO: TDateTime read getUltima_Atualizacao write FULTIMA_ATUALIZACAO;
+    [Dictionary('ULTIMA_ATUALIZACAO', 'Mensagem de validação', 'Now', '',
+      '!##/##/####;1;_', taCenter)]
+    property ULTIMA_ATUALIZACAO: TDateTime read getUltima_Atualizacao
+      write FULTIMA_ATUALIZACAO;
   end;
 
 implementation
@@ -86,7 +102,7 @@ implementation
 function TTESTPRODUTO.getCodigo: String;
 begin
   if FCODIGO.IsEmpty then
-  FCODIGO := TGUID.NewGuid.ToString;
+    FCODIGO := TGUID.NewGuid.ToString;
 
   Result := FCODIGO;
 end;
@@ -94,7 +110,7 @@ end;
 function TTESTPRODUTO.getData_Cadastro: TDateTime;
 begin
   if FDATA_CADASTRO = StrToDateTime('30/12/1899 00:00') then
-  FDATA_CADASTRO := Now;
+    FDATA_CADASTRO := Now;
 
   Result := FDATA_CADASTRO;
 end;
@@ -107,6 +123,7 @@ begin
 end;
 
 initialization
-  TRegisterClass.RegisterEntity(TTESTPRODUTO)
+
+TRegisterClass.RegisterEntity(TTESTPRODUTO)
 
 end.

@@ -71,26 +71,7 @@ inherited FEST0001PView: TFEST0001PView
         inherited cxLabel1: TcxLabel
           Caption = 'PRODUTOS'
           Style.IsFontAssigned = True
-          ExplicitLeft = 39
-          ExplicitTop = 1
           ExplicitWidth = 109
-        end
-        inherited PnPesquisa: TPanel
-          Left = 582
-          Top = 4
-          Height = 24
-          Margins.Top = 4
-          Margins.Bottom = 4
-          ExplicitLeft = 582
-          ExplicitHeight = 28
-          inherited ImPesquisa: TImage
-            Height = 24
-            ExplicitHeight = 28
-          end
-          inherited TePesquisa: TcxTextEdit
-            Style.IsFontAssigned = True
-            ExplicitHeight = 28
-          end
         end
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
@@ -128,6 +109,24 @@ inherited FEST0001PView: TFEST0001PView
               867E5A38562097470283DA2D17D3EF94319A6E96B655DA3DFB44BBEE9F8DBBAD
               33CAAEB47969531236DE6EFEA43BFC2B81D4923B5ACF931BAEE0F53DF01B561D
               2DE87CFF0B760000000049454E44AE426082}
+          end
+        end
+        inherited PnPesquisa: TPanel
+          Left = 582
+          Top = 4
+          Height = 24
+          Margins.Top = 4
+          Margins.Bottom = 4
+          ExplicitLeft = 582
+          ExplicitTop = 4
+          ExplicitHeight = 24
+          inherited ImPesquisa: TImage
+            Height = 24
+            ExplicitHeight = 28
+          end
+          inherited TePesquisa: TcxTextEdit
+            Style.IsFontAssigned = True
+            ExplicitHeight = 24
           end
         end
       end
@@ -175,7 +174,7 @@ inherited FEST0001PView: TFEST0001PView
               object VwDadosDESCRICAO: TcxGridDBColumn
                 Caption = 'Descri'#231#227'o'
                 DataBinding.FieldName = 'DESCRICAO'
-                Width = 250
+                Width = 220
               end
               object VwDadosUNIDMEDIDA: TcxGridDBColumn
                 Caption = 'Unid. Medida'
@@ -186,6 +185,10 @@ inherited FEST0001PView: TFEST0001PView
                 Caption = 'Origem Pre'#231'o'
                 DataBinding.FieldName = 'ORIGEM_PRECO'
                 Width = 70
+              end
+              object VwDadosPRMEDIO: TcxGridDBColumn
+                Caption = 'Pre'#231'o M'#233'dio'
+                DataBinding.FieldName = 'PRMEDIO'
               end
               object VwDadosPRMEDIO_SINAPI: TcxGridDBColumn
                 Caption = 'Pre'#231'o M'#233'dio SINAPI'
@@ -210,8 +213,9 @@ inherited FEST0001PView: TFEST0001PView
     object FdDadosIDPRODUTO: TIntegerField
       FieldName = 'IDPRODUTO'
     end
-    object FdDadosCODIGO_SINAPI: TIntegerField
+    object FdDadosCODIGO_SINAPI: TStringField
       FieldName = 'CODIGO_SINAPI'
+      Size = 22
     end
     object FdDadosDESCRICAO: TStringField
       FieldName = 'DESCRICAO'
@@ -220,6 +224,9 @@ inherited FEST0001PView: TFEST0001PView
     object FdDadosUNIDMEDIDA: TStringField
       FieldName = 'UNIDMEDIDA'
       Size = 10
+    end
+    object FdDadosPRMEDIO: TCurrencyField
+      FieldName = 'PRMEDIO'
     end
     object FdDadosPRMEDIO_SINAPI: TCurrencyField
       FieldName = 'PRMEDIO_SINAPI'

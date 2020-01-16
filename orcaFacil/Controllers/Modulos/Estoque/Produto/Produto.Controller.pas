@@ -29,6 +29,7 @@ type
     function descricao: string;
     function unidMedida: string;
     function origemPreco: string;
+    function prMedio: string;
     function prMedioSinapi: string;
   end;
 
@@ -106,6 +107,11 @@ end;
 function TProdutoController.origemPreco: string;
 begin
   Result := FRegistro.ORIGEM_PRECO;
+end;
+
+function TProdutoController.prMedio: string;
+begin
+  Result := CurrToStr(FRegistro.PRMEDIO);
 end;
 
 function TProdutoController.prMedioSinapi: string;

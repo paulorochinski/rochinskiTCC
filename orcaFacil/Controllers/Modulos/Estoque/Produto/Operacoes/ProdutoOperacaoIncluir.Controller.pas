@@ -16,6 +16,7 @@ type
     FDescricao: string;
     FUnidMedida: string;
     FOrigemPreco: string;
+    FPrMedio: Currency;
     FPrMedioSinap: Currency;
   public
     constructor Create;
@@ -33,6 +34,9 @@ type
     function unidMedida(AValue: string): IProdutoOperacaoIncluirController;
 
     function origemPreco(AValue: string): IProdutoOperacaoIncluirController;
+
+    function prMedio(AValue: Currency): IProdutoOperacaoIncluirController; overload;
+    function prMedio(AValue: string): IProdutoOperacaoIncluirController; overload;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
@@ -61,6 +65,7 @@ begin
   FProdutoModel.Entidade.DESCRICAO := FDescricao;
   FProdutoModel.Entidade.UNIDMEDIDA := FUnidMedida;
   FProdutoModel.Entidade.ORIGEM_PRECO := FOrigemPreco;
+  FProdutoModel.Entidade.PRMEDIO := FPrMedio;
   FProdutoModel.Entidade.PRMEDIO_SINAPI := FPrMedioSinap;
 
   FProdutoModel.DAO.Insert(FProdutoModel.Entidade);
@@ -95,6 +100,24 @@ function TProdutoOperacaoIncluirController.origemPreco(
 begin
    Result := Self;
    FOrigemPreco := AValue;
+end;
+
+function TProdutoOperacaoIncluirController.prMedio(
+  AValue: string): IProdutoOperacaoIncluirController;
+begin
+  Result := Self;
+
+  if AValue = EmptyStr then
+  AValue := '0';
+
+  FPrMedio := StrToCurr(AValue);
+end;
+
+function TProdutoOperacaoIncluirController.prMedio(
+  AValue: Currency): IProdutoOperacaoIncluirController;
+begin
+  Result := Self;
+  FPrMedio := AValue;
 end;
 
 function TProdutoOperacaoIncluirController.prMedioSinapi(AValue: string)

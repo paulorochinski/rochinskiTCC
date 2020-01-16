@@ -26,6 +26,8 @@ type
     TeOrigemPreco: TcxTextEdit;
     cxLabel7: TcxLabel;
     TeDescricao: TcxMemo;
+    cxLabel8: TcxLabel;
+    TePrecoMedio: TcxTextEdit;
     procedure FormCreate(Sender: TObject);
     procedure BtSalvarClick(Sender: TObject);
     procedure TeCodigoSinapiKeyPress(Sender: TObject; var Key: Char);
@@ -68,6 +70,7 @@ begin
     TeDescricao.Enabled := False;
     TeUnidMedida.Enabled := False;
     TeOrigemPreco.Enabled := False;
+    TePrecoMedio.Enabled := False;
     TePrMedioSinapi.Enabled := False;
   end;
 end;
@@ -93,6 +96,7 @@ begin
   TeDescricao.Text := FProduto.descricao;
   TeUnidMedida.Text := FProduto.unidMedida;
   TeOrigemPreco.Text := FProduto.origemPreco;
+  TePrecoMedio.Text := FProduto.prMedio;
   TePrMedioSinapi.Text := FProduto.prMedioSinapi;
 end;
 
@@ -131,6 +135,7 @@ begin
           .descricao(TeDescricao.Text)
           .unidMedida(TeUnidMedida.Text)
           .origemPreco(TeOrigemPreco.Text)
+          .prMedio(TePrecoMedio.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
          .&executar;
 
@@ -144,6 +149,7 @@ begin
           .descricao(TeDescricao.Text)
           .unidMedida(TeUnidMedida.Text)
           .origemPreco(TeOrigemPreco.Text)
+          .prMedio(TePrecoMedio.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
          .&executar;
 
@@ -167,6 +173,7 @@ begin
           .descricao(TeDescricao.Text)
           .unidMedida(TeUnidMedida.Text)
           .origemPreco(TeOrigemPreco.Text)
+          .prMedio(TePrecoMedio.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
          .&executar;
 

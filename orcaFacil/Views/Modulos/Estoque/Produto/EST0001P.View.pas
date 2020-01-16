@@ -27,7 +27,6 @@ type
   TFEST0001PView = class(TFPesquisaView, IBasePesquisaView)
     FdDadosCODIGO: TStringField;
     FdDadosIDPRODUTO: TIntegerField;
-    FdDadosCODIGO_SINAPI: TIntegerField;
     FdDadosDESCRICAO: TStringField;
     FdDadosUNIDMEDIDA: TStringField;
     FdDadosPRMEDIO_SINAPI: TCurrencyField;
@@ -39,6 +38,9 @@ type
     BtImportar: TcxButton;
     FdDadosORIGEM_PRECO: TStringField;
     VwDadosORIGEM_PRECO: TcxGridDBColumn;
+    FdDadosPRMEDIO: TCurrencyField;
+    VwDadosPRMEDIO: TcxGridDBColumn;
+    FdDadosCODIGO_SINAPI: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtNovoClick(Sender: TObject);
@@ -212,7 +214,7 @@ end;
 
 procedure TFEST0001PView.listarRegistros;
 begin
-  FContainer.Open;
+  FContainer.OpenWhere('', 'DESCRICAO');
   controlaBotoesAtivos;
 end;
 
