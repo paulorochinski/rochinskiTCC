@@ -57,7 +57,11 @@ uses
   Fornecedor.Model in 'Models\Modulos\Pagar\Fornecedor\Fornecedor.Model.pas',
   PagarFactory.Model.Interf in 'Models\Modulos\Pagar\PagarFactory.Model.Interf.pas',
   PagarFactory.Model in 'Models\Modulos\Pagar\PagarFactory.Model.pas',
-  MensagemBase in 'Views\Base\MensagemBase.pas' {FMensagemView};
+  MensagemBase in 'Views\Base\MensagemBase.pas' {FMensagemView},
+  M0001INF.View in 'Views\Mensagens\M0001INF.View.pas' {FM0001INFView},
+  M0001CON.View in 'Views\Mensagens\M0001CON.View.pas' {FM0001CONView},
+  M0001ERR.View in 'Views\Mensagens\M0001ERR.View.pas' {FM0001ERRView},
+  M0001ALE.View in 'Views\Mensagens\M0001ALE.View.pas' {FM0001ALEView};
 
 {$R *.res}
 

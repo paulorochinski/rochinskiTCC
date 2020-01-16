@@ -1,22 +1,32 @@
 inherited FMensagemView: TFMensagemView
   Caption = 'MensagemView'
-  ClientHeight = 193
+  ClientHeight = 176
   ClientWidth = 430
+  FormStyle = fsNormal
+  Position = poScreenCenter
+  Visible = False
   ExplicitWidth = 436
-  ExplicitHeight = 222
+  ExplicitHeight = 205
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 428
-    Height = 191
+    Height = 174
+    ExplicitWidth = 428
+    ExplicitHeight = 191
     inherited Panel2: TPanel
       Width = 426
-      Height = 189
+      Height = 172
+      ExplicitWidth = 426
+      ExplicitHeight = 189
       inherited PnBotoes: TPanel
-        Top = 143
+        Top = 126
         Width = 426
+        ExplicitTop = 143
+        ExplicitWidth = 426
         inherited BtEncerrar: TcxButton
           Left = 306
+          ExplicitLeft = 306
         end
         object BtSalvar: TcxButton
           AlignWithMargins = True
@@ -55,16 +65,14 @@ inherited FMensagemView: TFMensagemView
           Font.Style = []
           ParentFont = False
           OnClick = BtSalvarClick
-          ExplicitLeft = 184
         end
       end
       inherited Panel3: TPanel
         Width = 426
+        ExplicitWidth = 426
         inherited cxLabel1: TcxLabel
           Caption = 'MensagemView'
           Style.IsFontAssigned = True
-          ExplicitLeft = 39
-          ExplicitTop = 1
           ExplicitWidth = 160
         end
         inherited PnIconeTitulo: TPanel
@@ -88,10 +96,38 @@ inherited FMensagemView: TFMensagemView
       end
       inherited Panel4: TPanel
         Width = 424
-        Height = 109
+        Height = 92
+        ExplicitTop = 33
+        ExplicitWidth = 424
+        ExplicitHeight = 109
         inherited Panel5: TPanel
           Width = 422
-          Height = 107
+          Height = 90
+          ExplicitWidth = 422
+          ExplicitHeight = 107
+          object MmMensagem: TcxMemo
+            Left = 0
+            Top = 0
+            Align = alClient
+            Enabled = False
+            ParentFont = False
+            Style.BorderStyle = ebsNone
+            Style.Color = 15658986
+            Style.Font.Charset = ANSI_CHARSET
+            Style.Font.Color = clWindowText
+            Style.Font.Height = -12
+            Style.Font.Name = 'Open Sans'
+            Style.Font.Style = []
+            Style.IsFontAssigned = True
+            StyleDisabled.Color = 15658986
+            TabOrder = 0
+            ExplicitLeft = 176
+            ExplicitTop = 1
+            ExplicitWidth = 185
+            ExplicitHeight = 89
+            Height = 90
+            Width = 422
+          end
         end
       end
     end

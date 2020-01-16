@@ -33,6 +33,12 @@ type
     procedure &executar;
   end;
 
+  IBaseMensagemView = interface
+    ['{5D214805-B310-4B45-B616-E0B797B8F05B}']
+    function mensagem(AValue: string): IBaseMensagemView;
+    function &exibir: Boolean;
+  end;
+
 implementation
 
 end.
