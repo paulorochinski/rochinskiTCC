@@ -110,12 +110,14 @@ inherited FImportarView: TFImportarView
         inherited cxLabel1: TcxLabel
           Caption = 'ImportarBase'
           Style.IsFontAssigned = True
+          ExplicitLeft = 39
+          ExplicitTop = 1
           ExplicitWidth = 140
         end
       end
       inherited Panel4: TPanel
         Width = 482
-        Height = 175
+        Height = 173
         ExplicitWidth = 482
         ExplicitHeight = 175
         inherited Panel5: TPanel

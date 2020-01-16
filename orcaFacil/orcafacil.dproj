@@ -97,6 +97,8 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -180,6 +182,15 @@
         <DCCReference Include="Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.interf.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\ImportarProduto\Operacoes\ImportarProdutoOperacao.Controller.pas"/>
+        <DCCReference Include="Models\Modulos\Pagar\Fornecedor\Entidade\TPAGFORNECEDOR.Entidade.Model.pas"/>
+        <DCCReference Include="Models\Modulos\Pagar\Fornecedor\Fornecedor.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modulos\Pagar\Fornecedor\Fornecedor.Model.pas"/>
+        <DCCReference Include="Models\Modulos\Pagar\PagarFactory.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modulos\Pagar\PagarFactory.Model.pas"/>
+        <DCCReference Include="Views\Base\MensagemBase.pas">
+            <Form>FMensagemView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -206,6 +217,12 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
+                <DeployFile LocalName="windows\orcafacil.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>orcafacil.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="windows\orcafacil.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>orcafacil.exe</RemoteName>

@@ -51,7 +51,13 @@ uses
   EST0001I.View in 'Views\Modulos\Estoque\Produto\EST0001I.View.pas' {FEST0001IView},
   ImportarProduto.Controller.interf in 'Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.interf.pas',
   ImportarProduto.Controller in 'Controllers\Modulos\Estoque\ImportarProduto\ImportarProduto.Controller.pas',
-  ImportarProdutoOperacao.Controller in 'Controllers\Modulos\Estoque\ImportarProduto\Operacoes\ImportarProdutoOperacao.Controller.pas';
+  ImportarProdutoOperacao.Controller in 'Controllers\Modulos\Estoque\ImportarProduto\Operacoes\ImportarProdutoOperacao.Controller.pas',
+  TPAGFORNECEDOR.Entidade.Model in 'Models\Modulos\Pagar\Fornecedor\Entidade\TPAGFORNECEDOR.Entidade.Model.pas',
+  Fornecedor.Model.Interf in 'Models\Modulos\Pagar\Fornecedor\Fornecedor.Model.Interf.pas',
+  Fornecedor.Model in 'Models\Modulos\Pagar\Fornecedor\Fornecedor.Model.pas',
+  PagarFactory.Model.Interf in 'Models\Modulos\Pagar\PagarFactory.Model.Interf.pas',
+  PagarFactory.Model in 'Models\Modulos\Pagar\PagarFactory.Model.pas',
+  MensagemBase in 'Views\Base\MensagemBase.pas' {FMensagemView};
 
 {$R *.res}
 

@@ -32,7 +32,7 @@ uses FacadeModel, ImportarProdutoOperacao.Controller;
 constructor TImportarProdutoController.Create;
 begin
   FProdutoModel := TFacadeModel.New.ModulosFacadeModel.
-    EstoqueFactoryModel.Produto;
+    estoqueFactoryModel.Produto;
 end;
 
 destructor TImportarProdutoController.Destroy;

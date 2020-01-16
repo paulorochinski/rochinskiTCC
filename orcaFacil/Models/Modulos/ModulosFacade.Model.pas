@@ -2,7 +2,8 @@ unit ModulosFacade.Model;
 
 interface
 
-uses ModulosFacade.Model.Interf, EstoqueFactory.Model.Interf;
+uses ModulosFacade.Model.Interf, EstoqueFactory.Model.Interf,
+  PagarFactory.Model.Interf;
 
 type
   TModulosFacadeModel = class(TInterfacedObject, IModulosFacadeModel)
@@ -13,7 +14,8 @@ type
 
     class function New: IModulosFacadeModel;
 
-    function EstoqueFactoryModel: IEstoqueFactoryModel;
+    function estoqueFactoryModel: IEstoqueFactoryModel;
+    function pagarFactoryModel: IPagarFactoryModel;
 
   end;
 
@@ -21,7 +23,7 @@ implementation
 
 { TModulosFacadeModel }
 
-uses EstoqueFactory.Model;
+uses EstoqueFactory.Model, PagarFactory.Model;
 
 constructor TModulosFacadeModel.Create;
 begin
@@ -34,7 +36,7 @@ begin
   inherited;
 end;
 
-function TModulosFacadeModel.EstoqueFactoryModel: IEstoqueFactoryModel;
+function TModulosFacadeModel.estoqueFactoryModel: IEstoqueFactoryModel;
 begin
   Result := TEstoqueFactoryModel.New;
 end;
@@ -42,6 +44,11 @@ end;
 class function TModulosFacadeModel.New: IModulosFacadeModel;
 begin
   Result := Self.Create;
+end;
+
+function TModulosFacadeModel.pagarFactoryModel: IPagarFactoryModel;
+begin
+  Result := TPagarFactoryModel.New;
 end;
 
 end.

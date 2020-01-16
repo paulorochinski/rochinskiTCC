@@ -54,7 +54,7 @@ end;
 constructor TProdutoController.Create;
 begin
   FProdutoModel := TFacadeModel.New.ModulosFacadeModel.
-    EstoqueFactoryModel.Produto;
+    estoqueFactoryModel.Produto;
 end;
 
 function TProdutoController.descricao: string;

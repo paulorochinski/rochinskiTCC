@@ -23,6 +23,8 @@ type
     LBOrcamentos: TdxBarLargeButton;
     TimerJanelas: TTimer;
     MbAtalhos: TdxBar;
+    LbCotacao: TdxBarLargeButton;
+    LbAnaliseCotacao: TdxBarLargeButton;
     procedure TimerJanelasTimer(Sender: TObject);
     procedure LBProdutosClick(Sender: TObject);
   private
