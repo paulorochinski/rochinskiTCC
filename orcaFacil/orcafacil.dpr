@@ -58,10 +58,12 @@ uses
   PagarFactory.Model.Interf in 'Models\Modulos\Pagar\PagarFactory.Model.Interf.pas',
   PagarFactory.Model in 'Models\Modulos\Pagar\PagarFactory.Model.pas',
   MensagemBase in 'Views\Base\MensagemBase.pas' {FMensagemView},
-  M0001INF.View in 'Views\Mensagens\M0001INF.View.pas' {FM0001INFView},
-  M0001CON.View in 'Views\Mensagens\M0001CON.View.pas' {FM0001CONView},
-  M0001ERR.View in 'Views\Mensagens\M0001ERR.View.pas' {FM0001ERRView},
-  M0001ALE.View in 'Views\Mensagens\M0001ALE.View.pas' {FM0001ALEView};
+  M0001INF.View in 'Views\Mensagens\Informacao\M0001INF.View.pas' {FM0001INFView},
+  M0001CON.View in 'Views\Mensagens\Confirmacao\M0001CON.View.pas' {FM0001CONView},
+  M0001ERR.View in 'Views\Mensagens\Erro\M0001ERR.View.pas' {FM0001ERRView},
+  M0001ALE.View in 'Views\Mensagens\Alerta\M0001ALE.View.pas' {FM0001ALEView},
+  MensagensFactory.View.Interf in 'Views\Mensagens\MensagensFactory.View.Interf.pas',
+  MensagensFactory.View in 'Views\Mensagens\MensagensFactory.View.pas';
 
 {$R *.res}
 
