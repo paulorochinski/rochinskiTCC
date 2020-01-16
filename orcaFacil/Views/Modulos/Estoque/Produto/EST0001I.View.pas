@@ -99,7 +99,7 @@ end;
 procedure TFEST0001IView.importarArquivoCSV(AArquivo: string);
 var
   ArquivoCSV: TextFile;
-  Contador, I: Integer;
+  I: Integer;
   Linha: String;
   linhasArquivo: TStringList;
 
@@ -125,12 +125,10 @@ var
 
 begin
   PbProgresso.Visible := True;
-
   AssignFile(ArquivoCSV, AArquivo);
+  linhasArquivo := TStringList.Create;
 
   try
-    linhasArquivo := TStringList.Create;
-
     Reset(ArquivoCSV);
     Readln(ArquivoCSV, Linha);
     linhasArquivo.LoadFromFile(AArquivo);
@@ -157,7 +155,6 @@ begin
       Application.ProcessMessages;
 
       Readln(ArquivoCSV, Linha);
-      Contador := Contador + 1;
       PbProgresso.Position := PbProgresso.Position + 1;
     end;
 
@@ -185,21 +182,16 @@ begin
   while not(CdDados.Eof) do
   begin
     try
-      FImportarProduto := TFacadeController.New
-                             .ModulosFacadeController
-                             .EstoqueFactoryController
-                             .ImportarProduto;
+      FImportarProduto := TFacadeController.New.ModulosFacadeController.
+        EstoqueFactoryController.ImportarProduto;
 
-      FImportarProduto
-       .localizar(CdDadosCODIGO.AsInteger)
-        .Importar
-         .produtoSelecionado(FImportarProduto.produtoSelecionado)
-          .codigoSinapi(CdDadosCODIGO.AsInteger)
-          .descricao(CdDadosDESCRICAO.AsString)
-          .unidMedida(CdDadosUNIDMEDIDA.AsString)
-          .origemPreco(CdDadosPRORIGEM.AsString)
-          .prMedioSinapi(CdDadosPRMEDIOSINAPI.AsCurrency)
-         .executar;
+      FImportarProduto.localizar(CdDadosCODIGO.AsInteger)
+        .Importar.produtoSelecionado(FImportarProduto.produtoSelecionado)
+        .codigoSinapi(CdDadosCODIGO.AsString)
+        .descricao(CdDadosDESCRICAO.AsString)
+        .unidMedida(CdDadosUNIDMEDIDA.AsString)
+        .origemPreco(CdDadosPRORIGEM.AsString)
+        .prMedioSinapi(CdDadosPRMEDIOSINAPI.AsCurrency).executar;
 
     finally
 

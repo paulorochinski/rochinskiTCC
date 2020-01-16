@@ -14,7 +14,7 @@ type
     FProdutoModel: IProdutoModel;
     FProdutoEncontrado: Boolean;
 
-    FCodigoSinapi: Integer;
+    FCodigoSinapi: string;
     FDescricao: string;
     FUnidMedida: string;
     FOrigemPreco: string;
@@ -36,19 +36,17 @@ type
     function produtoSelecionado(AValue: TTESTPRODUTO)
       : IImportarProdutoOperacaoController;
 
-    function codigoSinapi(AValue: Integer)
-      : IImportarProdutoOperacaoController; overload;
     function codigoSinapi(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function descricao(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function unidMedida(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function origemPreco(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function prMedioSinapi(AValue: Currency)
       : IImportarProdutoOperacaoController; overload;
@@ -76,13 +74,6 @@ begin
 end;
 
 function TImportarProdutoOperacaoController.codigoSinapi(AValue: string)
-  : IImportarProdutoOperacaoController;
-begin
-  Result := Self;
-  FCodigoSinapi := StrToInt(AValue);
-end;
-
-function TImportarProdutoOperacaoController.codigoSinapi(AValue: Integer)
   : IImportarProdutoOperacaoController;
 begin
   Result := Self;

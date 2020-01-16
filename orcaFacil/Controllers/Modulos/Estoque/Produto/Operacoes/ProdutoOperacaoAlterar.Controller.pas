@@ -13,7 +13,7 @@ type
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
 
-    FCodigoSinapi: Integer;
+    FCodigoSinapi: string;
     FDescricao: string;
     FUnidMedida: string;
     FOrigemPreco: string;
@@ -29,14 +29,13 @@ type
 
     function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoAlterarController;
 
-    function codigoSinapi(AValue: Integer): IProdutoOperacaoAlterarController; overload;
-    function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController;
 
-    function descricao(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function descricao(AValue: string): IProdutoOperacaoAlterarController;
 
-    function unidMedida(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function unidMedida(AValue: string): IProdutoOperacaoAlterarController;
 
-    function origemPreco(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function origemPreco(AValue: string): IProdutoOperacaoAlterarController;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoAlterarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
@@ -50,13 +49,6 @@ implementation
 { TProdutosOperacoesAlterarController }
 
 function TProdutosOperacoesAlterarController.codigoSinapi(AValue: string)
-  : IProdutoOperacaoAlterarController;
-begin
-  Result := Self;
-  FCodigoSinapi := StrToInt(AValue);
-end;
-
-function TProdutosOperacoesAlterarController.codigoSinapi(AValue: Integer)
   : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
@@ -113,6 +105,10 @@ function TProdutosOperacoesAlterarController.prMedioSinapi(AValue: string)
   : IProdutoOperacaoAlterarController;
 begin
   Result := Self;
+
+  if AValue = EmptyStr then
+  AValue := '0';
+
   FPrMedioSinap := StrToCurr(AValue);
 end;
 

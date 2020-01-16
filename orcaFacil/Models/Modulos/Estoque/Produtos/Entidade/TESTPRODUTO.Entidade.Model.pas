@@ -26,11 +26,11 @@ type
     { Private declarations }
     FCODIGO: String;
     FIDPRODUTO: Integer;
-    FCODIGO_SINAPI: Nullable<Integer>;
+    FCODIGO_SINAPI: string;
     FDESCRICAO: Nullable<String>;
     FUNIDMEDIDA: Nullable<String>;
     FORIGEM_PRECO: Nullable<String>;
-    FPRMEDIO_SINAPI: Nullable<Double>;
+    FPRMEDIO_SINAPI: Double;
     FDATA_CADASTRO: TDateTime;
     FULTIMA_ATUALIZACAO: TDateTime;
     function getCodigo: String;
@@ -48,9 +48,9 @@ type
     [Dictionary('IDPRODUTO', 'Mensagem de validação', '', '', '', taCenter)]
     property IDPRODUTO: Integer read FIDPRODUTO write FIDPRODUTO;
 
-    [Column('CODIGO_SINAPI', ftInteger)]
+    [Column('CODIGO_SINAPI', ftString, 22)]
     [Dictionary('CODIGO_SINAPI', 'Mensagem de validação', '', '', '', taCenter)]
-    property CODIGO_SINAPI: Nullable<Integer> read FCODIGO_SINAPI write FCODIGO_SINAPI;
+    property CODIGO_SINAPI: string read FCODIGO_SINAPI write FCODIGO_SINAPI;
 
     [Column('DESCRICAO', ftString, 550)]
     [Dictionary('DESCRICAO', 'Mensagem de validação', '', '', '', taLeftJustify)]
@@ -66,7 +66,7 @@ type
 
     [Column('PRMEDIO_SINAPI', ftBCD, 18, 4)]
     [Dictionary('PRMEDIO_SINAPI', 'Mensagem de validação', '0', '', '', taRightJustify)]
-    property PRMEDIO_SINAPI: Nullable<Double> read FPRMEDIO_SINAPI write FPRMEDIO_SINAPI;
+    property PRMEDIO_SINAPI: Double read FPRMEDIO_SINAPI write FPRMEDIO_SINAPI;
 
     [Restrictions([NotNull])]
     [Column('DATA_CADASTRO', ftDateTime)]

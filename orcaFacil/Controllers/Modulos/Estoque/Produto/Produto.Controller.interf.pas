@@ -32,14 +32,13 @@ type
     function produtoController(AValue: IProdutoController): IProdutoOperacaoIncluirController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoIncluirController;
 
-    function codigoSinapi(AValue: integer): IProdutoOperacaoIncluirController; overload;
-    function codigoSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function codigoSinapi(AValue: string): IProdutoOperacaoIncluirController;
 
-    function descricao(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function descricao(AValue: string): IProdutoOperacaoIncluirController;
 
-    function unidMedida(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function unidMedida(AValue: string): IProdutoOperacaoIncluirController;
 
-    function origemPreco(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function origemPreco(AValue: string): IProdutoOperacaoIncluirController;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
@@ -54,14 +53,13 @@ type
 
     function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoAlterarController;
 
-    function codigoSinapi(AValue: integer): IProdutoOperacaoAlterarController; overload;
-    function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController;
 
-    function descricao(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function descricao(AValue: string): IProdutoOperacaoAlterarController;
 
-    function unidMedida(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function unidMedida(AValue: string): IProdutoOperacaoAlterarController;
 
-    function origemPreco(AValue: string): IProdutoOperacaoAlterarController; overload;
+    function origemPreco(AValue: string): IProdutoOperacaoAlterarController;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoAlterarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
@@ -88,14 +86,13 @@ type
 
     function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoDuplicarController;
 
-    function codigoSinapi(AValue: integer): IProdutoOperacaoDuplicarController; overload;
-    function codigoSinapi(AValue: string): IProdutoOperacaoDuplicarController; overload;
+    function codigoSinapi(AValue: string): IProdutoOperacaoDuplicarController;
 
-    function descricao(AValue: string): IProdutoOperacaoDuplicarController; overload;
+    function descricao(AValue: string): IProdutoOperacaoDuplicarController;
 
-    function unidMedida(AValue: string): IProdutoOperacaoDuplicarController; overload;
+    function unidMedida(AValue: string): IProdutoOperacaoDuplicarController;
 
-    function origemPreco(AValue: string): IProdutoOperacaoDuplicarController; overload;
+    function origemPreco(AValue: string): IProdutoOperacaoDuplicarController;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoDuplicarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoDuplicarController; overload;

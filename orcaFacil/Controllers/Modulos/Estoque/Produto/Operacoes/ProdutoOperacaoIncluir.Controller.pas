@@ -12,7 +12,7 @@ type
     FProdutoController: IProdutoController;
     FProdutoModel: IProdutoModel;
 
-    FCodigoSinapi: Integer;
+    FCodigoSinapi: string;
     FDescricao: string;
     FUnidMedida: string;
     FOrigemPreco: string;
@@ -26,14 +26,13 @@ type
     function produtoController(AValue: IProdutoController): IProdutoOperacaoIncluirController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoIncluirController;
 
-    function codigoSinapi(AValue: Integer): IProdutoOperacaoIncluirController; overload;
-    function codigoSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function codigoSinapi(AValue: string): IProdutoOperacaoIncluirController;
 
-    function descricao(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function descricao(AValue: string): IProdutoOperacaoIncluirController;
 
-    function unidMedida(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function unidMedida(AValue: string): IProdutoOperacaoIncluirController;
 
-    function origemPreco(AValue: string): IProdutoOperacaoIncluirController; overload;
+    function origemPreco(AValue: string): IProdutoOperacaoIncluirController;
 
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
@@ -46,13 +45,6 @@ implementation
 { TProdutoOperacaoIncluirController }
 
 function TProdutoOperacaoIncluirController.codigoSinapi(AValue: string)
-  : IProdutoOperacaoIncluirController;
-begin
-  Result := Self;
-  FCodigoSinapi := StrToInt(AValue);
-end;
-
-function TProdutoOperacaoIncluirController.codigoSinapi(AValue: Integer)
   : IProdutoOperacaoIncluirController;
 begin
   Result := Self;
@@ -109,6 +101,10 @@ function TProdutoOperacaoIncluirController.prMedioSinapi(AValue: string)
   : IProdutoOperacaoIncluirController;
 begin
   Result := Self;
+
+  if AValue = EmptyStr then
+  AValue := '0';
+
   FPrMedioSinap := StrToCurr(AValue);
 end;
 

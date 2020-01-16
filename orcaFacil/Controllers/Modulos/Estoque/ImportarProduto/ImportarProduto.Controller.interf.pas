@@ -25,19 +25,17 @@ type
     function produtoSelecionado(AValue: TTESTPRODUTO)
       : IImportarProdutoOperacaoController;
 
-    function codigoSinapi(AValue: Integer)
-      : IImportarProdutoOperacaoController; overload;
     function codigoSinapi(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function descricao(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function unidMedida(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function origemPreco(AValue: string)
-      : IImportarProdutoOperacaoController; overload;
+      : IImportarProdutoOperacaoController;
 
     function prMedioSinapi(AValue: Currency)
       : IImportarProdutoOperacaoController; overload;
