@@ -10,8 +10,10 @@ uses
 
 type
   TFM0001ALEView = class(TFMensagemView, IBaseMensagemView)
+    procedure BtSalvarClick(Sender: TObject);
+    procedure BtEncerrarClick(Sender: TObject);
   private
-    { Private declarations }
+
   public
     { Public declarations }
 
@@ -29,6 +31,18 @@ implementation
 {$R *.dfm}
 
 { TFM0001ALEView }
+
+procedure TFM0001ALEView.BtEncerrarClick(Sender: TObject);
+begin
+  FResposta := False;
+  inherited;
+end;
+
+procedure TFM0001ALEView.BtSalvarClick(Sender: TObject);
+begin
+  FResposta := True;
+  inherited;
+end;
 
 function TFM0001ALEView.exibir: Boolean;
 begin

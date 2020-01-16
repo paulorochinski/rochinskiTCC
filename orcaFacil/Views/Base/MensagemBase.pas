@@ -8,7 +8,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Base.View, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, cxControls, cxContainer,
   cxEdit, dxGDIPlusClasses,
-  Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons, Base.View.Interf, Tipos.Controller.Interf,
+  Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons, Base.View.Interf,
+  Tipos.Controller.Interf,
   cxTextEdit, cxMemo;
 
 type
@@ -23,6 +24,7 @@ type
   protected
     FResposta: Boolean;
     FMensagem: string;
+
   public
     { Public declarations }
     class function New: IBaseMensagemView;
@@ -53,10 +55,8 @@ end;
 
 function TFMensagemView.exibir: Boolean;
 begin
-
   ShowModal;
 
-  Result := FResposta;
 end;
 
 function TFMensagemView.mensagem(AValue: string): IBaseMensagemView;

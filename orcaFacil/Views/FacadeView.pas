@@ -2,7 +2,7 @@ unit FacadeView;
 
 interface
 
-uses FacadeView.Interf, ModulosFacade.View.Interf;
+uses FacadeView.Interf, ModulosFacade.View.Interf, MensagensFactory.View.Interf;
 
 type
   TFacadeView = class(TInterfacedObject, IFacadeView)
@@ -14,6 +14,7 @@ type
     class function New: IFacadeView;
 
     function ModulosFacadeView: IModulosFacadeView;
+    function MensagensFactory: IMensagemFactoryView;
 
   end;
 
@@ -21,7 +22,7 @@ implementation
 
 { TFacadeView }
 
-uses ModulosFacade.View;
+uses ModulosFacade.View, MensagensFactory.View;
 
 constructor TFacadeView.Create;
 begin
@@ -32,6 +33,11 @@ destructor TFacadeView.Destroy;
 begin
 
   inherited;
+end;
+
+function TFacadeView.MensagensFactory: IMensagemFactoryView;
+begin
+  Result := TMensagemFactoryView.New;
 end;
 
 function TFacadeView.ModulosFacadeView: IModulosFacadeView;

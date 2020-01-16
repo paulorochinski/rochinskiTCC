@@ -15,6 +15,8 @@ uses
 type
   TFM0001INFView = class(TFMensagemView, IBaseMensagemView)
   private
+    FResposta: Boolean;
+    FMensagem: string;
 
   public
     class function New: IBaseMensagemView;

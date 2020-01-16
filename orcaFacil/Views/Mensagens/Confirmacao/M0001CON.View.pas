@@ -15,7 +15,7 @@ uses
 type
   TFM0001CONView = class(TFMensagemView, IBaseMensagemView)
   private
-    { Private declarations }
+
   public
     { Public declarations }
 

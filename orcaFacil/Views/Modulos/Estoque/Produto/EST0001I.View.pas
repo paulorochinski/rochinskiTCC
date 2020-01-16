@@ -133,7 +133,6 @@ begin
 
     Reset(ArquivoCSV);
     Readln(ArquivoCSV, Linha);
-    Contador := 1;
     linhasArquivo.LoadFromFile(AArquivo);
 
     PbProgresso.Min := 1;

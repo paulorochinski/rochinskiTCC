@@ -15,7 +15,9 @@ uses
 type
   TFM0001ERRView = class(TFMensagemView, IBaseMensagemView)
   private
-    { Private declarations }
+    FResposta: Boolean;
+    FMensagem: string;
+
   public
     { Public declarations }
 

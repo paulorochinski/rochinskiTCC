@@ -19,10 +19,13 @@ type
 
     class function New: IProdutoOperacaoExcluirController;
 
-    function produtoController(AValue: IProdutoController): IProdutoOperacaoExcluirController;
-    function produtoModel(AValue: IProdutoModel): IProdutoOperacaoExcluirController;
+    function produtoController(AValue: IProdutoController)
+      : IProdutoOperacaoExcluirController;
+    function produtoModel(AValue: IProdutoModel)
+      : IProdutoOperacaoExcluirController;
 
-    function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoExcluirController;
+    function produtoSelecionado(AValue: TTESTPRODUTO)
+      : IProdutoOperacaoExcluirController;
 
     function &executar: IProdutoController;
 
@@ -32,12 +35,18 @@ implementation
 
 { TProdutoOperacaoExcluirController }
 
+uses FacadeView, Tipos.Controller.interf;
 
 function TProdutoOperacaoExcluirController.&executar: IProdutoController;
 begin
   Result := FProdutoController;
 
-  FProdutoModel.DAO.Delete(FRegistro);
+  if TFacadeView.New.MensagensFactory.exibirMensagem(tmConfirmacao)
+    .mensagem('Deseja excluir o registro selecionado?').exibir then
+  begin
+    FProdutoModel.DAO.Delete(FRegistro);
+  end;
+
 end;
 
 constructor TProdutoOperacaoExcluirController.Create;
@@ -57,7 +66,6 @@ begin
   Result := Self.Create;
 end;
 
-
 function TProdutoOperacaoExcluirController.produtoController
   (AValue: IProdutoController): IProdutoOperacaoExcluirController;
 begin
@@ -72,9 +80,8 @@ begin
   FProdutoModel := AValue;
 end;
 
-
-function TProdutoOperacaoExcluirController.produtoSelecionado(
-  AValue: TTESTPRODUTO): IProdutoOperacaoExcluirController;
+function TProdutoOperacaoExcluirController.produtoSelecionado
+  (AValue: TTESTPRODUTO): IProdutoOperacaoExcluirController;
 begin
   Result := Self;
   FRegistro := AValue;

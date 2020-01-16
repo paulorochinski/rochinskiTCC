@@ -48,7 +48,7 @@ begin
       Result := TFM0001ERRView.New;
 
     tmConfirmacao:
-      TFM0001CONView.New;
+      Result := TFM0001CONView.New;
   end;
 end;
 

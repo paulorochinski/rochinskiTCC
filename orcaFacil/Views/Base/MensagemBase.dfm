@@ -13,16 +13,16 @@ inherited FMensagemView: TFMensagemView
     Width = 428
     Height = 174
     ExplicitWidth = 428
-    ExplicitHeight = 191
+    ExplicitHeight = 174
     inherited Panel2: TPanel
       Width = 426
       Height = 172
       ExplicitWidth = 426
-      ExplicitHeight = 189
+      ExplicitHeight = 172
       inherited PnBotoes: TPanel
         Top = 126
         Width = 426
-        ExplicitTop = 143
+        ExplicitTop = 126
         ExplicitWidth = 426
         inherited BtEncerrar: TcxButton
           Left = 306
@@ -69,42 +69,56 @@ inherited FMensagemView: TFMensagemView
       end
       inherited Panel3: TPanel
         Width = 426
+        Height = 34
         ExplicitWidth = 426
+        ExplicitHeight = 34
         inherited cxLabel1: TcxLabel
+          Left = 51
           Caption = 'MensagemView'
           Style.IsFontAssigned = True
+          ExplicitLeft = 51
           ExplicitWidth = 160
+          ExplicitHeight = 46
         end
         inherited PnIconeTitulo: TPanel
+          Width = 48
+          Height = 34
+          ExplicitWidth = 48
+          ExplicitHeight = 48
           inherited ImIconeTitulo: TImage
+            Width = 48
+            Height = 34
             Picture.Data = {
               0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
-              000000200806000000737A7AF40000001974455874536F667477617265004164
-              6F626520496D616765526561647971C9653C0000000B744558745469746C6500
-              496E666F3B6D122D860000011B49444154785ECDD7316E84301040D17084A542
-              5C81B3A4F7115C25DDA6B552AF5CEF5152F80A5B70036E81A8263F1185159164
-              26AC98146F45853ECBC8D80F22E2EAF3E7F1F54DA3474046C1847935A12023A0
-              57DC4F1D30206184288D4818F6043488B841FEE88688C61AD0E102B9930B3A6D
-              40872BE4CEAEE87E0B68944FBEE0092D4EEBF5A2FC279A9F022244E15908AF11
-              F0025188DF050C86816B37025AC3600E5B0109B23740297D0DE8314276BC82B3
-              719DE8EB8050171A86F0641CC25AA80332E460B90E280E01A50E98AC011B3320
-              46531D303B04CCEE01FFEA1514878052076487805C07048780A05E8AED01F6A5
-              F8433A3020193FC7F600FBE71888070444ED96CCCEBE25F3DF94FA6FCBFD0F26
-              FE4733FFC3A9AB77B1F2A0BCBF49974B0000000049454E44AE426082}
+              00000020080300000044A48AC60000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000026744558745469746C6500
+              5175657374696F6E3B48656C703B446F63756D656E746174696F6E3B57686174
+              6DE9F94600000033504C5445FFFFFF4D82B84D82B84D82B84D82B84D82B84D82
+              B84D82B84D82B84D82B84D82B84D82B84D82B84D82B84D82B84D82B84D82B8B1
+              73B13B0000001074524E53004010EFBF7F60DFAF8F309FCF705020EB658B4500
+              00008F49444154785EBD924B0E4321080051C0EFFB78FFD3360F5D740198B44D
+              673B238628FC998B0B51E1A0DBC83816594DC27823ED028C4670509EC5A90539
+              3DE7AA044509FA1A2B3348D9021634031BD9966D7F8E8766FA24BE6CFC113FF5
+              4D7C373D74F19B0D33383C032A6C26B0175422AAF01D21F81AC7C0CBF61195EF
+              A67C4BFB967B0637F86FC9E0D0981BFC9817F504096F1A37806D000000004945
+              4E44AE426082}
+            ExplicitWidth = 48
+            ExplicitHeight = 48
           end
         end
       end
       inherited Panel4: TPanel
+        Top = 35
         Width = 424
-        Height = 92
-        ExplicitTop = 33
+        Height = 90
+        ExplicitTop = 49
         ExplicitWidth = 424
-        ExplicitHeight = 109
+        ExplicitHeight = 76
         inherited Panel5: TPanel
           Width = 422
-          Height = 90
+          Height = 88
           ExplicitWidth = 422
-          ExplicitHeight = 107
+          ExplicitHeight = 74
           object MmMensagem: TcxMemo
             Left = 0
             Top = 0
@@ -121,11 +135,8 @@ inherited FMensagemView: TFMensagemView
             Style.IsFontAssigned = True
             StyleDisabled.Color = 15658986
             TabOrder = 0
-            ExplicitLeft = 176
-            ExplicitTop = 1
-            ExplicitWidth = 185
-            ExplicitHeight = 89
-            Height = 90
+            ExplicitHeight = 74
+            Height = 88
             Width = 422
           end
         end
