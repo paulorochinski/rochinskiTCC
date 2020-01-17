@@ -27,6 +27,7 @@ type
     LbAnaliseCotacao: TdxBarLargeButton;
     procedure TimerJanelasTimer(Sender: TObject);
     procedure LBProdutosClick(Sender: TObject);
+    procedure LBFornecedoresClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,6 +42,15 @@ implementation
 {$R *.dfm}
 
 uses FacadeView, Tipos.Controller.Interf;
+
+procedure TFPrincipalView.LBFornecedoresClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .ModulosFacadeView
+     .PagarFactoryView
+      .exibirTelaListagem(tlFornecedor)
+       .executar;
+end;
 
 procedure TFPrincipalView.LBProdutosClick(Sender: TObject);
 begin

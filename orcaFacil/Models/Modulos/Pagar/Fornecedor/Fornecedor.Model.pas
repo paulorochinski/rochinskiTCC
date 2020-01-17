@@ -54,7 +54,7 @@ end;
 
 function TFornecedorModel.Entidade: TTPAGFORNECEDOR;
 begin
-
+  Result := FEntidade;
 end;
 
 class function TFornecedorModel.New: IFornecedorModel;

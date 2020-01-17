@@ -41,8 +41,11 @@ function TProdutoOperacaoExcluirController.&executar: IProdutoController;
 begin
   Result := FProdutoController;
 
-  if TFacadeView.New.MensagensFactory.exibirMensagem(tmConfirmacao)
-    .mensagem('Deseja excluir o registro selecionado?').exibir then
+  if TFacadeView.New
+      .MensagensFactory
+      .exibirMensagem(tmConfirmacao)
+      .mensagem(Format('Deseja excluir o produto %s ?', [FRegistro.DESCRICAO.Value]))
+      .exibir then
   begin
     FProdutoModel.DAO.Delete(FRegistro);
   end;

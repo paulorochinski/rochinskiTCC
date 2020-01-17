@@ -214,7 +214,7 @@ end;
 
 procedure TFEST0001PView.listarRegistros;
 begin
-  FContainer.OpenWhere('', 'DESCRICAO');
+  FContainer.OpenWhere('', FCampoOrdem);
   controlaBotoesAtivos;
 end;
 

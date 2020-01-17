@@ -63,7 +63,16 @@ uses
   M0001ERR.View in 'Views\Mensagens\Erro\M0001ERR.View.pas' {FM0001ERRView},
   M0001ALE.View in 'Views\Mensagens\Alerta\M0001ALE.View.pas' {FM0001ALEView},
   MensagensFactory.View.Interf in 'Views\Mensagens\MensagensFactory.View.Interf.pas',
-  MensagensFactory.View in 'Views\Mensagens\MensagensFactory.View.pas';
+  MensagensFactory.View in 'Views\Mensagens\MensagensFactory.View.pas',
+  Fornecedor.Controller.Interf in 'Controllers\Modulos\Pagar\Fornecedor\Fornecedor.Controller.Interf.pas',
+  Fornecedor.Controller in 'Controllers\Modulos\Pagar\Fornecedor\Fornecedor.Controller.pas',
+  FornecedorOperacaoIncluir.Controller in 'Controllers\Modulos\Pagar\Fornecedor\Operacoes\FornecedorOperacaoIncluir.Controller.pas',
+  FornecedorOperacaoAlterar.Controller in 'Controllers\Modulos\Pagar\Fornecedor\Operacoes\FornecedorOperacaoAlterar.Controller.pas',
+  FornecedorOperacaoDuplicar.Controller in 'Controllers\Modulos\Pagar\Fornecedor\Operacoes\FornecedorOperacaoDuplicar.Controller.pas',
+  FornecedorOperacaoExcluir.Controller in 'Controllers\Modulos\Pagar\Fornecedor\Operacoes\FornecedorOperacaoExcluir.Controller.pas',
+  PAG0001P.View in 'Views\Modulos\Pagar\Fornecedor\PAG0001P.View.pas' {FPAG0001PView},
+  PagarFactory.View.interf in 'Views\Modulos\Pagar\PagarFactory.View.interf.pas',
+  PagarFactory.View in 'Views\Modulos\Pagar\PagarFactory.View.pas';
 
 {$R *.res}
 

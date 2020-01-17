@@ -24,7 +24,7 @@ object FPrincipalView: TFPrincipalView
     ApplicationButton.Menu = BaMenu
     BarManager = BmMenu
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Black'
+    ColorSchemeName = 'Blue'
     QuickAccessToolbar.Toolbar = MbAtalhos
     Contexts = <>
     TabOrder = 0
@@ -237,6 +237,7 @@ object FPrincipalView: TFPrincipalView
         3D16A9AA5DAB44E1290F35614F4D02F8562E67AE3DC4B70AAC102588B804D0E2
         1158C9248800F2BA886C05FA44C4390B6012220C24817A20C2FF5736300A8C88
         88CDA4FE0B5DB0B1A0723AE2060000000049454E44AE426082}
+      OnClick = LBFornecedoresClick
     end
     object LBOrcamentos: TdxBarLargeButton
       Caption = 'Or'#231'amentos'
