@@ -113,7 +113,7 @@ object FBaseView: TFBaseView
         Margins.Bottom = 0
         Align = alTop
         BevelOuter = bvNone
-        Color = 14935011
+        Color = 15921906
         ParentBackground = False
         TabOrder = 1
         object cxLabel1: TcxLabel
@@ -140,7 +140,7 @@ object FBaseView: TFBaseView
           Height = 32
           Align = alLeft
           BevelOuter = bvNone
-          Color = 14935011
+          Color = 15921906
           ParentBackground = False
           TabOrder = 1
           object ImIconeTitulo: TImage
@@ -175,8 +175,6 @@ object FBaseView: TFBaseView
         Color = 14537936
         ParentBackground = False
         TabOrder = 2
-        ExplicitTop = 31
-        ExplicitHeight = 139
         object Panel5: TPanel
           AlignWithMargins = True
           Left = 1
@@ -192,7 +190,6 @@ object FBaseView: TFBaseView
           Color = 15658986
           ParentBackground = False
           TabOrder = 0
-          ExplicitHeight = 137
         end
       end
     end

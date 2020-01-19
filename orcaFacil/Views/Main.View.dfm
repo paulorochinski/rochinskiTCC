@@ -20,12 +20,12 @@ object FPrincipalView: TFPrincipalView
     Left = 0
     Top = 0
     Width = 577
-    Height = 160
+    Height = 159
     ApplicationButton.Menu = BaMenu
     BarManager = BmMenu
-    Style = rs2010
+    Style = rs2016
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'Office2007Blue'
     QuickAccessToolbar.Toolbar = MbAtalhos
     Contexts = <>
     TabOrder = 0

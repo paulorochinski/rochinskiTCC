@@ -1,32 +1,29 @@
 inherited FPAG0001PView: TFPAG0001PView
   Caption = 'Fornecedores'
-  ClientHeight = 303
+  ClientHeight = 346
   ClientWidth = 735
   ExplicitWidth = 741
-  ExplicitHeight = 332
+  ExplicitHeight = 375
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 733
-    Height = 301
+    Height = 344
     ExplicitWidth = 733
     ExplicitHeight = 301
     inherited Panel2: TPanel
       Width = 731
-      Height = 299
+      Height = 342
       ExplicitWidth = 731
       ExplicitHeight = 299
       inherited PnBotoes: TPanel
-        Top = 253
+        Top = 296
         Width = 731
         ExplicitTop = 253
         ExplicitWidth = 731
         inherited BtEncerrar: TcxButton
           Left = 611
           ExplicitLeft = 611
-        end
-        inherited BtAlterar: TcxButton
-          ExplicitTop = 1
         end
       end
       inherited Panel3: TPanel
@@ -110,36 +107,22 @@ inherited FPAG0001PView: TFPAG0001PView
               44AE426082}
           end
         end
-        inherited PnPesquisa: TPanel
-          Left = 499
-          ExplicitLeft = 499
-          ExplicitHeight = 28
-          inherited ImPesquisa: TImage
-            Height = 28
-            ExplicitHeight = 28
-          end
-          inherited TePesquisa: TcxTextEdit
-            Style.IsFontAssigned = True
-            ExplicitHeight = 28
-          end
-        end
       end
       inherited Panel4: TPanel
         Width = 729
-        Height = 219
-        ExplicitTop = 33
+        Height = 262
         ExplicitWidth = 729
         ExplicitHeight = 219
         inherited Panel5: TPanel
           Width = 727
-          Height = 217
+          Height = 216
           ExplicitWidth = 727
-          ExplicitHeight = 217
+          ExplicitHeight = 173
           inherited DbDados: TcxGrid
             Width = 727
-            Height = 217
+            Height = 216
             ExplicitWidth = 727
-            ExplicitHeight = 217
+            ExplicitHeight = 173
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsDados
               Filtering.ColumnAddValueItems = False
@@ -150,6 +133,7 @@ inherited FPAG0001PView: TFPAG0001PView
               OptionsData.Editing = False
               OptionsData.Inserting = False
               OptionsSelection.CellSelect = False
+              Styles.Indicator = StHeader
               object VwDadosIDFORNECEDOR: TcxGridDBColumn
                 Caption = 'N'#186
                 DataBinding.FieldName = 'IDFORNECEDOR'
@@ -180,6 +164,34 @@ inherited FPAG0001PView: TFPAG0001PView
                 DataBinding.FieldName = 'EMAIL'
                 Width = 210
               end
+            end
+          end
+        end
+        inherited PnCrud: TPanel
+          Width = 729
+          ExplicitWidth = 729
+          inherited PnPesquisa: TPanel
+            Left = 406
+            Top = 9
+            Width = 320
+            Height = 26
+            Margins.Top = 9
+            Margins.Bottom = 9
+            ExplicitLeft = 406
+            ExplicitTop = 9
+            ExplicitWidth = 320
+            ExplicitHeight = 26
+            inherited ImPesquisa: TImage
+              Left = 283
+              Height = 26
+              ExplicitHeight = 28
+            end
+            inherited TePesquisa: TcxTextEdit
+              Style.IsFontAssigned = True
+              Width = 235
+            end
+            inherited cxLabel2: TcxLabel
+              Style.IsFontAssigned = True
             end
           end
         end

@@ -44,6 +44,8 @@ type
     ImPesquisa: TImage;
     TePesquisa: TcxTextEdit;
     StInactive: TcxStyle;
+    PnCrud: TPanel;
+    cxLabel2: TcxLabel;
     procedure FdDadosAfterRefresh(DataSet: TDataSet);
     procedure FormShow(Sender: TObject);
     procedure VwDadosColumnHeaderClick(Sender: TcxGridTableView;
