@@ -75,7 +75,18 @@ uses
   PagarFactory.View in 'Views\Modulos\Pagar\PagarFactory.View.pas',
   PAG0001C.View in 'Views\Modulos\Pagar\Fornecedor\PAG0001C.View.pas' {FPAG0001CView},
   PagarFactory.Controller.interf in 'Controllers\Modulos\Pagar\PagarFactory.Controller.interf.pas',
-  PagarFactory.Controller in 'Controllers\Modulos\Pagar\PagarFactory.Controller.pas';
+  PagarFactory.Controller in 'Controllers\Modulos\Pagar\PagarFactory.Controller.pas',
+  TESTORCAMENTO.Entidade.Model in 'Models\Modulos\Estoque\Orcamento\Entidade\TESTORCAMENTO.Entidade.Model.pas',
+  TESTORCAMENTOITENS.Entidade.Model in 'Models\Modulos\Estoque\OrcamentoItens\Entidade\TESTORCAMENTOITENS.Entidade.Model.pas',
+  Orcamento.Model.Interf in 'Models\Modulos\Estoque\Orcamento\Orcamento.Model.Interf.pas',
+  Orcamento.Model in 'Models\Modulos\Estoque\Orcamento\Orcamento.Model.pas',
+  OrcamentoItens.Model.Interf in 'Models\Modulos\Estoque\OrcamentoItens\OrcamentoItens.Model.Interf.pas',
+  OrcamentoItens.Model in 'Models\Modulos\Estoque\OrcamentoItens\OrcamentoItens.Model.pas',
+  Orcamento.Controller.interf in 'Controllers\Modulos\Estoque\Orcamento\Orcamento.Controller.interf.pas',
+  Orcamento.Controller in 'Controllers\Modulos\Estoque\Orcamento\Orcamento.Controller.pas',
+  OrcamentoOperacaoIncluir.Controller in 'Controllers\Modulos\Estoque\Orcamento\Operacoes\OrcamentoOperacaoIncluir.Controller.pas',
+  EST0002P.View in 'Views\Modulos\Estoque\Orcamento\EST0002P.View.pas' {FEST0002PView},
+  EST0002C.View in 'Views\Modulos\Estoque\Orcamento\EST0002C.View.pas' {FEST0002CView};
 
 {$R *.res}
 

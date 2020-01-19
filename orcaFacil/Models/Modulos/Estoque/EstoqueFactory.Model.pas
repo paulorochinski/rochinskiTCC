@@ -2,7 +2,8 @@ unit EstoqueFactory.Model;
 
 interface
 
-uses EstoqueFactory.Model.Interf, Produto.Model.Interf;
+uses EstoqueFactory.Model.Interf, Produto.Model.Interf, Orcamento.Model.Interf,
+  OrcamentoItens.Model.Interf;
 
 type
   TEstoqueFactoryModel = class(TInterfacedObject, IEstoqueFactoryModel)
@@ -14,13 +15,17 @@ type
     class function New: IEstoqueFactoryModel;
 
     function Produto: IProdutoModel;
+
+    function Orcamento: IOrcamentoModel;
+    function OrcamentoItens: IOrcamentoItensModel;
+
   end;
 
 implementation
 
 { TEstoqueFactoryModel }
 
-uses Produto.Model;
+uses Produto.Model, Orcamento.Model, OrcamentoItens.Model;
 
 constructor TEstoqueFactoryModel.Create;
 begin
@@ -36,6 +41,16 @@ end;
 class function TEstoqueFactoryModel.New: IEstoqueFactoryModel;
 begin
   Result := Self.Create;
+end;
+
+function TEstoqueFactoryModel.Orcamento: IOrcamentoModel;
+begin
+ Result := TOrcamentoModel.New;
+end;
+
+function TEstoqueFactoryModel.OrcamentoItens: IOrcamentoItensModel;
+begin
+  Result := TOrcamentoItensModel.New;
 end;
 
 function TEstoqueFactoryModel.Produto: IProdutoModel;

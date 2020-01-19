@@ -6,7 +6,7 @@ type
   TTipoOperacao = (toIncluir, toAlterar, toConsultar, toExcluir, toDuplicar);
   TTIpoMensagem = (tmInformacao, tmAlerta, tmErro, tmConfirmacao);
 
-  TTelaListagem = (tlProduto, tlFornecedor);
+  TTelaListagem = (tlProduto, tlFornecedor, tlOrcamento);
   TTelaCadastro = (tcProduto, tcFornecedor);
   TTelaImportacao = (tiProduto);
 

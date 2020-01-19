@@ -30,6 +30,7 @@ type
     procedure TimerJanelasTimer(Sender: TObject);
     procedure LBProdutosClick(Sender: TObject);
     procedure LBFornecedoresClick(Sender: TObject);
+    procedure LBOrcamentosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,6 +52,15 @@ begin
     .ModulosFacadeView
      .PagarFactoryView
       .exibirTelaListagem(tlFornecedor)
+       .executar;
+end;
+
+procedure TFPrincipalView.LBOrcamentosClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaListagem(tlOrcamento)
        .executar;
 end;
 

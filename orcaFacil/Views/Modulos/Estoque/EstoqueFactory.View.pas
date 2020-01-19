@@ -23,7 +23,7 @@ implementation
 
 { TEstoqueFactoryView }
 
-uses EST0001P.View, EST0001C.View, EST0001I.View;
+uses EST0001P.View, EST0001C.View, EST0001I.View, EST0002P.View;
 
 constructor TEstoqueFactoryView.Create;
 begin
@@ -59,6 +59,9 @@ begin
   case AValue of
     tlProduto:
       Result := TFEST0001PView.New;
+
+    tlOrcamento:
+     Result := TFEST0002PView.New;
   end;
 end;
 

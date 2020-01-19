@@ -1,33 +1,33 @@
 inherited FEST0001PView: TFEST0001PView
   Caption = 'Produtos'
-  ClientHeight = 359
-  ClientWidth = 818
-  ExplicitWidth = 824
-  ExplicitHeight = 388
+  ClientHeight = 273
+  ClientWidth = 600
+  ExplicitWidth = 606
+  ExplicitHeight = 302
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 816
-    Height = 357
+    Width = 598
+    Height = 271
     ExplicitWidth = 816
     ExplicitHeight = 357
     inherited Panel2: TPanel
-      Width = 814
-      Height = 355
+      Width = 596
+      Height = 269
       ExplicitWidth = 814
       ExplicitHeight = 355
       inherited PnBotoes: TPanel
-        Top = 309
-        Width = 814
+        Top = 223
+        Width = 596
         ExplicitTop = 309
         ExplicitWidth = 814
         inherited BtEncerrar: TcxButton
-          Left = 694
+          Left = 476
           ExplicitLeft = 694
         end
       end
       inherited Panel3: TPanel
-        Width = 814
+        Width = 596
         ExplicitWidth = 814
         inherited cxLabel1: TcxLabel
           Caption = 'PRODUTOS'
@@ -74,18 +74,18 @@ inherited FEST0001PView: TFEST0001PView
         end
       end
       inherited Panel4: TPanel
-        Width = 812
-        Height = 275
+        Width = 594
+        Height = 189
         ExplicitWidth = 812
         ExplicitHeight = 275
         inherited Panel5: TPanel
-          Width = 810
-          Height = 229
+          Width = 592
+          Height = 143
           ExplicitWidth = 810
           ExplicitHeight = 229
           inherited DbDados: TcxGrid
-            Width = 810
-            Height = 229
+            Width = 592
+            Height = 143
             ExplicitWidth = 810
             ExplicitHeight = 229
             inherited VwDados: TcxGridDBTableView
@@ -141,10 +141,10 @@ inherited FEST0001PView: TFEST0001PView
           end
         end
         inherited PnCrud: TPanel
-          Width = 812
+          Width = 594
           ExplicitWidth = 812
           inherited PnPesquisa: TPanel
-            Left = 489
+            Left = 271
             Top = 9
             Width = 320
             Height = 26

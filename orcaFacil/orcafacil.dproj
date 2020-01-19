@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>orcafacil.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -227,6 +227,23 @@
         </DCCReference>
         <DCCReference Include="Controllers\Modulos\Pagar\PagarFactory.Controller.interf.pas"/>
         <DCCReference Include="Controllers\Modulos\Pagar\PagarFactory.Controller.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\Orcamento\Entidade\TESTORCAMENTO.Entidade.Model.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\OrcamentoItens\Entidade\TESTORCAMENTOITENS.Entidade.Model.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\Orcamento\Orcamento.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\Orcamento\Orcamento.Model.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\OrcamentoItens\OrcamentoItens.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\OrcamentoItens\OrcamentoItens.Model.pas"/>
+        <DCCReference Include="Controllers\Modulos\Estoque\Orcamento\Orcamento.Controller.interf.pas"/>
+        <DCCReference Include="Controllers\Modulos\Estoque\Orcamento\Orcamento.Controller.pas"/>
+        <DCCReference Include="Controllers\Modulos\Estoque\Orcamento\Operacoes\OrcamentoOperacaoIncluir.Controller.pas"/>
+        <DCCReference Include="Views\Modulos\Estoque\Orcamento\EST0002P.View.pas">
+            <Form>FEST0002PView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modulos\Estoque\Orcamento\EST0002C.View.pas">
+            <Form>FEST0002CView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
