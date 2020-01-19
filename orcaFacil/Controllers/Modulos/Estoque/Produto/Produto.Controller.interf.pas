@@ -30,7 +30,6 @@ type
 
   IProdutoOperacaoIncluirController = interface
     ['{0FBDB52C-DB07-402B-9B2D-8AD9E8EA51EC}']
-    function produtoController(AValue: IProdutoController): IProdutoOperacaoIncluirController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoIncluirController;
 
     function codigoSinapi(AValue: string): IProdutoOperacaoIncluirController;
@@ -47,14 +46,12 @@ type
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
 
-    function &executar: IProdutoController;
+    procedure finalizar;
   end;
 
   IProdutoOperacaoAlterarController = interface
     ['{0FBDB52C-DB07-402B-9B2D-8AD9E8EA51EC}']
-    function produtoController(AValue: IProdutoController): IProdutoOperacaoAlterarController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoAlterarController;
-
     function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoAlterarController;
 
     function codigoSinapi(AValue: string): IProdutoOperacaoAlterarController;
@@ -71,26 +68,20 @@ type
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoAlterarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
 
-    function &executar: IProdutoController;
+    procedure finalizar;
   end;
 
   IProdutoOperacaoExcluirController = interface
     ['{39E9F642-5752-4D00-AABA-EF915EC23D4B}']
-    function produtoController(AValue: IProdutoController)
-      : IProdutoOperacaoExcluirController;
-    function produtoModel(AValue: IProdutoModel)
-      : IProdutoOperacaoExcluirController;
-
+    function produtoModel(AValue: IProdutoModel): IProdutoOperacaoExcluirController;
     function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoExcluirController;
 
-    function &executar: IProdutoController;
+    procedure finalizar;
   end;
 
   IProdutoOperacaoDuplicarController = interface
     ['{0FBDB52C-DB07-402B-9B2D-8AD9E8EA51EC}']
-    function produtoController(AValue: IProdutoController): IProdutoOperacaoDuplicarController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoDuplicarController;
-
     function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoDuplicarController;
 
     function codigoSinapi(AValue: string): IProdutoOperacaoDuplicarController;
@@ -109,7 +100,7 @@ type
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoDuplicarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoDuplicarController; overload;
 
-    function &executar: IProdutoController;
+    procedure finalizar;
   end;
 
 

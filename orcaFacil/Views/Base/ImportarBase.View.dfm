@@ -117,15 +117,15 @@ inherited FImportarView: TFImportarView
         Width = 482
         Height = 173
         ExplicitWidth = 482
-        ExplicitHeight = 175
+        ExplicitHeight = 173
         inherited Panel5: TPanel
           Width = 480
-          Height = 173
+          Height = 171
           ExplicitWidth = 480
-          ExplicitHeight = 173
+          ExplicitHeight = 171
           object PbProgresso: TProgressBar
             Left = 0
-            Top = 156
+            Top = 154
             Width = 480
             Height = 17
             Align = alBottom
@@ -135,7 +135,7 @@ inherited FImportarView: TFImportarView
             Left = 0
             Top = 0
             Width = 480
-            Height = 156
+            Height = 154
             Align = alClient
             BevelInner = bvNone
             BevelOuter = bvNone
@@ -214,7 +214,7 @@ inherited FImportarView: TFImportarView
     end
     object StContentOdd: TcxStyle
       AssignedValues = [svColor, svFont]
-      Color = 16119285
+      Color = 13630446
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -11

@@ -157,15 +157,18 @@ inherited FEST0001PView: TFEST0001PView
             inherited ImPesquisa: TImage
               Left = 283
               Height = 26
+              ExplicitLeft = 283
               ExplicitHeight = 28
             end
             inherited TePesquisa: TcxTextEdit
               Style.IsFontAssigned = True
-              ExplicitHeight = 36
+              ExplicitWidth = 235
+              ExplicitHeight = 26
               Width = 235
             end
             inherited cxLabel2: TcxLabel
               Style.IsFontAssigned = True
+              ExplicitHeight = 20
             end
           end
           object BtImportar: TcxButton
@@ -203,7 +206,6 @@ inherited FEST0001PView: TFEST0001PView
             Font.Style = []
             ParentFont = False
             OnClick = BtImportarClick
-            ExplicitLeft = 282
           end
         end
       end

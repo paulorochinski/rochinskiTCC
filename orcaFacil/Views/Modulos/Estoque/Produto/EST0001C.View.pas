@@ -142,7 +142,7 @@ begin
           .origemPreco(TeOrigemPreco.Text)
           .prMedio(TePrecoMedio.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
-         .&executar;
+         .finalizar;
 
       end;
 
@@ -156,7 +156,7 @@ begin
           .origemPreco(TeOrigemPreco.Text)
           .prMedio(TePrecoMedio.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
-         .&executar;
+         .finalizar;
 
       end;
 
@@ -167,7 +167,7 @@ begin
       begin
         FProduto
          .Excluir
-          .&executar;
+          .finalizar;
       end;
 
     toDuplicar:
@@ -180,7 +180,7 @@ begin
           .origemPreco(TeOrigemPreco.Text)
           .prMedio(TePrecoMedio.Text)
           .prMedioSinapi(TePrMedioSinapi.Text)
-         .&executar;
+         .finalizar;
 
       end;
 

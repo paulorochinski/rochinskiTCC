@@ -25,7 +25,7 @@ object FPrincipalView: TFPrincipalView
     BarManager = BmMenu
     Style = rs2016
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'Office2007Blue'
+    ColorSchemeName = 'Office2007Silver'
     QuickAccessToolbar.Toolbar = MbAtalhos
     Contexts = <>
     TabOrder = 0

@@ -9,7 +9,6 @@ type
   TProdutoOperacaoExcluirController = class(TInterfacedObject,
     IProdutoOperacaoExcluirController)
   private
-    FProdutoController: IProdutoController;
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
 
@@ -19,15 +18,14 @@ type
 
     class function New: IProdutoOperacaoExcluirController;
 
-    function produtoController(AValue: IProdutoController)
-      : IProdutoOperacaoExcluirController;
     function produtoModel(AValue: IProdutoModel)
       : IProdutoOperacaoExcluirController;
 
     function produtoSelecionado(AValue: TTESTPRODUTO)
       : IProdutoOperacaoExcluirController;
 
-    function &executar: IProdutoController;
+
+    procedure finalizar;
 
   end;
 
@@ -37,10 +35,8 @@ implementation
 
 uses FacadeView, Tipos.Controller.interf;
 
-function TProdutoOperacaoExcluirController.&executar: IProdutoController;
+procedure TProdutoOperacaoExcluirController.finalizar;
 begin
-  Result := FProdutoController;
-
   if TFacadeView.New
       .MensagensFactory
       .exibirMensagem(tmConfirmacao)
@@ -67,13 +63,6 @@ class function TProdutoOperacaoExcluirController.New
   : IProdutoOperacaoExcluirController;
 begin
   Result := Self.Create;
-end;
-
-function TProdutoOperacaoExcluirController.produtoController
-  (AValue: IProdutoController): IProdutoOperacaoExcluirController;
-begin
-  Result := Self;
-  FProdutoController := AValue;
 end;
 
 function TProdutoOperacaoExcluirController.produtoModel(AValue: IProdutoModel)

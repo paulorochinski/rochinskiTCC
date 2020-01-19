@@ -9,7 +9,6 @@ type
   TProdutosOperacoesAlterarController = class(TInterfacedObject,
     IProdutoOperacaoAlterarController)
   private
-    FProdutoController: IProdutoController;
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
 
@@ -25,7 +24,6 @@ type
 
     class function New: IProdutoOperacaoAlterarController;
 
-    function produtoController(AValue: IProdutoController): IProdutoOperacaoAlterarController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoAlterarController;
 
     function produtoSelecionado(AValue: TTESTPRODUTO): IProdutoOperacaoAlterarController;
@@ -44,7 +42,7 @@ type
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoAlterarController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoAlterarController; overload;
 
-    function &executar: IProdutoController;
+    procedure finalizar;
 
   end;
 
@@ -59,10 +57,8 @@ begin
   FCodigoSinapi := AValue;
 end;
 
-function TProdutosOperacoesAlterarController.&executar: IProdutoController;
+procedure TProdutosOperacoesAlterarController.finalizar;
 begin
-  Result := FProdutoController;
-
   FProdutoModel.DAO.Modify(FRegistro);
 
   FRegistro.CODIGO_SINAPI := FCodigoSinapi;
@@ -140,13 +136,6 @@ function TProdutosOperacoesAlterarController.prMedioSinapi(AValue: Currency)
 begin
   Result := Self;
   FPrMedioSinap := AValue;
-end;
-
-function TProdutosOperacoesAlterarController.produtoController
-  (AValue: IProdutoController): IProdutoOperacaoAlterarController;
-begin
-  Result := Self;
-  FProdutoController := AValue;
 end;
 
 function TProdutosOperacoesAlterarController.produtoModel(AValue: IProdutoModel)

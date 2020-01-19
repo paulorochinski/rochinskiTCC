@@ -139,7 +139,7 @@ inherited FPesquisaView: TFPesquisaView
           end
           object BtConsultar: TcxButton
             AlignWithMargins = True
-            Left = 132
+            Left = 88
             Top = 1
             Width = 44
             Height = 42
@@ -214,7 +214,7 @@ inherited FPesquisaView: TFPesquisaView
           end
           object BtExcluir: TcxButton
             AlignWithMargins = True
-            Left = 88
+            Left = 132
             Top = 1
             Width = 44
             Height = 42
@@ -339,8 +339,6 @@ inherited FPesquisaView: TFPesquisaView
               Style.HotTrack = False
               Style.IsFontAssigned = True
               TabOrder = 0
-              ExplicitLeft = 0
-              ExplicitWidth = 192
               Width = 144
             end
             object cxLabel2: TcxLabel
@@ -356,9 +354,6 @@ inherited FPesquisaView: TFPesquisaView
               Style.Font.Name = 'Open Sans SemiBold'
               Style.Font.Style = [fsBold]
               Style.IsFontAssigned = True
-              ExplicitLeft = 187
-              ExplicitTop = 9
-              ExplicitHeight = 19
             end
           end
         end
@@ -384,7 +379,7 @@ inherited FPesquisaView: TFPesquisaView
     end
     object StContentOdd: TcxStyle
       AssignedValues = [svColor, svFont]
-      Color = 16119285
+      Color = 13630446
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -11

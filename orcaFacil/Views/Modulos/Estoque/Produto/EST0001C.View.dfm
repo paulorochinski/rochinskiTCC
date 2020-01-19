@@ -42,7 +42,7 @@ inherited FEST0001CView: TFEST0001CView
         inherited LbOperacao: TcxLabel
           Left = 476
           Style.IsFontAssigned = True
-          ExplicitLeft = 476
+          ExplicitLeft = 456
         end
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
@@ -86,7 +86,6 @@ inherited FEST0001CView: TFEST0001CView
       inherited Panel4: TPanel
         Width = 578
         Height = 214
-        ExplicitTop = 33
         ExplicitWidth = 578
         ExplicitHeight = 214
         inherited Panel5: TPanel

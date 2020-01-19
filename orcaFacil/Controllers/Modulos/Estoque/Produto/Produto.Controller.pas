@@ -10,7 +10,6 @@ type
   private
     FProdutoModel: IProdutoModel;
     FRegistro: TTESTPRODUTO;
-    FprodutoEncontrado: Boolean;
   public
     constructor Create;
     destructor Destroy; override;
@@ -43,8 +42,9 @@ uses FacadeModel, ProdutoOperacaoIncluir.Controller,
 
 function TProdutoController.Alterar: IProdutoOperacaoAlterarController;
 begin
-  Result := TProdutosOperacoesAlterarController.New.produtoController(Self)
-    .produtoModel(FProdutoModel).produtoSelecionado(FRegistro);
+  Result := TProdutosOperacoesAlterarController.New
+             .produtoModel(FProdutoModel)
+             .produtoSelecionado(FRegistro);
 end;
 
 function TProdutoController.codigoSinapi: string;
@@ -71,14 +71,16 @@ end;
 
 function TProdutoController.Duplicar: IProdutoOperacaoDuplicarController;
 begin
-  Result := TProdutosOperacoesDuplicarController.New.produtoController(Self)
-    .produtoModel(FProdutoModel).produtoSelecionado(FRegistro);
+  Result := TProdutosOperacoesDuplicarController.New
+               .produtoModel(FProdutoModel)
+               .produtoSelecionado(FRegistro);
 end;
 
 function TProdutoController.Excluir: IProdutoOperacaoExcluirController;
 begin
-  Result := TProdutoOperacaoExcluirController.New.produtoController(Self)
-    .produtoModel(FProdutoModel).produtoSelecionado(FRegistro);
+  Result := TProdutoOperacaoExcluirController.New
+              .produtoModel(FProdutoModel)
+              .produtoSelecionado(FRegistro);
 end;
 
 function TProdutoController.idProduto: string;
@@ -88,8 +90,8 @@ end;
 
 function TProdutoController.Incluir: IProdutoOperacaoIncluirController;
 begin
-  Result := TProdutoOperacaoIncluirController.New.produtoController(Self)
-    .produtoModel(FProdutoModel);
+  Result := TProdutoOperacaoIncluirController.New
+              .produtoModel(FProdutoModel);
 end;
 
 function TProdutoController.localizar(AValue: string): IProdutoController;
@@ -111,7 +113,7 @@ end;
 
 function TProdutoController.prMedio: string;
 begin
-  Result := CurrToStr(FRegistro.PRMEDIO);
+  Result := CurrToStr(FRegistro.prMedio);
 end;
 
 function TProdutoController.prMedioSinapi: string;

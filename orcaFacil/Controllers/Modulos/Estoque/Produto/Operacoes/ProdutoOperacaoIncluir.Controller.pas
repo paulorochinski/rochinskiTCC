@@ -9,7 +9,6 @@ type
   TProdutoOperacaoIncluirController = class(TInterfacedObject,
     IProdutoOperacaoIncluirController)
   private
-    FProdutoController: IProdutoController;
     FProdutoModel: IProdutoModel;
 
     FCodigoSinapi: string;
@@ -24,7 +23,6 @@ type
 
     class function New: IProdutoOperacaoIncluirController;
 
-    function produtoController(AValue: IProdutoController): IProdutoOperacaoIncluirController;
     function produtoModel(AValue: IProdutoModel): IProdutoOperacaoIncluirController;
 
     function codigoSinapi(AValue: string): IProdutoOperacaoIncluirController;
@@ -41,7 +39,7 @@ type
     function prMedioSinapi(AValue: Currency): IProdutoOperacaoIncluirController; overload;
     function prMedioSinapi(AValue: string): IProdutoOperacaoIncluirController; overload;
 
-    function &executar: IProdutoController;
+    procedure finalizar;
   end;
 
 implementation
@@ -53,22 +51,6 @@ function TProdutoOperacaoIncluirController.codigoSinapi(AValue: string)
 begin
   Result := Self;
   FCodigoSinapi := AValue;
-end;
-
-function TProdutoOperacaoIncluirController.&executar: IProdutoController;
-begin
-  Result := FProdutoController;
-
-  FProdutoModel.Entidade(TTESTPRODUTO.Create);
-
-  FProdutoModel.Entidade.CODIGO_SINAPI := FCodigoSinapi;
-  FProdutoModel.Entidade.DESCRICAO := FDescricao;
-  FProdutoModel.Entidade.UNIDMEDIDA := FUnidMedida;
-  FProdutoModel.Entidade.ORIGEM_PRECO := FOrigemPreco;
-  FProdutoModel.Entidade.PRMEDIO := FPrMedio;
-  FProdutoModel.Entidade.PRMEDIO_SINAPI := FPrMedioSinap;
-
-  FProdutoModel.DAO.Insert(FProdutoModel.Entidade);
 end;
 
 constructor TProdutoOperacaoIncluirController.Create;
@@ -87,6 +69,20 @@ destructor TProdutoOperacaoIncluirController.Destroy;
 begin
 
   inherited;
+end;
+
+procedure TProdutoOperacaoIncluirController.finalizar;
+begin
+  FProdutoModel.Entidade(TTESTPRODUTO.Create);
+
+  FProdutoModel.Entidade.CODIGO_SINAPI := FCodigoSinapi;
+  FProdutoModel.Entidade.DESCRICAO := FDescricao;
+  FProdutoModel.Entidade.UNIDMEDIDA := FUnidMedida;
+  FProdutoModel.Entidade.ORIGEM_PRECO := FOrigemPreco;
+  FProdutoModel.Entidade.PRMEDIO := FPrMedio;
+  FProdutoModel.Entidade.PRMEDIO_SINAPI := FPrMedioSinap;
+
+  FProdutoModel.DAO.Insert(FProdutoModel.Entidade);
 end;
 
 class function TProdutoOperacaoIncluirController.New
@@ -136,13 +132,6 @@ function TProdutoOperacaoIncluirController.prMedioSinapi(AValue: Currency)
 begin
   Result := Self;
   FPrMedioSinap := AValue;
-end;
-
-function TProdutoOperacaoIncluirController.produtoController
-  (AValue: IProdutoController): IProdutoOperacaoIncluirController;
-begin
-  Result := Self;
-  FProdutoController := AValue;
 end;
 
 function TProdutoOperacaoIncluirController.produtoModel(AValue: IProdutoModel)
