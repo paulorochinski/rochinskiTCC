@@ -20,7 +20,8 @@ uses
   cxGrid, cxTextEdit,
   dxGDIPlusClasses, Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
   Base.View.Interf, ormbr.container.DataSet.interfaces,
-  TPAGFORNECEDOR.Entidade.Model, ormbr.container.fdmemtable;
+  TPAGFORNECEDOR.Entidade.Model, ormbr.container.fdmemtable, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFPAG0001PView = class(TFPesquisaView, IBasePesquisaView)
@@ -39,6 +40,11 @@ type
     VwDadosEMAIL: TcxGridDBColumn;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BtNovoClick(Sender: TObject);
+    procedure BtAlterarClick(Sender: TObject);
+    procedure BtConsultarClick(Sender: TObject);
+    procedure BtExcluirClick(Sender: TObject);
+    procedure BtDuplicarClick(Sender: TObject);
   private
     FContainer: IContainerDataSet<TTPAGFORNECEDOR>;
 
@@ -64,26 +70,95 @@ var
 implementation
 
 {$R *.dfm}
+
+uses FacadeView, Tipos.Controller.Interf;
 { TFPAG0001PView }
 
 function TFPAG0001PView.alterarRegistro: IBasePesquisaView;
 begin
+  Result := Self;
 
+  TFacadeView.New
+    .ModulosFacadeView
+     .PagarFactoryView
+      .exibirTelaCadastro(tcFornecedor)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
+end;
+
+procedure TFPAG0001PView.BtAlterarClick(Sender: TObject);
+begin
+  inherited;
+  alterarRegistro;
+  listarRegistros;
+end;
+
+procedure TFPAG0001PView.BtConsultarClick(Sender: TObject);
+begin
+  inherited;
+  consultarRegistro;
+  listarRegistros;
+end;
+
+procedure TFPAG0001PView.BtDuplicarClick(Sender: TObject);
+begin
+  inherited;
+  duplicarRegistro;
+  listarRegistros;
+end;
+
+procedure TFPAG0001PView.BtExcluirClick(Sender: TObject);
+begin
+  inherited;
+  excluirRegistro;
+  listarRegistros;
+end;
+
+procedure TFPAG0001PView.BtNovoClick(Sender: TObject);
+begin
+  inherited;
+  incluirRegistro;
+  listarRegistros;
 end;
 
 function TFPAG0001PView.consultarRegistro: IBasePesquisaView;
 begin
+  Result := Self;
 
+  TFacadeView.New
+    .ModulosFacadeView
+     .PagarFactoryView
+      .exibirTelaCadastro(tcFornecedor)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
 end;
 
 function TFPAG0001PView.duplicarRegistro: IBasePesquisaView;
 begin
+  Result := Self;
 
+  TFacadeView.New
+    .ModulosFacadeView
+     .PagarFactoryView
+      .exibirTelaCadastro(tcFornecedor)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
 end;
 
 function TFPAG0001PView.excluirRegistro: IBasePesquisaView;
 begin
+  Result := Self;
 
+  TFacadeView.New
+    .ModulosFacadeView
+     .PagarFactoryView
+      .exibirTelaCadastro(tcFornecedor)
+       .operacao(FOperacao)
+        .registroSelecionado(FdDadosCODIGO.AsString)
+         .executar;
 end;
 
 procedure TFPAG0001PView.executar;
@@ -106,7 +181,14 @@ end;
 
 function TFPAG0001PView.incluirRegistro: IBasePesquisaView;
 begin
+  Result := Self;
 
+  TFacadeView.New
+    .ModulosFacadeView
+     .PagarFactoryView
+      .exibirTelaCadastro(tcFornecedor)
+       .operacao(FOperacao)
+        .executar
 end;
 
 procedure TFPAG0001PView.listarRegistros;

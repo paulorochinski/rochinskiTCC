@@ -7,13 +7,8 @@ type
   TTIpoMensagem = (tmInformacao, tmAlerta, tmErro, tmConfirmacao);
 
   TTelaListagem = (tlProduto, tlFornecedor);
-
-  TTelaCadastro = (tcProduto);
+  TTelaCadastro = (tcProduto, tcFornecedor);
   TTelaImportacao = (tiProduto);
-
-
-
-
 
 implementation
 

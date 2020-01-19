@@ -226,12 +226,15 @@ inherited FPesquisaView: TFPesquisaView
           Style.IsFontAssigned = True
           ExplicitWidth = 139
         end
+        inherited PnIconeTitulo: TPanel
+          TabOrder = 2
+        end
         object PnPesquisa: TPanel
           AlignWithMargins = True
           Left = 285
           Top = 2
           Width = 229
-          Height = 26
+          Height = 28
           Margins.Top = 2
           Margins.Bottom = 2
           Align = alRight
@@ -239,6 +242,7 @@ inherited FPesquisaView: TFPesquisaView
           Color = 15658986
           ParentBackground = False
           TabOrder = 1
+          ExplicitHeight = 26
           object ImPesquisa: TImage
             Left = 192
             Top = 0
@@ -282,7 +286,7 @@ inherited FPesquisaView: TFPesquisaView
       end
       inherited Panel4: TPanel
         Width = 515
-        Height = 172
+        Height = 170
         ExplicitWidth = 515
         ExplicitHeight = 172
         inherited Panel5: TPanel

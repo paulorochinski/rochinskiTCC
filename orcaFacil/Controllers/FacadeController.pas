@@ -16,7 +16,7 @@ type
 
     function ConexaoController: IConexaoController;
 
-    function ModulosFacadeController: IModulosFacadeController;
+    function modulosFacadeController: IModulosFacadeController;
 
   end;
 
@@ -42,7 +42,7 @@ begin
   inherited;
 end;
 
-function TFacadeController.ModulosFacadeController: IModulosFacadeController;
+function TFacadeController.modulosFacadeController: IModulosFacadeController;
 begin
   Result := TModulosFacadeController.New;
 end;

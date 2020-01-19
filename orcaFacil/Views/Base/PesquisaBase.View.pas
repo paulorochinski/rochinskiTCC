@@ -19,7 +19,8 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Base.View.Interf, Tipos.Controller.Interf, cxLabel, dxGDIPlusClasses;
+  Base.View.Interf, Tipos.Controller.Interf, cxLabel, dxGDIPlusClasses, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFPesquisaView = class(TFBaseView, IBasePesquisaView)

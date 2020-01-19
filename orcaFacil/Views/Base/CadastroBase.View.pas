@@ -8,7 +8,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Base.View, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, Vcl.StdCtrls, cxButtons,
   Vcl.ExtCtrls, cxControls, cxContainer, cxEdit, cxLabel,
-  Tipos.Controller.Interf, dxGDIPlusClasses;
+  Tipos.Controller.Interf, dxGDIPlusClasses, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFCadastroView = class(TFBaseView)

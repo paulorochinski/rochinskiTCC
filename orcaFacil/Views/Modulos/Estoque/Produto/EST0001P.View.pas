@@ -21,7 +21,8 @@ uses
   ormbr.container.fdmemtable,
   FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   TESTPRODUTO.Entidade.Model, Vcl.Grids, Vcl.DBGrids, dxBevel, cxLabel,
-  dxGDIPlusClasses;
+  dxGDIPlusClasses, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFEST0001PView = class(TFPesquisaView, IBasePesquisaView)

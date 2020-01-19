@@ -9,18 +9,29 @@ inherited FPAG0001PView: TFPAG0001PView
   inherited Panel1: TPanel
     Width = 733
     Height = 301
+    ExplicitWidth = 733
+    ExplicitHeight = 301
     inherited Panel2: TPanel
       Width = 731
       Height = 299
+      ExplicitWidth = 731
+      ExplicitHeight = 299
       inherited PnBotoes: TPanel
         Top = 253
         Width = 731
+        ExplicitTop = 253
+        ExplicitWidth = 731
         inherited BtEncerrar: TcxButton
           Left = 611
+          ExplicitLeft = 611
+        end
+        inherited BtAlterar: TcxButton
+          ExplicitTop = 1
         end
       end
       inherited Panel3: TPanel
         Width = 731
+        ExplicitWidth = 731
         inherited cxLabel1: TcxLabel
           Caption = 'Fornecedores'
           Style.IsFontAssigned = True
@@ -101,25 +112,44 @@ inherited FPAG0001PView: TFPAG0001PView
         end
         inherited PnPesquisa: TPanel
           Left = 499
+          ExplicitLeft = 499
+          ExplicitHeight = 28
           inherited ImPesquisa: TImage
             Height = 28
+            ExplicitHeight = 28
           end
           inherited TePesquisa: TcxTextEdit
             Style.IsFontAssigned = True
+            ExplicitHeight = 28
           end
         end
       end
       inherited Panel4: TPanel
         Width = 729
         Height = 219
+        ExplicitTop = 33
+        ExplicitWidth = 729
+        ExplicitHeight = 219
         inherited Panel5: TPanel
           Width = 727
           Height = 217
+          ExplicitWidth = 727
+          ExplicitHeight = 217
           inherited DbDados: TcxGrid
             Width = 727
             Height = 217
+            ExplicitWidth = 727
+            ExplicitHeight = 217
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsDados
+              Filtering.ColumnAddValueItems = False
+              Filtering.ColumnMRUItemsList = False
+              OptionsData.CancelOnExit = False
+              OptionsData.Deleting = False
+              OptionsData.DeletingConfirmation = False
+              OptionsData.Editing = False
+              OptionsData.Inserting = False
+              OptionsSelection.CellSelect = False
               object VwDadosIDFORNECEDOR: TcxGridDBColumn
                 Caption = 'N'#186
                 DataBinding.FieldName = 'IDFORNECEDOR'

@@ -110,8 +110,6 @@ inherited FImportarView: TFImportarView
         inherited cxLabel1: TcxLabel
           Caption = 'ImportarBase'
           Style.IsFontAssigned = True
-          ExplicitLeft = 39
-          ExplicitTop = 1
           ExplicitWidth = 140
         end
       end

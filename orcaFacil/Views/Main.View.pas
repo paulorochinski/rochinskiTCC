@@ -8,7 +8,9 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, dxSkinsCore, cxGraphics, cxControls,
   cxLookAndFeels, cxLookAndFeelPainters, dxRibbonSkins,
   dxRibbonCustomizationForm, dxStatusBar, dxRibbonStatusBar, cxClasses,
-  dxRibbon, dxBar, dxBarApplicationMenu, Vcl.ExtCtrls;
+  dxRibbon, dxBar, dxBarApplicationMenu, Vcl.ExtCtrls, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
+  dxSkinsForm;
 
 type
   TFPrincipalView = class(TForm)

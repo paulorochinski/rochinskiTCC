@@ -10,7 +10,8 @@ uses
   cxEdit, dxGDIPlusClasses,
   Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons, Base.View.Interf,
   Tipos.Controller.Interf,
-  cxTextEdit, cxMemo;
+  cxTextEdit, cxMemo, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFMensagemView = class(TFBaseView, IBaseMensagemView)

@@ -14,7 +14,9 @@ uses
   cxDataControllerConditionalFormattingRulesManagerDialog,
   Data.DB, cxDBData, cxGridLevel, cxClasses, cxGridCustomView,
   cxGridCustomTableView,
-  cxGridTableView, cxGridDBTableView, cxGrid, Datasnap.DBClient, dxGDIPlusClasses;
+  cxGridTableView, cxGridDBTableView, cxGrid, Datasnap.DBClient, dxGDIPlusClasses,
+  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue,
+  dxSkinOffice2007Silver;
 
 type
   TFImportarView = class(TFBaseView)

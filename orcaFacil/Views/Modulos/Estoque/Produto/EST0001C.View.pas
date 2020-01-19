@@ -10,7 +10,9 @@ uses
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, cxControls, cxContainer,
   cxEdit, cxLabel,
   Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, Base.View.Interf,
-  Tipos.Controller.Interf, Produto.Controller.Interf, cxTextEdit, cxMemo, dxGDIPlusClasses;
+  Tipos.Controller.Interf, Produto.Controller.Interf, cxTextEdit, cxMemo, dxGDIPlusClasses,
+  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue,
+  dxSkinOffice2007Silver;
 
 type
   TFEST0001CView = class(TFCadastroView, IBaseCadastroView)
@@ -34,15 +36,16 @@ type
   private
     FProduto: IProdutoController;
     FRegistro: string;
+
+    procedure salvarDados;
+    procedure exibirDadosNaTela;
+    procedure desabilitaCampos;
   public
     { Public declarations }
     class function New: IBaseCadastroView;
 
     function operacao(AValue: TTipoOperacao): IBaseCadastroView;
     function registroSelecionado(AValue: string): IBaseCadastroView;
-    procedure salvarDados;
-    procedure exibirDadosNaTela;
-    procedure desabilitaCampos;
     procedure &executar;
   end;
 
@@ -103,8 +106,10 @@ end;
 procedure TFEST0001CView.FormCreate(Sender: TObject);
 begin
   inherited;
-  FProduto := TFacadeController.New.ModulosFacadeController.
-    EstoqueFactoryController.Produto
+  FProduto := TFacadeController.New
+                .modulosFacadeController
+                .estoqueFactoryController
+                .Produto
 end;
 
 class function TFEST0001CView.New: IBaseCadastroView;

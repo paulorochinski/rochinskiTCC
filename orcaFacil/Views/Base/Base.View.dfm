@@ -132,8 +132,6 @@ object FBaseView: TFBaseView
           Style.Font.Style = [fsBold]
           Style.TextColor = 6050636
           Style.IsFontAssigned = True
-          ExplicitLeft = 155
-          ExplicitTop = -2
         end
         object PnIconeTitulo: TPanel
           Left = 0

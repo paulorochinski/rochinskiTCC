@@ -59,7 +59,7 @@ type
     [Dictionary('CNPJ', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property CNPJ: nullable<String> read FCNPJ write FCNPJ;
 
-    [Column('IE', ftString, 10)]
+    [Column('IE', ftString, 22)]
     [Dictionary('IE', 'Mensagem de validação', '', '', '', taLeftJustify)]
     property IE: nullable<String> read FIE write FIE;
 

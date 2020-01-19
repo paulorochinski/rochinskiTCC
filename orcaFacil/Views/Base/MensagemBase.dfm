@@ -26,6 +26,7 @@ inherited FMensagemView: TFMensagemView
         ExplicitWidth = 426
         inherited BtEncerrar: TcxButton
           Left = 306
+          Caption = 'C&ancelar'
           ExplicitLeft = 306
         end
         object BtSalvar: TcxButton
@@ -78,13 +79,13 @@ inherited FMensagemView: TFMensagemView
           Style.IsFontAssigned = True
           ExplicitLeft = 51
           ExplicitWidth = 160
-          ExplicitHeight = 46
+          ExplicitHeight = 32
         end
         inherited PnIconeTitulo: TPanel
           Width = 48
           Height = 34
           ExplicitWidth = 48
-          ExplicitHeight = 48
+          ExplicitHeight = 34
           inherited ImIconeTitulo: TImage
             Width = 48
             Height = 34
@@ -111,14 +112,14 @@ inherited FMensagemView: TFMensagemView
         Top = 35
         Width = 424
         Height = 90
-        ExplicitTop = 49
+        ExplicitTop = 35
         ExplicitWidth = 424
-        ExplicitHeight = 76
+        ExplicitHeight = 90
         inherited Panel5: TPanel
           Width = 422
           Height = 88
           ExplicitWidth = 422
-          ExplicitHeight = 74
+          ExplicitHeight = 88
           object MmMensagem: TcxMemo
             Left = 0
             Top = 0
@@ -135,7 +136,6 @@ inherited FMensagemView: TFMensagemView
             Style.IsFontAssigned = True
             StyleDisabled.Color = 15658986
             TabOrder = 0
-            ExplicitHeight = 74
             Height = 88
             Width = 422
           end

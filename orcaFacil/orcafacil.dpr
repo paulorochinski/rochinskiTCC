@@ -72,7 +72,10 @@ uses
   FornecedorOperacaoExcluir.Controller in 'Controllers\Modulos\Pagar\Fornecedor\Operacoes\FornecedorOperacaoExcluir.Controller.pas',
   PAG0001P.View in 'Views\Modulos\Pagar\Fornecedor\PAG0001P.View.pas' {FPAG0001PView},
   PagarFactory.View.interf in 'Views\Modulos\Pagar\PagarFactory.View.interf.pas',
-  PagarFactory.View in 'Views\Modulos\Pagar\PagarFactory.View.pas';
+  PagarFactory.View in 'Views\Modulos\Pagar\PagarFactory.View.pas',
+  PAG0001C.View in 'Views\Modulos\Pagar\Fornecedor\PAG0001C.View.pas' {FPAG0001CView},
+  PagarFactory.Controller.interf in 'Controllers\Modulos\Pagar\PagarFactory.Controller.interf.pas',
+  PagarFactory.Controller in 'Controllers\Modulos\Pagar\PagarFactory.Controller.pas';
 
 {$R *.res}
 

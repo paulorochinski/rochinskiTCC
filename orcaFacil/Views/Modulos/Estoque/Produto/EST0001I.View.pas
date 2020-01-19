@@ -16,7 +16,8 @@ uses
   cxGridTableView,
   cxGridDBTableView, cxGrid, Vcl.ComCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
   Vcl.ExtCtrls,
-  Base.View.Interf, ImportarProduto.Controller.Interf, dxGDIPlusClasses;
+  Base.View.Interf, ImportarProduto.Controller.Interf, dxGDIPlusClasses, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFEST0001IView = class(TFImportarView, IBaseImportarView)
@@ -182,8 +183,8 @@ begin
   while not(CdDados.Eof) do
   begin
     try
-      FImportarProduto := TFacadeController.New.ModulosFacadeController.
-        EstoqueFactoryController.ImportarProduto;
+      FImportarProduto := TFacadeController.New.modulosFacadeController.
+        estoqueFactoryController.ImportarProduto;
 
       FImportarProduto.localizar(CdDadosCODIGO.AsInteger)
         .Importar.produtoSelecionado(FImportarProduto.produtoSelecionado)

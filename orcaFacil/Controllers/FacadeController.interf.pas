@@ -9,7 +9,7 @@ type
     ['{1F5A8116-1427-4D49-83A9-DFC34C0395FA}']
     function ConexaoController: IConexaoController;
 
-    function ModulosFacadeController: IModulosFacadeController;
+    function modulosFacadeController: IModulosFacadeController;
   end;
 
 implementation

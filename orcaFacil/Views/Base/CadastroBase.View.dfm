@@ -69,7 +69,6 @@ inherited FCadastroView: TFCadastroView
           Style.TextColor = 6050636
           Style.IsFontAssigned = True
           ExplicitLeft = 300
-          ExplicitHeight = 28
         end
         inherited PnIconeTitulo: TPanel
           TabOrder = 2

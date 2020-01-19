@@ -11,7 +11,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, dxBevel, Vcl.ExtCtrls, cxGraphics,
   cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, Vcl.StdCtrls,
   cxButtons, ormbr.factory.interfaces, cxControls, cxContainer, cxEdit, cxLabel,
-  Tipos.Controller.Interf, dxGDIPlusClasses;
+  Tipos.Controller.Interf, dxGDIPlusClasses, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFBaseView = class(TForm)
