@@ -126,6 +126,12 @@ inherited FEST0002PView: TFEST0002PView
             ExplicitHeight = 120
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsDados
+              OptionsData.CancelOnExit = False
+              OptionsData.Deleting = False
+              OptionsData.DeletingConfirmation = False
+              OptionsData.Editing = False
+              OptionsData.Inserting = False
+              OptionsSelection.CellSelect = False
               object VwDadosIDORCAMENTO: TcxGridDBColumn
                 Caption = 'N'#186
                 DataBinding.FieldName = 'IDORCAMENTO'

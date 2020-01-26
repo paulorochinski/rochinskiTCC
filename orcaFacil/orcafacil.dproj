@@ -244,6 +244,14 @@
             <Form>FEST0002CView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\Base\LocalizarBase.View.pas">
+            <Form>FLocalizarView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\Modulos\Estoque\Produto\EST0001L.View.pas">
+            <Form>FEST0001LView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

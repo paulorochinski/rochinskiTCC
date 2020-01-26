@@ -16,17 +16,17 @@ uses
   ormbr.mapping.classes,
   ormbr.mapping.register,
   ormbr.mapping.attributes,
-  TESTPRODUTO.Entidade.Model,
-  TESTORCAMENTO.Entidade.Model;
+  TESTORCAMENTO.Entidade.Model,
+  TESTPRODUTO.Entidade.Model;
 
 type
   [Entity]
   [Table('TESTORCAMENTOITENS', '')]
-  [PrimaryKey('IDORCAMENTO', NotInc, NoSort, False, 'Chave primária')]
-  [PrimaryKey('IDPRODUTO', NotInc, NoSort, False, 'Chave primária')]
+  [PrimaryKey('ID', NotInc, NoSort, False, 'Chave primária')]
   TTESTORCAMENTOITENS = class
   private
     { Private declarations }
+    FID: Integer;
     FIDORCAMENTO: String;
     FIDPRODUTO: String;
     FQTDE: Nullable<Double>;
@@ -35,12 +35,17 @@ type
 
     FTESTORCAMENTO_0:  TTESTORCAMENTO  ;
     FTESTPRODUTO_1:  TTESTPRODUTO  ;
-    function getDATA_CADASTRO: TDateTime;
     function getULTIMA_ATUALIZACAO: TDateTime;
+    function getDATA_CADASTRO: TDateTime;
   public
     { Public declarations }
     constructor Create;
     destructor Destroy; override;
+    [Restrictions([NotNull])]
+    [Column('ID', ftInteger)]
+    [Dictionary('ID', 'Mensagem de validação', '', '', '', taCenter)]
+    property ID: Integer read FID write FID;
+
     [Restrictions([NotNull])]
     [Column('IDORCAMENTO', ftString, 64)]
     [ForeignKey('FK_TESTORCAMENTOITENS_1', 'IDORCAMENTO', 'TESTORCAMENTO', 'CODIGO', SetNull, SetNull)]

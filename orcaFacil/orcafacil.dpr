@@ -86,7 +86,9 @@ uses
   Orcamento.Controller in 'Controllers\Modulos\Estoque\Orcamento\Orcamento.Controller.pas',
   OrcamentoOperacaoIncluir.Controller in 'Controllers\Modulos\Estoque\Orcamento\Operacoes\OrcamentoOperacaoIncluir.Controller.pas',
   EST0002P.View in 'Views\Modulos\Estoque\Orcamento\EST0002P.View.pas' {FEST0002PView},
-  EST0002C.View in 'Views\Modulos\Estoque\Orcamento\EST0002C.View.pas' {FEST0002CView};
+  EST0002C.View in 'Views\Modulos\Estoque\Orcamento\EST0002C.View.pas' {FEST0002CView},
+  LocalizarBase.View in 'Views\Base\LocalizarBase.View.pas' {FLocalizarView},
+  EST0001L.View in 'Views\Modulos\Estoque\Produto\EST0001L.View.pas' {FEST0001LView};
 
 {$R *.res}
 

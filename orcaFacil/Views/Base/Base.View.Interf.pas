@@ -39,6 +39,13 @@ type
     function &exibir: Boolean;
   end;
 
+  IBaseLocalizarView = interface
+    ['{3E5D8E06-093C-4943-BC53-CE9C4740C56C}']
+    procedure listarRegistros;
+
+    function exibir: string;
+  end;
+
 implementation
 
 end.

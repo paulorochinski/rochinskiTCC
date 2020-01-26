@@ -1,8 +1,8 @@
 object FDataMFirebird: TFDataMFirebird
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 133
-  Width = 141
+  Height = 198
+  Width = 264
   object FBancoDeDados: TFDConnection
     Left = 32
     Top = 8
@@ -15,5 +15,10 @@ object FDataMFirebird: TFDataMFirebird
     Provider = 'Forms'
     Left = 88
     Top = 32
+  end
+  object FDQuery1: TFDQuery
+    Connection = FBancoDeDados
+    Left = 120
+    Top = 112
   end
 end

@@ -7,8 +7,7 @@ uses TESTORCAMENTOITENS.Entidade.Model, Generics.Collections, Orcamento.Model.In
 
 type
   TOrcamentoItens = record
-    idOrcamento: string;
-    idProduto: string;
+    codigo: string;
     qtde: Double;
   end;
 
@@ -29,7 +28,17 @@ type
     function idOrcamento: string;
     function descricao: string;
 
-    function itens: TObjectList<TTESTORCAMENTOITENS>;
+    function itens: TList<TOrcamentoItens>;
+
+    procedure AddItem(AValue: TOrcamentoItens);
+    procedure removeAllItens;
+  end;
+
+  IOrcamentoItemController = interface
+    ['{862A5A15-4353-49DF-AB9C-6C9AFDE16DEF}']
+    function codigoItem(AValue: string): IOrcamentoItemController;
+    function qtde(AValue: Double): IOrcamentoItemController;
+    function finalizar: TOrcamentoItens;
   end;
 
   IOrcamentoOperacaoIncluirController = interface
@@ -38,6 +47,7 @@ type
     function orcamentoItensModel(AValue: IOrcamentoItensModel): IOrcamentoOperacaoIncluirController;
 
     function descricao(AValue: string): IOrcamentoOperacaoIncluirController;
+    function itens(AValue: TList<TOrcamentoItens>): IOrcamentoOperacaoIncluirController;
 
     procedure finalizar;
   end;

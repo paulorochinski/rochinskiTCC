@@ -9,13 +9,15 @@ uses
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.IBBase, FireDAC.Phys.FB,
   Data.DB, FireDAC.Comp.Client, Conexao.Model.Interf, ormbr.Factory.Interfaces,
   ConfiguracoesConexao.Model.Interf, ormbr.Factory.FireDAC,
-  ormbr.dml.Generator.Firebird;
+  ormbr.dml.Generator.Firebird, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet;
 
 type
   TFDataMFirebird = class(TDataModule, IConexaoModel)
     FBancoDeDados: TFDConnection;
     DriverLink: TFDPhysFBDriverLink;
     WaitCursor: TFDGUIxWaitCursor;
+    FDQuery1: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -29,6 +31,7 @@ type
     class function New: IConexaoModel;
 
     function Conexao: IDBConnection;
+    function ConexaoFireDac: TFDConnection;
   end;
 
 var
@@ -67,6 +70,11 @@ end;
 function TFDataMFirebird.Conexao: IDBConnection;
 begin
   Result := FConexao;
+end;
+
+function TFDataMFirebird.ConexaoFireDac: TFDConnection;
+begin
+  Result := FBancoDeDados;
 end;
 
 procedure TFDataMFirebird.DataModuleCreate(Sender: TObject);

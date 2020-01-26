@@ -1,9 +1,9 @@
 inherited FEST0002CView: TFEST0002CView
+  Anchors = [akLeft, akTop, akRight]
   Caption = 'Or'#231'amentos'
   ClientHeight = 418
   ClientWidth = 754
   Position = poScreenCenter
-  Visible = True
   ExplicitWidth = 760
   ExplicitHeight = 447
   PixelsPerInch = 96
@@ -11,21 +11,30 @@ inherited FEST0002CView: TFEST0002CView
   inherited Panel1: TPanel
     Width = 752
     Height = 416
+    ExplicitWidth = 752
+    ExplicitHeight = 416
     inherited Panel2: TPanel
       Width = 750
       Height = 414
+      ExplicitWidth = 750
+      ExplicitHeight = 414
       inherited PnBotoes: TPanel
         Top = 368
         Width = 750
+        ExplicitTop = 368
+        ExplicitWidth = 750
         inherited BtEncerrar: TcxButton
           Left = 630
+          ExplicitLeft = 630
         end
         inherited BtSalvar: TcxButton
           Left = 510
+          ExplicitLeft = 510
         end
       end
       inherited Panel3: TPanel
         Width = 750
+        ExplicitWidth = 750
         inherited cxLabel1: TcxLabel
           Caption = 'OR'#199'AMENTOS'
           Style.IsFontAssigned = True
@@ -34,6 +43,7 @@ inherited FEST0002CView: TFEST0002CView
         inherited LbOperacao: TcxLabel
           Left = 646
           Style.IsFontAssigned = True
+          ExplicitLeft = 646
         end
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
@@ -114,81 +124,35 @@ inherited FEST0002CView: TFEST0002CView
       inherited Panel4: TPanel
         Width = 748
         Height = 334
+        ExplicitWidth = 748
+        ExplicitHeight = 334
         inherited Panel5: TPanel
           Width = 746
           Height = 332
-          object TeIdProduto: TcxTextEdit
-            Left = 608
-            Top = 4
-            Enabled = False
-            ParentFont = False
-            Style.BorderStyle = ebsSingle
-            Style.Font.Charset = ANSI_CHARSET
-            Style.Font.Color = clWindowText
-            Style.Font.Height = -11
-            Style.Font.Name = 'Open Sans'
-            Style.Font.Style = []
-            Style.IsFontAssigned = True
-            StyleDisabled.BorderColor = clWindowFrame
-            StyleDisabled.Color = 16119539
-            StyleDisabled.TextColor = clBlack
-            TabOrder = 0
-            Width = 129
-          end
-          object cxLabel6: TcxLabel
-            Left = 586
-            Top = 7
-            Caption = 'N'#186':'
-            ParentFont = False
-            Style.Font.Charset = ANSI_CHARSET
-            Style.Font.Color = clWindowText
-            Style.Font.Height = -9
-            Style.Font.Name = 'Open Sans SemiBold'
-            Style.Font.Style = [fsBold]
-            Style.IsFontAssigned = True
-          end
-          object TeDescricao: TcxMemo
-            Left = 91
-            Top = 33
-            Properties.CharCase = ecUpperCase
-            StyleDisabled.BorderColor = clWindowFrame
-            StyleDisabled.Color = 16119539
-            StyleDisabled.TextColor = clBlack
-            TabOrder = 2
-            Height = 72
-            Width = 646
-          end
-          object cxLabel3: TcxLabel
-            Left = 1
-            Top = 36
-            Caption = 'DESCRI'#199#195'O:'
-            ParentFont = False
-            Style.Font.Charset = ANSI_CHARSET
-            Style.Font.Color = clWindowText
-            Style.Font.Height = -9
-            Style.Font.Name = 'Open Sans SemiBold'
-            Style.Font.Style = [fsBold]
-            Style.IsFontAssigned = True
-          end
+          ExplicitWidth = 746
+          ExplicitHeight = 332
           object cxPageControl1: TcxPageControl
             Left = 0
-            Top = 111
+            Top = 105
             Width = 746
-            Height = 221
-            Align = alBottom
+            Height = 227
+            Align = alClient
             Font.Charset = ANSI_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
             Font.Name = 'Open Sans'
             Font.Style = []
             ParentFont = False
-            TabOrder = 4
+            TabOrder = 0
             Properties.ActivePage = TbItens
             Properties.CustomButtons.Buttons = <>
             Properties.Style = 9
             Properties.TabSlants.Kind = skCutCorner
+            LookAndFeel.Kind = lfStandard
+            LookAndFeel.NativeStyle = False
+            LookAndFeel.ScrollbarMode = sbmDefault
             TabSlants.Kind = skCutCorner
-            ClientRectBottom = 221
+            ClientRectBottom = 227
             ClientRectRight = 746
             ClientRectTop = 22
             object TbItens: TcxTabSheet
@@ -200,13 +164,9 @@ inherited FEST0002CView: TFEST0002CView
               Font.Style = []
               ImageIndex = 0
               ParentFont = False
-              ExplicitLeft = 4
-              ExplicitTop = 24
-              ExplicitWidth = 281
-              ExplicitHeight = 165
               object PnCrud: TPanel
                 Left = 0
-                Top = 155
+                Top = 161
                 Width = 746
                 Height = 44
                 Align = alBottom
@@ -214,46 +174,9 @@ inherited FEST0002CView: TFEST0002CView
                 Color = 14935011
                 ParentBackground = False
                 TabOrder = 0
-                ExplicitTop = 8
-                object BtAlterar: TcxButton
+                object BtExcluirItem: TcxButton
                   AlignWithMargins = True
                   Left = 44
-                  Top = 1
-                  Width = 44
-                  Height = 42
-                  Hint = 'F6 - Alterar'
-                  Margins.Left = 0
-                  Margins.Top = 1
-                  Margins.Right = 0
-                  Margins.Bottom = 1
-                  Align = alLeft
-                  OptionsImage.Glyph.SourceDPI = 96
-                  OptionsImage.Glyph.Data = {
-                    89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
-                    F40000001974455874536F6674776172650041646F626520496D616765526561
-                    647971C9653C00000020744558745469746C6500456469743B426172733B5269
-                    62626F6E3B5374616E646172643B3013C3DB000000C049444154785EEDD2310A
-                    03211484E1BD93B71072A960EB11BC47EE12AC02DBA7DD14468BF0C08188FB78
-                    93140A83DBFD1FB85B29E5A7FB5FC0028410CAE41E75BE6EC385738099D31031
-                    C6574AC977111E20E70C082AA01E40B0018060037AC4D1106400222AC03300DF
-                    B61B03C638326001160077B9DE5C5DBB3FDF3CC07D7FB6683F670BC0B8EB1176
-                    008C0B8205C0B820144FA08BCFFE84A67125401FD703F4710540119F020C7632
-                    8E00D52432885B022486711A40A212A703303E06BC0134E183BDE44D59830000
-                    000049454E44AE426082}
-                  ParentShowHint = False
-                  ShowHint = True
-                  SpeedButtonOptions.CanBeFocused = False
-                  TabOrder = 0
-                  Font.Charset = ANSI_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -11
-                  Font.Name = 'Open Sans'
-                  Font.Style = []
-                  ParentFont = False
-                end
-                object BtExcluir: TcxButton
-                  AlignWithMargins = True
-                  Left = 88
                   Top = 1
                   Width = 44
                   Height = 42
@@ -283,16 +206,15 @@ inherited FEST0002CView: TFEST0002CView
                   ParentShowHint = False
                   ShowHint = True
                   SpeedButtonOptions.CanBeFocused = False
-                  TabOrder = 1
+                  TabOrder = 0
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
                   Font.Name = 'Open Sans'
                   Font.Style = []
                   ParentFont = False
-                  ExplicitLeft = 132
                 end
-                object BtNovo: TcxButton
+                object BtNovoItem: TcxButton
                   AlignWithMargins = True
                   Left = 0
                   Top = 1
@@ -319,79 +241,147 @@ inherited FEST0002CView: TFEST0002CView
                   ParentShowHint = False
                   ShowHint = True
                   SpeedButtonOptions.CanBeFocused = False
-                  TabOrder = 2
+                  TabOrder = 1
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
                   Font.Name = 'Open Sans'
                   Font.Style = []
                   ParentFont = False
+                  OnClick = BtNovoItemClick
                 end
               end
-              object DbDados: TcxGrid
-                AlignWithMargins = True
-                Left = 1
-                Top = 1
-                Width = 744
-                Height = 153
-                Margins.Left = 1
-                Margins.Top = 1
-                Margins.Right = 1
-                Margins.Bottom = 1
+              object GrdItens: TPanel
+                Left = 0
+                Top = 0
+                Width = 746
+                Height = 161
                 Align = alClient
-                BevelInner = bvNone
                 BevelOuter = bvNone
-                BorderStyle = cxcbsNone
-                Font.Charset = ANSI_CHARSET
-                Font.Color = clWindowText
-                Font.Height = -11
-                Font.Name = 'Open Sans'
-                Font.Style = []
-                ParentFont = False
                 TabOrder = 1
-                LookAndFeel.Kind = lfStandard
-                LookAndFeel.NativeStyle = False
-                ExplicitLeft = 0
-                ExplicitTop = 8
-                ExplicitWidth = 746
-                ExplicitHeight = 132
-                object VwDados: TcxGridDBTableView
-                  Navigator.Buttons.CustomButtons = <>
-                  DataController.Summary.DefaultGroupSummaryItems = <>
-                  DataController.Summary.FooterSummaryItems = <>
-                  DataController.Summary.SummaryGroups = <>
-                  OptionsBehavior.CopyCaptionsToClipboard = False
-                  OptionsBehavior.CopyRecordsToClipboard = False
-                  OptionsBehavior.ColumnHeaderHints = False
-                  OptionsBehavior.CopyPreviewToClipboard = False
-                  OptionsData.CancelOnExit = False
-                  OptionsData.Deleting = False
-                  OptionsData.DeletingConfirmation = False
-                  OptionsData.Editing = False
-                  OptionsData.Inserting = False
-                  OptionsSelection.CellSelect = False
-                  OptionsView.NoDataToDisplayInfoText = '<Sem dados para exibir>'
-                  OptionsView.CellAutoHeight = True
-                  OptionsView.ColumnAutoWidth = True
-                  OptionsView.GroupByBox = False
-                  OptionsView.Indicator = True
-                end
-                object LvDados: TcxGridLevel
-                  GridView = VwDados
+                object DbDados: TcxGrid
+                  AlignWithMargins = True
+                  Left = 1
+                  Top = 1
+                  Width = 744
+                  Height = 159
+                  Margins.Left = 1
+                  Margins.Top = 1
+                  Margins.Right = 1
+                  Margins.Bottom = 1
+                  Align = alClient
+                  BevelInner = bvNone
+                  BevelOuter = bvNone
+                  BorderStyle = cxcbsNone
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clWindowText
+                  Font.Height = -11
+                  Font.Name = 'Open Sans'
+                  Font.Style = []
+                  ParentFont = False
+                  TabOrder = 0
+                  LookAndFeel.Kind = lfStandard
+                  LookAndFeel.NativeStyle = False
+                  object VwDados: TcxGridDBTableView
+                    Navigator.Buttons.CustomButtons = <>
+                    DataController.DataSource = DsItens
+                    DataController.Summary.DefaultGroupSummaryItems = <>
+                    DataController.Summary.FooterSummaryItems = <>
+                    DataController.Summary.SummaryGroups = <>
+                    OptionsBehavior.CopyCaptionsToClipboard = False
+                    OptionsBehavior.CopyRecordsToClipboard = False
+                    OptionsBehavior.ColumnHeaderHints = False
+                    OptionsBehavior.CopyPreviewToClipboard = False
+                    OptionsData.CancelOnExit = False
+                    OptionsData.Deleting = False
+                    OptionsData.DeletingConfirmation = False
+                    OptionsData.Inserting = False
+                    OptionsView.NoDataToDisplayInfoText = '<Sem dados para exibir>'
+                    OptionsView.CellAutoHeight = True
+                    OptionsView.ColumnAutoWidth = True
+                    OptionsView.GroupByBox = False
+                    OptionsView.Indicator = True
+                    Styles.Background = StBackground
+                    Styles.ContentEven = StContentEven
+                    Styles.ContentOdd = StContentOdd
+                    Styles.Header = StHeader
+                    Styles.Inactive = StInactive
+                    Styles.Indicator = StHeader
+                    Styles.Selection = StSelection
+                    object VwDadosCODIGO_SINAPI: TcxGridDBColumn
+                      Caption = 'C'#243'digo Sinapi'
+                      DataBinding.FieldName = 'CODIGO_SINAPI'
+                      HeaderAlignmentHorz = taCenter
+                      Options.Editing = False
+                      Options.Filtering = False
+                      Options.Focusing = False
+                      Options.IncSearch = False
+                      Options.FilteringAddValueItems = False
+                      Options.FilteringFilteredItemsList = False
+                      Options.FilteringMRUItemsList = False
+                      Options.FilteringPopup = False
+                      Options.GroupFooters = False
+                      Options.Grouping = False
+                      Options.Moving = False
+                      Width = 110
+                    end
+                    object VwDadosDESCRICAO: TcxGridDBColumn
+                      Caption = 'Descri'#231#227'o'
+                      DataBinding.FieldName = 'DESCRICAO'
+                      Options.Editing = False
+                      Options.Filtering = False
+                      Options.Focusing = False
+                      Options.IncSearch = False
+                      Options.FilteringAddValueItems = False
+                      Options.FilteringFilteredItemsList = False
+                      Options.FilteringMRUItemsList = False
+                      Options.FilteringPopup = False
+                      Options.GroupFooters = False
+                      Options.Grouping = False
+                      Options.Moving = False
+                      Width = 550
+                    end
+                    object VwDadosUNIDMEDIDA: TcxGridDBColumn
+                      Caption = 'Unid. Medida'
+                      DataBinding.FieldName = 'UNIDMEDIDA'
+                      Options.Editing = False
+                      Options.Filtering = False
+                      Options.Focusing = False
+                      Options.IncSearch = False
+                      Options.FilteringAddValueItems = False
+                      Options.FilteringFilteredItemsList = False
+                      Options.FilteringMRUItemsList = False
+                      Options.FilteringPopup = False
+                      Options.GroupFooters = False
+                      Options.Grouping = False
+                      Options.Moving = False
+                      Width = 100
+                    end
+                    object VwDadosQTDE: TcxGridDBColumn
+                      Caption = 'Qtde'
+                      DataBinding.FieldName = 'QTDE'
+                      HeaderAlignmentHorz = taCenter
+                      Width = 100
+                    end
+                  end
+                  object LvDados: TcxGridLevel
+                    GridView = VwDados
+                  end
                 end
               end
             end
             object TbFornecedor: TcxTabSheet
               Caption = '   FORNECEDORES   '
               ImageIndex = 1
-              ExplicitTop = 20
-              ExplicitHeight = 201
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
               object cxGrid1: TcxGrid
                 AlignWithMargins = True
                 Left = 1
                 Top = 1
                 Width = 744
-                Height = 153
+                Height = 159
                 Margins.Left = 1
                 Margins.Top = 1
                 Margins.Right = 1
@@ -409,9 +399,6 @@ inherited FEST0002CView: TFEST0002CView
                 TabOrder = 0
                 LookAndFeel.Kind = lfStandard
                 LookAndFeel.NativeStyle = False
-                ExplicitLeft = 2
-                ExplicitTop = 2
-                ExplicitHeight = 197
                 object cxGridDBTableView1: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
                   DataController.Summary.DefaultGroupSummaryItems = <>
@@ -439,7 +426,7 @@ inherited FEST0002CView: TFEST0002CView
               end
               object Panel6: TPanel
                 Left = 0
-                Top = 155
+                Top = 161
                 Width = 746
                 Height = 44
                 Align = alBottom
@@ -447,46 +434,9 @@ inherited FEST0002CView: TFEST0002CView
                 Color = 14935011
                 ParentBackground = False
                 TabOrder = 1
-                ExplicitTop = 8
-                object cxButton1: TcxButton
+                object BtExcluirFornec: TcxButton
                   AlignWithMargins = True
                   Left = 44
-                  Top = 1
-                  Width = 44
-                  Height = 42
-                  Hint = 'F6 - Alterar'
-                  Margins.Left = 0
-                  Margins.Top = 1
-                  Margins.Right = 0
-                  Margins.Bottom = 1
-                  Align = alLeft
-                  OptionsImage.Glyph.SourceDPI = 96
-                  OptionsImage.Glyph.Data = {
-                    89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
-                    F40000001974455874536F6674776172650041646F626520496D616765526561
-                    647971C9653C00000020744558745469746C6500456469743B426172733B5269
-                    62626F6E3B5374616E646172643B3013C3DB000000C049444154785EEDD2310A
-                    03211484E1BD93B71072A960EB11BC47EE12AC02DBA7DD14468BF0C08188FB78
-                    93140A83DBFD1FB85B29E5A7FB5FC0028410CAE41E75BE6EC385738099D31031
-                    C6574AC977111E20E70C082AA01E40B0018060037AC4D1106400222AC03300DF
-                    B61B03C638326001160077B9DE5C5DBB3FDF3CC07D7FB6683F670BC0B8EB1176
-                    008C0B8205C0B820144FA08BCFFE84A67125401FD703F4710540119F020C7632
-                    8E00D52432885B022486711A40A212A703303E06BC0134E183BDE44D59830000
-                    000049454E44AE426082}
-                  ParentShowHint = False
-                  ShowHint = True
-                  SpeedButtonOptions.CanBeFocused = False
-                  TabOrder = 0
-                  Font.Charset = ANSI_CHARSET
-                  Font.Color = clWindowText
-                  Font.Height = -11
-                  Font.Name = 'Open Sans'
-                  Font.Style = []
-                  ParentFont = False
-                end
-                object cxButton2: TcxButton
-                  AlignWithMargins = True
-                  Left = 88
                   Top = 1
                   Width = 44
                   Height = 42
@@ -516,7 +466,7 @@ inherited FEST0002CView: TFEST0002CView
                   ParentShowHint = False
                   ShowHint = True
                   SpeedButtonOptions.CanBeFocused = False
-                  TabOrder = 1
+                  TabOrder = 0
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
@@ -524,7 +474,7 @@ inherited FEST0002CView: TFEST0002CView
                   Font.Style = []
                   ParentFont = False
                 end
-                object cxButton3: TcxButton
+                object BtNovoFornec: TcxButton
                   AlignWithMargins = True
                   Left = 0
                   Top = 1
@@ -551,7 +501,7 @@ inherited FEST0002CView: TFEST0002CView
                   ParentShowHint = False
                   ShowHint = True
                   SpeedButtonOptions.CanBeFocused = False
-                  TabOrder = 2
+                  TabOrder = 1
                   Font.Charset = ANSI_CHARSET
                   Font.Color = clWindowText
                   Font.Height = -11
@@ -562,8 +512,170 @@ inherited FEST0002CView: TFEST0002CView
               end
             end
           end
+          object PnCampos: TPanel
+            Left = 0
+            Top = 0
+            Width = 746
+            Height = 105
+            Align = alTop
+            BevelOuter = bvNone
+            TabOrder = 1
+            DesignSize = (
+              746
+              105)
+            object cxLabel3: TcxLabel
+              Left = 1
+              Top = 33
+              Caption = 'DESCRI'#199#195'O:'
+              ParentFont = False
+              Style.Font.Charset = ANSI_CHARSET
+              Style.Font.Color = clWindowText
+              Style.Font.Height = -9
+              Style.Font.Name = 'Open Sans SemiBold'
+              Style.Font.Style = [fsBold]
+              Style.IsFontAssigned = True
+            end
+            object cxLabel6: TcxLabel
+              Left = 1
+              Top = 7
+              Caption = 'N'#186':'
+              ParentFont = False
+              Style.Font.Charset = ANSI_CHARSET
+              Style.Font.Color = clWindowText
+              Style.Font.Height = -9
+              Style.Font.Name = 'Open Sans SemiBold'
+              Style.Font.Style = [fsBold]
+              Style.IsFontAssigned = True
+            end
+            object TeDescricao: TcxMemo
+              Left = 64
+              Top = 31
+              Anchors = [akLeft, akTop, akRight]
+              Properties.CharCase = ecUpperCase
+              StyleDisabled.BorderColor = clWindowFrame
+              StyleDisabled.Color = 16119539
+              StyleDisabled.TextColor = clBlack
+              TabOrder = 2
+              Height = 72
+              Width = 673
+            end
+            object TeIdProduto: TcxTextEdit
+              Left = 64
+              Top = 4
+              Enabled = False
+              ParentFont = False
+              Style.BorderStyle = ebsSingle
+              Style.Font.Charset = ANSI_CHARSET
+              Style.Font.Color = clWindowText
+              Style.Font.Height = -11
+              Style.Font.Name = 'Open Sans'
+              Style.Font.Style = []
+              Style.IsFontAssigned = True
+              StyleDisabled.BorderColor = clWindowFrame
+              StyleDisabled.Color = 16119539
+              StyleDisabled.TextColor = clBlack
+              TabOrder = 3
+              Width = 129
+            end
+          end
         end
       end
+    end
+  end
+  object DsItens: TDataSource
+    DataSet = CdItens
+    Left = 188
+    Top = 241
+  end
+  object CdItens: TClientDataSet
+    PersistDataPacket.Data = {
+      A10000009619E0BD010000001800000005000000000003000000A10006434F44
+      49474F01004900000001000557494454480200020040000D434F4449474F5F53
+      494E415049010049000000010005574944544802000200160009444553435249
+      43414F02004900000001000557494454480200020026020A554E49444D454449
+      44410100490000000100055749445448020002000A0004515444450800040000
+      0000000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 132
+    Top = 225
+    object CdItensCODIGO: TStringField
+      FieldName = 'CODIGO'
+      Size = 64
+    end
+    object CdItensCODIGO_SINAPI: TStringField
+      Alignment = taCenter
+      FieldName = 'CODIGO_SINAPI'
+      Size = 22
+    end
+    object CdItensDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Size = 550
+    end
+    object CdItensUNIDMEDIDA: TStringField
+      FieldName = 'UNIDMEDIDA'
+      Size = 10
+    end
+    object CdItensQTDE: TFloatField
+      Alignment = taCenter
+      FieldName = 'QTDE'
+    end
+  end
+  object StGrid: TcxStyleRepository
+    Left = 80
+    Top = 216
+    PixelsPerInch = 96
+    object StHeader: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 16448507
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+    end
+    object StBackground: TcxStyle
+      AssignedValues = [svColor]
+      Color = 16119285
+    end
+    object StContentOdd: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 13630446
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object StContentEven: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = clWhite
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans'
+      Font.Style = []
+    end
+    object StSelection: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14935011
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object StInactive: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14935011
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Open Sans SemiBold'
+      Font.Style = [fsBold]
+      TextColor = clBlack
     end
   end
 end
