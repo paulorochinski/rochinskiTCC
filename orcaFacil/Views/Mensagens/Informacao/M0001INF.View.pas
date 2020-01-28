@@ -10,7 +10,8 @@ uses
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, cxControls, cxContainer,
   cxEdit, cxTextEdit,
   cxMemo, dxGDIPlusClasses, Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
-  Base.View.Interf;
+  Base.View.Interf, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Silver;
 
 type
   TFM0001INFView = class(TFMensagemView, IBaseMensagemView)

@@ -2,7 +2,8 @@ unit ConfiguracoesFactory.Model;
 
 interface
 
-uses ConfiguracoesFactory.Model.interf, ConfiguracoesConexao.Model.interf;
+uses ConfiguracoesFactory.Model.interf, ConfiguracoesConexao.Model.interf,
+  ConfiguracoesExportar.Model.interf;
 
 type
   TConfiguracoesFactoryModel = class(TInterfacedObject,
@@ -15,13 +16,14 @@ type
     class function New: IConfiguracoesFactoryModel;
 
     function conexao: IConfiguracoesConexaoModel;
+    function exportar: IConfiguracoesExportarModel;
   end;
 
 implementation
 
 { TConfiguracoesFactoryModel }
 
-uses ConfiguracoesConexao.Model;
+uses ConfiguracoesConexao.Model, ConfiguracoesExportar.Model;
 
 function TConfiguracoesFactoryModel.conexao: IConfiguracoesConexaoModel;
 begin
@@ -37,6 +39,11 @@ destructor TConfiguracoesFactoryModel.Destroy;
 begin
 
   inherited;
+end;
+
+function TConfiguracoesFactoryModel.exportar: IConfiguracoesExportarModel;
+begin
+  Result := TConfiguracoesExportarModel.New;
 end;
 
 class function TConfiguracoesFactoryModel.New: IConfiguracoesFactoryModel;

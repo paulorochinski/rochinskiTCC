@@ -25,6 +25,8 @@ type
     VwDadosIDORCAMENTO: TcxGridDBColumn;
     VwDadosDESCRICAO: TcxGridDBColumn;
     VwDadosDATA_CADASTRO: TcxGridDBColumn;
+    BtExportar: TcxButton;
+    BtEnviar: TcxButton;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure BtNovoClick(Sender: TObject);
@@ -32,6 +34,7 @@ type
     procedure BtConsultarClick(Sender: TObject);
     procedure BtExcluirClick(Sender: TObject);
     procedure BtDuplicarClick(Sender: TObject);
+    procedure BtExportarClick(Sender: TObject);
   private
     FContainer: IContainerDataSet<TTESTORCAMENTO>;
     procedure listarRegistros;
@@ -57,7 +60,7 @@ implementation
 
 {$R *.dfm}
 
-uses FacadeView, Tipos.Controller.Interf;
+uses FacadeView, Tipos.Controller.Interf, FacadeController;
 
 { TFEST0002PView }
 
@@ -101,6 +104,18 @@ begin
   inherited;
   excluirRegistro;
   listarRegistros;
+end;
+
+procedure TFEST0002PView.BtExportarClick(Sender: TObject);
+begin
+  inherited;
+  TFacadeController.New
+    .modulosFacadeController
+     .estoqueFactoryController
+      .exportarOrcamento
+       .codigoOrcamento(FdDadosCODIGO.AsString)
+       .carregarItens
+       .exportar;
 end;
 
 procedure TFEST0002PView.BtNovoClick(Sender: TObject);

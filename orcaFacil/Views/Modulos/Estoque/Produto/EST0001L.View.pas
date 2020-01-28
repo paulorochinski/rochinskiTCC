@@ -28,12 +28,24 @@ type
     FdDadosORIGEM_PRECO: TStringField;
     VwDadosIDPRODUTO: TcxGridDBColumn;
     VwDadosDESCRICAO: TcxGridDBColumn;
-    VwDadosCODIGO: TcxGridDBColumn;
+    VwDadosCODIGO_SINAPI: TcxGridDBColumn;
+    VwDadosUNIDMEDIDA: TcxGridDBColumn;
+    StGrid: TcxStyleRepository;
+    StHeader: TcxStyle;
+    StBackground: TcxStyle;
+    StContentOdd: TcxStyle;
+    StContentEven: TcxStyle;
+    StSelection: TcxStyle;
+    StInactive: TcxStyle;
     procedure FormCreate(Sender: TObject);
     procedure BtSalvarClick(Sender: TObject);
+    procedure TePesquisaPropertiesChange(Sender: TObject);
   private
+    FCampoOrdem: string;
     FContainer: IContainerDataSet<TTESTPRODUTO>;
     FCodigoSelecionado: string;
+
+    procedure filtrarRegistros;
   public
     { Public declarations }
 
@@ -69,20 +81,39 @@ begin
   Result := FCodigoSelecionado;
 end;
 
+procedure TFEST0001LView.filtrarRegistros;
+begin
+  FdDados.Filtered := false;
+
+  if not(TePesquisa.Text = EmptyStr) then
+  begin
+    FdDados.Filter := UpperCase(FCampoOrdem) + ' Like ''%' +
+      AnsiUpperCase(TePesquisa.Text) + '%''';
+    FdDados.Filtered := True;
+  end;
+end;
+
 procedure TFEST0001LView.FormCreate(Sender: TObject);
 begin
   inherited;
   FContainer := TContainerFDMemTable<TTESTPRODUTO>.Create(FConexao, FdDados);
+  FCampoOrdem := 'DESCRICAO';
 end;
 
 procedure TFEST0001LView.listarRegistros;
 begin
-  FContainer.OpenWhere('', 'DESCRICAO');
+  FContainer.OpenWhere('', FCampoOrdem);
 end;
 
 class function TFEST0001LView.New: IBaseLocalizarView;
 begin
   Result := Self.Create(nil);
+end;
+
+procedure TFEST0001LView.TePesquisaPropertiesChange(Sender: TObject);
+begin
+  inherited;
+  filtrarRegistros;
 end;
 
 end.

@@ -40,21 +40,21 @@ inherited FPesquisaView: TFPesquisaView
       end
       inherited Panel4: TPanel
         Width = 515
-        Height = 170
+        Height = 150
         ExplicitWidth = 515
-        ExplicitHeight = 170
+        ExplicitHeight = 150
         inherited Panel5: TPanel
           Top = 45
           Width = 513
-          Height = 124
+          Height = 104
           ExplicitTop = 45
           ExplicitWidth = 513
-          ExplicitHeight = 124
+          ExplicitHeight = 104
           object DbDados: TcxGrid
             Left = 0
             Top = 0
             Width = 513
-            Height = 124
+            Height = 104
             Align = alClient
             BevelInner = bvNone
             BevelOuter = bvNone
@@ -97,7 +97,7 @@ inherited FPesquisaView: TFPesquisaView
           Height = 44
           Align = alTop
           BevelOuter = bvNone
-          Color = 14935011
+          Color = 15921906
           ParentBackground = False
           TabOrder = 1
           object BtAlterar: TcxButton
@@ -299,7 +299,7 @@ inherited FPesquisaView: TFPesquisaView
             Margins.Bottom = 8
             Align = alRight
             BevelOuter = bvNone
-            Color = 15658986
+            Color = 16250871
             ParentBackground = False
             TabOrder = 5
             object ImPesquisa: TImage
@@ -330,7 +330,7 @@ inherited FPesquisaView: TFPesquisaView
               Properties.OnChange = TePesquisaPropertiesChange
               Style.BorderColor = 14537936
               Style.BorderStyle = ebsNone
-              Style.Color = 15658986
+              Style.Color = 16250871
               Style.Font.Charset = ANSI_CHARSET
               Style.Font.Color = clWindowText
               Style.Font.Height = -12

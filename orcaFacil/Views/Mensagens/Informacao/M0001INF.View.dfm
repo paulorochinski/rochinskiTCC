@@ -14,10 +14,8 @@ inherited FM0001INFView: TFM0001INFView
           Caption = 'Informa'#231#227'o'
           Style.IsFontAssigned = True
           ExplicitWidth = 118
-          ExplicitHeight = 32
         end
         inherited PnIconeTitulo: TPanel
-          ExplicitHeight = 34
           inherited ImIconeTitulo: TImage
             Picture.Data = {
               0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000020
@@ -37,13 +35,10 @@ inherited FM0001INFView: TFM0001INFView
         end
       end
       inherited Panel4: TPanel
-        ExplicitTop = 35
-        ExplicitHeight = 90
         inherited Panel5: TPanel
-          ExplicitHeight = 88
           inherited MmMensagem: TcxMemo
             Style.IsFontAssigned = True
-            ExplicitHeight = 88
+            StyleDisabled.TextColor = clBlack
           end
         end
       end

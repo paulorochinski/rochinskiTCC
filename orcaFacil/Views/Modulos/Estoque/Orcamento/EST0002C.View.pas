@@ -69,8 +69,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure BtSalvarClick(Sender: TObject);
     procedure BtNovoItemClick(Sender: TObject);
+    procedure BtExcluirItemClick(Sender: TObject);
   private
-    FContainer: IContainerDataSet<TTESTORCAMENTOITENS>;
     FOrcamento: IOrcamentoController;
     FProdutoController: IProdutoController;
     FRegistro: string;
@@ -147,6 +147,12 @@ begin
    CdItensUNIDMEDIDA.AsString := FProdutoController.unidMedida;
    CdItensQTDE.AsFloat := AQtde;
    CdItens.Post;
+end;
+
+procedure TFEST0002CView.BtExcluirItemClick(Sender: TObject);
+begin
+  inherited;
+  CdItens.Delete;
 end;
 
 procedure TFEST0002CView.BtNovoItemClick(Sender: TObject);
@@ -274,17 +280,29 @@ begin
 
     toAlterar:
       begin
+        carregarItens;
 
+        FOrcamento
+         .Alterar
+         .descricao(TeDescricao.Text)
+         .finalizar;
       end;
 
     toExcluir:
       begin
-
+        FOrcamento
+         .Excluir
+         .finalizar;
       end;
 
     toDuplicar:
       begin
+        carregarItens;
 
+        FOrcamento
+         .Duplicar
+         .descricao(TeDescricao.Text)
+         .finalizar;
       end;
   end;
 end;

@@ -4,7 +4,7 @@ interface
 
 uses Orcamento.Controller.interf, Orcamento.Model.interf,
   OrcamentoItens.Model.interf, TESTORCAMENTOITENS.Entidade.Model,
-  Generics.Collections, TESTORCAMENTO.Entidade.Model, FireDAC.Stan.Param, 
+  Generics.Collections, TESTORCAMENTO.Entidade.Model, FireDAC.Stan.Param,
   FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
@@ -46,7 +46,9 @@ implementation
 
 { TOrcamentoController }
 
-uses FacadeController, FacadeModel, OrcamentoOperacaoIncluir.Controller;
+uses FacadeController, FacadeModel, OrcamentoOperacaoIncluir.Controller,
+  OrcamentoOperacaoAlterar.Controller, OrcamentoOperacaoExcluir.Controller,
+  OrcamentoOperacaoDuplicar.Controller;
 
 procedure TOrcamentoController.AddItem(AValue: TOrcamentoItens);
 begin
@@ -55,7 +57,9 @@ end;
 
 function TOrcamentoController.Alterar: IOrcamentoOperacaoAlterarController;
 begin
-
+  Result := TOrcamentoOperacaoAlterarController.New.orcamentoModel
+    (FOrcamentoModel).orcamentoItensModel(FOrcamentoItensModel)
+    .orcamentoSelecionado(FRegistro).itens(FItens)
 end;
 
 constructor TOrcamentoController.Create;
@@ -82,12 +86,15 @@ end;
 
 function TOrcamentoController.Duplicar: IOrcamentoOperacaoDuplicarController;
 begin
-
+  Result := TOrcamentoOperacaoDuplicarController.New.orcamentoModel
+    (FOrcamentoModel).orcamentoItensModel(FOrcamentoItensModel).itens(FItens)
 end;
 
 function TOrcamentoController.Excluir: IOrcamentoOperacaoExcluirController;
 begin
-
+  Result := TOrcamentoOperacaoExcluirController.New.orcamentoModel
+    (FOrcamentoModel).orcamentoItensModel(FOrcamentoItensModel)
+    .orcamentoSelecionado(FRegistro)
 end;
 
 function TOrcamentoController.idOrcamento: string;
@@ -127,7 +134,7 @@ begin
   FRegistro := FOrcamentoModel.DAO.FindWhere('CODIGO=' + QuotedStr(AValue),
     'DATA_CADASTRO').Items[0];
 
-  FQueryItens := FOrcamentoModel.queryItensOrcamento(FRegistro.CODIGO);  
+  FQueryItens := FOrcamentoModel.queryItensOrcamento(FRegistro.CODIGO);
 end;
 
 class function TOrcamentoController.New: IOrcamentoController;

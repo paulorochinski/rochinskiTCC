@@ -91,6 +91,9 @@ begin
   FDQuery.SQL.Add
     (Format('  select                                           ' +
     'b.codigo,                                                  ' +
+    'b.codigo_sinapi,                                           ' +
+    'b.descricao,                                               ' +
+    'b.unidmedida,                                              ' +
     'a.qtde                                                     ' +
     'from                                                       ' +
     'testorcamentoitens a                                       ' +

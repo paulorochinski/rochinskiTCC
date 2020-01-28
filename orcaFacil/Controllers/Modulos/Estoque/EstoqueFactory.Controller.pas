@@ -3,7 +3,8 @@ unit EstoqueFactory.Controller;
 interface
 
 uses EstoqueFactory.Controller.interf, Produto.Controller.interf,
-  ImportarProduto.Controller.interf, Orcamento.Controller.interf;
+  ImportarProduto.Controller.interf, Orcamento.Controller.interf,
+  ExportarOrcamento.Controller.interf;
 
 type
   TEstoqueFactory = class(TInterfacedObject, IEstoqueFactoryController)
@@ -17,6 +18,7 @@ type
     function Produto: IProdutoController;
     function ImportarProduto: IImportarProdutoController;
     function Orcamento: IOrcamentoController;
+    function ExportarOrcamento: IExportarOrcamento;
 
   end;
 
@@ -24,7 +26,8 @@ implementation
 
 { TEstoqueFactory }
 
-uses Produto.Controller, ImportarProduto.Controller, Orcamento.Controller;
+uses Produto.Controller, ImportarProduto.Controller, Orcamento.Controller,
+  ExportarOrcamento.Controller;
 
 constructor TEstoqueFactory.Create;
 begin
@@ -35,6 +38,11 @@ destructor TEstoqueFactory.Destroy;
 begin
 
   inherited;
+end;
+
+function TEstoqueFactory.ExportarOrcamento: IExportarOrcamento;
+begin
+  Result := TExportarOrcamento.New;
 end;
 
 function TEstoqueFactory.ImportarProduto: IImportarProdutoController;

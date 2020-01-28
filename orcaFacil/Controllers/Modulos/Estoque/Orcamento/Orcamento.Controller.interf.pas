@@ -3,7 +3,7 @@ unit Orcamento.Controller.interf;
 interface
 
 uses TESTORCAMENTOITENS.Entidade.Model, Generics.Collections, Orcamento.Model.Interf,
-  OrcamentoItens.Model.Interf;
+  OrcamentoItens.Model.Interf, TESTORCAMENTO.Entidade.Model;
 
 type
   TOrcamentoItens = record
@@ -34,13 +34,6 @@ type
     procedure removeAllItens;
   end;
 
-  IOrcamentoItemController = interface
-    ['{862A5A15-4353-49DF-AB9C-6C9AFDE16DEF}']
-    function codigoItem(AValue: string): IOrcamentoItemController;
-    function qtde(AValue: Double): IOrcamentoItemController;
-    function finalizar: TOrcamentoItens;
-  end;
-
   IOrcamentoOperacaoIncluirController = interface
     ['{83D617C7-833C-49A9-916D-C1ECF73C3F75}']
     function orcamentoModel(AValue: IOrcamentoModel): IOrcamentoOperacaoIncluirController;
@@ -54,14 +47,36 @@ type
 
   IOrcamentoOperacaoAlterarController = interface
     ['{88400D99-E02B-4FE7-BE4F-E2C3062FA4CE}']
+    function orcamentoModel(AValue: IOrcamentoModel): IOrcamentoOperacaoAlterarController;
+    function orcamentoItensModel(AValue: IOrcamentoItensModel): IOrcamentoOperacaoAlterarController;
+
+    function orcamentoSelecionado(AValue: TTESTORCAMENTO): IOrcamentoOperacaoAlterarController;
+
+    function descricao(AValue: string): IOrcamentoOperacaoAlterarController;
+    function itens(AValue: TList<TOrcamentoItens>): IOrcamentoOperacaoAlterarController;
+
+    procedure finalizar;
   end;
 
   IOrcamentoOperacaoExcluirController = interface
     ['{0F9E14BA-EE3D-4E57-8247-6EB02FD15996}']
+    function orcamentoModel(AValue: IOrcamentoModel): IOrcamentoOperacaoExcluirController;
+    function orcamentoItensModel(AValue: IOrcamentoItensModel): IOrcamentoOperacaoExcluirController;
+
+    function orcamentoSelecionado(AValue: TTESTORCAMENTO): IOrcamentoOperacaoExcluirController;
+
+    procedure finalizar;
   end;
 
   IOrcamentoOperacaoDuplicarController = interface
     ['{B14AE514-4A2F-454F-9298-DEA1B82F421E}']
+    function orcamentoModel(AValue: IOrcamentoModel): IOrcamentoOperacaoDuplicarController;
+    function orcamentoItensModel(AValue: IOrcamentoItensModel): IOrcamentoOperacaoDuplicarController;
+
+    function descricao(AValue: string): IOrcamentoOperacaoDuplicarController;
+    function itens(AValue: TList<TOrcamentoItens>): IOrcamentoOperacaoDuplicarController;
+
+    procedure finalizar;
   end;
 
 implementation

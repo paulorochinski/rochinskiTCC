@@ -88,7 +88,14 @@ uses
   EST0002P.View in 'Views\Modulos\Estoque\Orcamento\EST0002P.View.pas' {FEST0002PView},
   EST0002C.View in 'Views\Modulos\Estoque\Orcamento\EST0002C.View.pas' {FEST0002CView},
   LocalizarBase.View in 'Views\Base\LocalizarBase.View.pas' {FLocalizarView},
-  EST0001L.View in 'Views\Modulos\Estoque\Produto\EST0001L.View.pas' {FEST0001LView};
+  EST0001L.View in 'Views\Modulos\Estoque\Produto\EST0001L.View.pas' {FEST0001LView},
+  OrcamentoOperacaoAlterar.Controller in 'Controllers\Modulos\Estoque\Orcamento\Operacoes\OrcamentoOperacaoAlterar.Controller.pas',
+  OrcamentoOperacaoExcluir.Controller in 'Controllers\Modulos\Estoque\Orcamento\Operacoes\OrcamentoOperacaoExcluir.Controller.pas',
+  OrcamentoOperacaoDuplicar.Controller in 'Controllers\Modulos\Estoque\Orcamento\Operacoes\OrcamentoOperacaoDuplicar.Controller.pas',
+  ConfiguracoesExportar.Model.interf in 'Models\Configuracoes\Exportar\ConfiguracoesExportar.Model.interf.pas',
+  ConfiguracoesExportar.Model in 'Models\Configuracoes\Exportar\ConfiguracoesExportar.Model.pas',
+  ExportarOrcamento.Controller.interf in 'Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.interf.pas',
+  ExportarOrcamento.Controller in 'Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.pas';
 
 {$R *.res}
 
