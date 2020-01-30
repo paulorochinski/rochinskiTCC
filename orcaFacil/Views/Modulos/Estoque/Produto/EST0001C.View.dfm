@@ -297,7 +297,7 @@ inherited FEST0001CView: TFEST0001CView
   end
   object cxLabel8: TcxLabel
     Left = 338
-    Top = 196
+    Top = 216
     Caption = 'PRE'#199'O M'#201'DIO:'
     ParentFont = False
     Style.Font.Charset = ANSI_CHARSET
@@ -309,7 +309,7 @@ inherited FEST0001CView: TFEST0001CView
   end
   object TePrecoMedio: TcxTextEdit
     Left = 428
-    Top = 193
+    Top = 213
     ParentFont = False
     Properties.CharCase = ecUpperCase
     Style.Font.Charset = ANSI_CHARSET

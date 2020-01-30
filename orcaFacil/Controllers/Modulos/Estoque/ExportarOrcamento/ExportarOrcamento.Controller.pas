@@ -16,6 +16,7 @@ type
   private
     FOrcamentoModel: IOrcamentoModel;
     FConfigExportacaoModel: IConfiguracoesExportarModel;
+    FArquivoNome: String;
     FArquivo: TextFile;
     FCodigoSinap: string;
     FDescricao: string;
@@ -79,13 +80,15 @@ procedure TExportarOrcamento.exportar;
 var
  vLinha, vCabecalho: string;
 begin
-  AssignFile(FArquivo, FConfigExportacaoModel.diretorioExportarOrcamentoCsv+'\Orcamento.csv');
+  FArquivoNome :=  FConfigExportacaoModel.diretorioExportarOrcamentoCsv+'\Orcamento.csv';
+
+  AssignFile(FArquivo, FArquivoNome);
 
   Rewrite(FArquivo);
 
   FLista.First;
 
-  vCabecalho := 'Codigo Sinapi|Descricao|Unid Medida|Qtde|Preco Unitario|Total';
+  vCabecalho := 'Codigo Sinapi;Descricao;Unid Medida;Qtde;Preco Unitario;Total';
   Writeln(FArquivo, vCabecalho);
 
   while not(FLista.Eof) do
@@ -97,7 +100,7 @@ begin
     FPreco       := '     ';
     FTotal       := '     ';
 
-    vLinha := FCodigoSinap +'|'+FDescricao+'|'+FUnidMedida+'|'+FQtde+'|'+FPreco+'|'+FTotal;
+    vLinha := FCodigoSinap +';'+FDescricao+';'+FUnidMedida+';'+FQtde+';'+FPreco+';'+FTotal;
 
     Writeln(FArquivo, vLinha);
 
@@ -109,7 +112,7 @@ begin
   TFacadeView.New
     .MensagensFactory
     .exibirMensagem(tmInformacao)
-    .mensagem('Exportação concluída!')
+    .mensagem(Format('Exportação concluída! Arquivo salvo em: %s ', [FArquivoNome]))
     .exibir;
 end;
 

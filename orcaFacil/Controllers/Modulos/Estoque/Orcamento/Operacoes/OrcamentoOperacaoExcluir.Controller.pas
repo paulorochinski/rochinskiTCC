@@ -16,7 +16,9 @@ type
 
     FRegistro: TTESTORCAMENTO;
 
-    procedure removerItens;
+    procedure removerOrcamento;
+    procedure removerItensOrcamento;
+    procedure removerFornecedoresOrcamento;
   public
     constructor Create;
     destructor Destroy; override;
@@ -59,9 +61,9 @@ begin
       .mensagem(Format('Deseja excluir o orçamento Nº: %s ?', [FRegistro.IDORCAMENTO.ToString]))
       .exibir then
   begin
-    removerItens;
-
-    FOrcamentoModel.DAO.Delete(FRegistro);
+    {1} removerFornecedoresOrcamento;
+    {2} removerItensOrcamento;
+    {3} removerOrcamento;
   end;
 end;
 
@@ -92,13 +94,27 @@ begin
    FRegistro := AValue;
 end;
 
-procedure TOrcamentoOperacaoExcluirController.removerItens;
+procedure TOrcamentoOperacaoExcluirController.removerFornecedoresOrcamento;
+begin
+   FConexao
+    .ExecuteDirect(
+      Format('Delete from TEstOrcamentoFornecedores Where IdOrcamento = %s',
+        [QuotedStr(FRegistro.CODIGO)]
+        ));
+end;
+
+procedure TOrcamentoOperacaoExcluirController.removerItensOrcamento;
 begin
    FConexao
     .ExecuteDirect(
       Format('Delete from TEstOrcamentoItens Where IdOrcamento = %s',
         [QuotedStr(FRegistro.CODIGO)]
         ));
+end;
+
+procedure TOrcamentoOperacaoExcluirController.removerOrcamento;
+begin
+    FOrcamentoModel.DAO.Delete(FRegistro);
 end;
 
 end.

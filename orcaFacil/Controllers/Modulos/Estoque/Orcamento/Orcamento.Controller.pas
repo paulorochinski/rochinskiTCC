@@ -10,17 +10,22 @@ uses Orcamento.Controller.interf, Orcamento.Model.interf,
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FBDef,
   FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.IBBase, FireDAC.Phys.FB,
-  Data.DB, FireDAC.Comp.Client, System.SysUtils;
+  Data.DB, FireDAC.Comp.Client, System.SysUtils, OrcamentoFornecedores.Model.Interf;
 
 type
   TOrcamentoController = class(TInterfacedObject, IOrcamentoController)
   private
     FOrcamentoModel: IOrcamentoModel;
     FOrcamentoItensModel: IOrcamentoItensModel;
+    FOrcamentoFornecedoresModel: IOrcamentoFornecedoresModel;
 
     FRegistro: TTESTORCAMENTO;
+
     FItens: TList<TOrcamentoItens>;
+    FFornecedores: TList<TOrcamentoFornecedores>;
+
     FQueryItens: TFDQuery;
+    FQueryFornecedores: TFDQuery;
   public
     constructor Create;
     destructor Destroy; override;
@@ -39,7 +44,12 @@ type
 
     function itens: TList<TOrcamentoItens>;
     procedure AddItem(AValue: TOrcamentoItens);
-    procedure removeAllItens;
+
+    function fornecedores: TList<TOrcamentoFornecedores>;
+    procedure AddFornecedor(AValue: TOrcamentoFornecedores);
+
+    procedure removerTodosOsItens;
+    procedure removerTodosOsFornecedores;
   end;
 
 implementation
@@ -50,6 +60,11 @@ uses FacadeController, FacadeModel, OrcamentoOperacaoIncluir.Controller,
   OrcamentoOperacaoAlterar.Controller, OrcamentoOperacaoExcluir.Controller,
   OrcamentoOperacaoDuplicar.Controller;
 
+procedure TOrcamentoController.AddFornecedor(AValue: TOrcamentoFornecedores);
+begin
+ FFornecedores.Add(AValue);
+end;
+
 procedure TOrcamentoController.AddItem(AValue: TOrcamentoItens);
 begin
   FItens.Add(AValue);
@@ -57,9 +72,13 @@ end;
 
 function TOrcamentoController.Alterar: IOrcamentoOperacaoAlterarController;
 begin
-  Result := TOrcamentoOperacaoAlterarController.New.orcamentoModel
-    (FOrcamentoModel).orcamentoItensModel(FOrcamentoItensModel)
-    .orcamentoSelecionado(FRegistro).itens(FItens)
+  Result := TOrcamentoOperacaoAlterarController.New
+             .orcamentoModel(FOrcamentoModel)
+              .orcamentoItensModel(FOrcamentoItensModel)
+               .orcamentoFornecedoresModel(FOrcamentoFornecedoresModel)
+                .orcamentoSelecionado(FRegistro)
+                 .itens(FItens)
+                 .fornecedores(FFornecedores)
 end;
 
 constructor TOrcamentoController.Create;
@@ -70,7 +89,11 @@ begin
   FOrcamentoItensModel := TFacadeModel.New.ModulosFacadeModel.
     estoqueFactoryModel.OrcamentoItens;
 
+  FOrcamentoFornecedoresModel := TFacadeModel.New.ModulosFacadeModel.
+    estoqueFactoryModel.orcamentoFornecedores;
+
   FItens := TList<TOrcamentoItens>.Create;
+  FFornecedores := TList<TOrcamentoFornecedores>.Create;
 end;
 
 function TOrcamentoController.descricao: string;
@@ -86,15 +109,38 @@ end;
 
 function TOrcamentoController.Duplicar: IOrcamentoOperacaoDuplicarController;
 begin
-  Result := TOrcamentoOperacaoDuplicarController.New.orcamentoModel
-    (FOrcamentoModel).orcamentoItensModel(FOrcamentoItensModel).itens(FItens)
+  Result := TOrcamentoOperacaoDuplicarController.New
+             .orcamentoModel(FOrcamentoModel)
+              .orcamentoItensModel(FOrcamentoItensModel)
+               .orcamentoFornecedoresModel(FOrcamentoFornecedoresModel)
+                .itens(FItens)
+                .fornecedores(FFornecedores)
 end;
 
 function TOrcamentoController.Excluir: IOrcamentoOperacaoExcluirController;
 begin
-  Result := TOrcamentoOperacaoExcluirController.New.orcamentoModel
-    (FOrcamentoModel).orcamentoItensModel(FOrcamentoItensModel)
-    .orcamentoSelecionado(FRegistro)
+  Result := TOrcamentoOperacaoExcluirController.New
+             .orcamentoModel(FOrcamentoModel)
+              .orcamentoItensModel(FOrcamentoItensModel)
+               .orcamentoSelecionado(FRegistro)
+end;
+
+function TOrcamentoController.fornecedores: TList<TOrcamentoFornecedores>;
+var VFornecedor: TOrcamentoFornecedores;
+begin
+  FFornecedores.Clear;
+
+  FQueryFornecedores.First;
+  while not(FQueryFornecedores.Eof) do
+  begin
+    VFornecedor.codigo := FQueryFornecedores.FieldByName('CODIGO').AsString;
+
+    FFornecedores.Add(VFornecedor);
+
+    FQueryFornecedores.Next;
+  end;
+
+  Result := FFornecedores;
 end;
 
 function TOrcamentoController.idOrcamento: string;
@@ -104,8 +150,12 @@ end;
 
 function TOrcamentoController.Incluir: IOrcamentoOperacaoIncluirController;
 begin
-  Result := TOrcamentoOperacaoIncluirController.New.orcamentoModel
-    (FOrcamentoModel).orcamentoItensModel(FOrcamentoItensModel).itens(FItens)
+  Result := TOrcamentoOperacaoIncluirController.New
+             .orcamentoModel(FOrcamentoModel)
+              .orcamentoItensModel(FOrcamentoItensModel)
+               .orcamentoFornecedoresModel(FOrcamentoFornecedoresModel)
+                .itens(FItens)
+                .fornecedores(FFornecedores)
 end;
 
 function TOrcamentoController.itens: TList<TOrcamentoItens>;
@@ -135,6 +185,7 @@ begin
     'DATA_CADASTRO').Items[0];
 
   FQueryItens := FOrcamentoModel.queryItensOrcamento(FRegistro.CODIGO);
+  FQueryFornecedores := FOrcamentoModel.queryFornecedoresOrcamento(FRegistro.CODIGO);
 end;
 
 class function TOrcamentoController.New: IOrcamentoController;
@@ -142,7 +193,12 @@ begin
   Result := Self.Create;
 end;
 
-procedure TOrcamentoController.removeAllItens;
+procedure TOrcamentoController.removerTodosOsFornecedores;
+begin
+ FFornecedores.Clear;
+end;
+
+procedure TOrcamentoController.removerTodosOsItens;
 begin
   FItens.Clear;
 end;

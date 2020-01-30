@@ -18,6 +18,7 @@ type
     FEntidade: TTESTORCAMENTO;
     FDao: IContainerObjectSet<TTESTORCAMENTO>;
     FDQuery: TFDQuery;
+    FDQueryFornec: TFDQuery;
 
   public
     constructor Create;
@@ -33,6 +34,7 @@ type
     function query: TFDQuery;
 
     function queryItensOrcamento(ACodOrcamento: string): TFDQuery;
+    function queryFornecedoresOrcamento(ACodOrcamento: string): TFDQuery;
   end;
 
 implementation
@@ -49,8 +51,12 @@ begin
   FDao := TContainerObjectSet<TTESTORCAMENTO>.Create(FConexao, 1);
 
   FDQuery := TFDQuery.Create(nil);
+  FDQueryFornec := TFDQuery.Create(nil);
 
   FDQuery.Connection := TFacadeModel.New.conexaoFactoryModel.
+    conexaoComBancoDeDados(dbFirebird).ConexaoFireDac;
+
+  FDQueryFornec.Connection := TFacadeModel.New.conexaoFactoryModel.
     conexaoComBancoDeDados(dbFirebird).ConexaoFireDac;
 end;
 
@@ -86,8 +92,28 @@ begin
   Result := FDQuery;
 end;
 
+function TOrcamentoModel.queryFornecedoresOrcamento(ACodOrcamento: string): TFDQuery;
+begin
+  FDQueryFornec.SQL.Clear;
+  FDQueryFornec.Active := False;
+
+  FDQueryFornec.SQL.Add(Format('select                                   ' +
+    'b.codigo                                                      ' +
+    'from                                                          ' +
+    'testorcamentofornecedores a                                   ' +
+    'inner join tpagfornecedor b on (b.codigo = a.idfornecedor)    ' +
+    'where a.idorcamento = %s ', [QuotedStr(ACodOrcamento)]));
+
+  FDQueryFornec.Active := True;
+
+  Result := FDQueryFornec;
+end;
+
 function TOrcamentoModel.queryItensOrcamento(ACodOrcamento: string): TFDQuery;
 begin
+  FDQuery.SQL.Clear;
+  FDQuery.Active := False;
+
   FDQuery.SQL.Add
     (Format('  select                                           ' +
     'b.codigo,                                                  ' +

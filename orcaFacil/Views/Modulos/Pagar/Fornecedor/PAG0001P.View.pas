@@ -21,7 +21,8 @@ uses
   dxGDIPlusClasses, Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
   Base.View.Interf, ormbr.container.DataSet.interfaces,
   TPAGFORNECEDOR.Entidade.Model, ormbr.container.fdmemtable, dxSkinDevExpressDarkStyle,
-  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFPAG0001PView = class(TFPesquisaView, IBasePesquisaView)
@@ -45,6 +46,7 @@ type
     procedure BtConsultarClick(Sender: TObject);
     procedure BtExcluirClick(Sender: TObject);
     procedure BtDuplicarClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     FContainer: IContainerDataSet<TTPAGFORNECEDOR>;
 
@@ -171,6 +173,42 @@ begin
   inherited;
   FContainer := TContainerFDMemTable<TTPAGFORNECEDOR>.Create(FConexao, FdDados);
 end;
+
+procedure TFPAG0001PView.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  inherited;
+
+  case Key of
+    VK_F5:
+      begin
+        incluirRegistro;
+        listarRegistros;
+      end;
+
+    VK_F6:
+      begin
+        alterarRegistro;
+        listarRegistros;
+      end;
+
+    VK_F7:
+      begin
+        consultarRegistro;
+        listarRegistros;
+      end;
+
+    VK_F8:
+      begin
+        excluirRegistro;
+        listarRegistros;
+      end;
+
+    VK_F9:
+      begin
+        duplicarRegistro;
+        listarRegistros;
+      end;
+  end;end;
 
 procedure TFPAG0001PView.FormShow(Sender: TObject);
 begin

@@ -20,6 +20,7 @@ type
     function query: TFDQuery;
 
     function queryItensOrcamento(ACodOrcamento: string): TFDQuery;
+    function queryFornecedoresOrcamento(ACodOrcamento: string): TFDQuery;
   end;
 
 implementation

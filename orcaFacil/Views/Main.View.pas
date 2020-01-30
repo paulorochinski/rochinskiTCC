@@ -10,7 +10,7 @@ uses
   dxRibbonCustomizationForm, dxStatusBar, dxRibbonStatusBar, cxClasses,
   dxRibbon, dxBar, dxBarApplicationMenu, Vcl.ExtCtrls, dxSkinDevExpressDarkStyle,
   dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
-  dxSkinsForm;
+  dxSkinsForm, cxContainer, cxEdit, cxLabel, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFPrincipalView = class(TForm)

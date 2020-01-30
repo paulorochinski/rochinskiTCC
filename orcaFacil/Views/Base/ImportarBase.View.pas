@@ -16,7 +16,7 @@ uses
   cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGrid, Datasnap.DBClient, dxGDIPlusClasses,
   dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue,
-  dxSkinOffice2007Silver;
+  dxSkinOffice2007Silver, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFImportarView = class(TFBaseView)
@@ -78,6 +78,7 @@ begin
   for I := 0 to Pred(tamanhoTexto) do
   begin
     AValue := StringReplace(AValue, '  ', '', [rfReplaceAll, rfIgnoreCase]);
+    AValue := StringReplace(AValue, ';', '', [rfReplaceAll, rfIgnoreCase]);
   end;
 
   Result := AValue;

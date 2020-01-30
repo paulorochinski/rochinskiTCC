@@ -23,7 +23,8 @@ uses
   TESTORCAMENTOITENS.Entidade.Model, ormbr.container.DataSet.interfaces,
   ormbr.container.fdmemtable, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, FireDAC.Stan.Async, FireDAC.DApt;
+  FireDAC.Comp.Client, FireDAC.Stan.Async, FireDAC.DApt, dxSkinOffice2016Colorful,
+  dxSkinOffice2016Dark, Fornecedor.Controller.Interf;
 
 type
   TFEST0002CView = class(TFCadastroView, IBaseCadastroView)
@@ -39,10 +40,10 @@ type
     DbDados: TcxGrid;
     VwDados: TcxGridDBTableView;
     LvDados: TcxGridLevel;
-    TbFornecedor: TcxTabSheet;
-    cxGrid1: TcxGrid;
-    cxGridDBTableView1: TcxGridDBTableView;
-    cxGridLevel1: TcxGridLevel;
+    TbFornecedores: TcxTabSheet;
+    DbDadosFornec: TcxGrid;
+    VwDadosFornec: TcxGridDBTableView;
+    LvDadosFornec: TcxGridLevel;
     Panel6: TPanel;
     BtExcluirFornec: TcxButton;
     BtNovoFornec: TcxButton;
@@ -66,15 +67,30 @@ type
     StInactive: TcxStyle;
     PnCampos: TPanel;
     GrdItens: TPanel;
+    DsFornecedores: TDataSource;
+    VwDadosFornecIDFORNECEDOR: TcxGridDBColumn;
+    VwDadosFornecNOMEFANTASIA: TcxGridDBColumn;
+    CdFornecedores: TClientDataSet;
+    CdFornecedoresCODIGO: TStringField;
+    CdFornecedoresIDFORNECEDOR: TStringField;
+    CdFornecedoresNOMEFANTASIA: TStringField;
     procedure FormCreate(Sender: TObject);
     procedure BtSalvarClick(Sender: TObject);
     procedure BtNovoItemClick(Sender: TObject);
     procedure BtExcluirItemClick(Sender: TObject);
+    procedure BtNovoFornecClick(Sender: TObject);
+    procedure BtExcluirFornecClick(Sender: TObject);
   private
     FOrcamento: IOrcamentoController;
     FProdutoController: IProdutoController;
+    FFornecedorController: IFornecedorController;
     FRegistro: string;
+
     FItens: TList<TOrcamentoItens>;
+    FFornecedores: TList<TOrcamentoFornecedores>;
+
+    procedure exibirFornecedoresNaTela;
+    procedure exibirItensNaTela;
 
     procedure salvarDados;
     procedure exibirDadosNaTela;
@@ -82,12 +98,17 @@ type
 
     procedure addItem(AValue: string); overload;
     procedure addItem(AValue: string; AQtde: Double); overload;
+
+    procedure addForncedor(AValue: string);
+
     procedure carregarItens;
+    procedure carregarFornecedores;
   public
     class function New: IBaseCadastroView;
 
     function operacao(AValue: TTipoOperacao): IBaseCadastroView;
     function registroSelecionado(AValue: string): IBaseCadastroView;
+
     procedure &executar;
   end;
 
@@ -125,20 +146,36 @@ begin
    CdItens.Post;
 end;
 
+procedure TFEST0002CView.addForncedor(AValue: string);
+begin
+   if AValue = EmptyStr then Exit;
+
+   FFornecedorController.localizar(AValue);
+
+
+   if CdFornecedores.Locate('CODIGO', AValue, []) then begin
+     TFacadeView
+      .New
+       .MensagensFactory
+        .exibirMensagem(tmAlerta)
+        .mensagem(Format('Já foi informado o fornecedor %s', [CdFornecedoresNOMEFANTASIA.AsString]))
+       .exibir;
+
+     Exit;
+   end;
+
+   CdFornecedores.Insert;
+   CdFornecedoresCODIGO.AsString := AValue;
+   CdFornecedoresIDFORNECEDOR.AsString := FFornecedorController.idFornecedor;
+   CdFornecedoresNOMEFANTASIA.AsString := FFornecedorController.nomeFantasia;
+   CdFornecedores.Post;
+end;
+
 procedure TFEST0002CView.addItem(AValue: string; AQtde: Double);
 begin
    if AValue = EmptyStr then Exit;
 
    FProdutoController.localizar(AValue);
-
-
-   if CdItens.Locate('CODIGO', AValue, []) then begin
-     CdItens.Edit;
-     CdItensQTDE.AsFloat := CdItensQTDE.AsFloat + 1;
-     CdItens.Post;
-
-     Exit;
-   end;
 
    CdItens.Insert;
    CdItensCODIGO.AsString := AValue;
@@ -149,19 +186,42 @@ begin
    CdItens.Post;
 end;
 
+procedure TFEST0002CView.BtExcluirFornecClick(Sender: TObject);
+begin
+  inherited;
+  CdFornecedores.Delete;
+end;
+
 procedure TFEST0002CView.BtExcluirItemClick(Sender: TObject);
 begin
   inherited;
-  CdItens.Delete;
+ CdItens.Delete;
+end;
+
+procedure TFEST0002CView.BtNovoFornecClick(Sender: TObject);
+begin
+  inherited;
+
+  addForncedor(
+     TFacadeView.New
+      .ModulosFacadeView
+       .PagarFactoryView
+        .exibirTelaBusca(tbFornecedor)
+        .exibir
+        );
 end;
 
 procedure TFEST0002CView.BtNovoItemClick(Sender: TObject);
 begin
   inherited;
 
-  addItem(TFacadeView.New.ModulosFacadeView.EstoqueFactoryView.
-    exibirTelaBusca(tbProduto).exibir);
-
+  addItem(
+    TFacadeView.New
+     .ModulosFacadeView
+     .EstoqueFactoryView
+     .exibirTelaBusca(tbProduto)
+     .exibir
+     );
 end;
 
 procedure TFEST0002CView.BtSalvarClick(Sender: TObject);
@@ -197,10 +257,26 @@ begin
   ShowModal;
 end;
 
+procedure TFEST0002CView.carregarFornecedores;
+var VFornecedor: TOrcamentoFornecedores;
+begin
+  FOrcamento.removerTodosOsFornecedores;
+
+  CdFornecedores.First;
+  while not (CdFornecedores.Eof) do
+  begin
+    VFornecedor.codigo := CdFornecedoresCODIGO.AsString;
+  
+    FOrcamento.AddFornecedor(VFornecedor);
+
+    CdFornecedores.Next;
+  end;
+end;
+
 procedure TFEST0002CView.carregarItens;
 var VItem: TOrcamentoItens;
 begin
-  FOrcamento.removeAllItens;
+  FOrcamento.removerTodosOsItens;
 
   CdItens.First;
   while not (CdItens.Eof) do
@@ -215,8 +291,6 @@ begin
 end;
 
 procedure TFEST0002CView.exibirDadosNaTela;
-var
-  I: Integer;
 begin
   if FOperacao = toIncluir then
     Exit;
@@ -226,6 +300,26 @@ begin
   TeIdProduto.Text := FOrcamento.idOrcamento;
   TeDescricao.Text := FOrcamento.descricao;
 
+  {1} exibirFornecedoresNaTela;
+  {2} exibirItensNaTela;
+end;
+
+procedure TFEST0002CView.exibirFornecedoresNaTela;
+var
+  I: Integer;
+begin
+ FFornecedores := FOrcamento.fornecedores;
+
+ for I := 0 to Pred(FFornecedores.Count) do
+   begin
+     addForncedor(FFornecedores.Items[I].codigo);
+   end;
+end;
+
+procedure TFEST0002CView.exibirItensNaTela;
+var
+  I: Integer;
+begin
   FItens := FOrcamento.itens;
 
   for I := 0 to pred(FItens.Count) do
@@ -243,6 +337,8 @@ begin
   FProdutoController := TFacadeController.New.modulosFacadeController.
     estoqueFactoryController.Produto;
 
+  FFornecedorController := TFacadeController.New.modulosFacadeController.
+    pagarFactoryController.Fornecedor;
 
     Self.Width := Screen.Width - 100;
     Self.Height := Screen.Height - 100;
@@ -271,6 +367,7 @@ begin
     toIncluir:
       begin
         carregarItens;
+        carregarFornecedores;
 
         FOrcamento
          .Incluir
@@ -281,6 +378,7 @@ begin
     toAlterar:
       begin
         carregarItens;
+        carregarFornecedores;
 
         FOrcamento
          .Alterar
@@ -298,6 +396,7 @@ begin
     toDuplicar:
       begin
         carregarItens;
+        carregarFornecedores;
 
         FOrcamento
          .Duplicar

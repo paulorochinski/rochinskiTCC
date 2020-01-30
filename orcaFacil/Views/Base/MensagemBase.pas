@@ -11,7 +11,7 @@ uses
   Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons, Base.View.Interf,
   Tipos.Controller.Interf,
   cxTextEdit, cxMemo, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Silver;
+  dxSkinOffice2007Blue, dxSkinOffice2007Silver, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFMensagemView = class(TFBaseView, IBaseMensagemView)

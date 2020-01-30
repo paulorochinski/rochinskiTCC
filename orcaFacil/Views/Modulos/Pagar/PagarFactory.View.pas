@@ -13,6 +13,8 @@ type
 
     class function New: iPagarFactoryView;
 
+    function exibirTelaBusca(AValue: TTelaBusca): IBaseLocalizarView;
+
     function exibirTelaListagem(AValue: TTelaListagem): IBasePesquisaView;
     function exibirTelaCadastro(AValue: TTelaCadastro): IBaseCadastroView;
   end;
@@ -21,7 +23,7 @@ implementation
 
 { TPagarFactoryView }
 
-uses PAG0001P.View, PAG0001C.View;
+uses PAG0001P.View, PAG0001C.View, PAG0001L.View;
 
 constructor TPagarFactoryView.Create;
 begin
@@ -32,6 +34,13 @@ destructor TPagarFactoryView.Destroy;
 begin
 
   inherited;
+end;
+
+function TPagarFactoryView.exibirTelaBusca(AValue: TTelaBusca): IBaseLocalizarView;
+begin
+  case AValue of
+    tbFornecedor: Result := TFPAG0001LView.New;
+  end;
 end;
 
 function TPagarFactoryView.exibirTelaCadastro(AValue: TTelaCadastro)

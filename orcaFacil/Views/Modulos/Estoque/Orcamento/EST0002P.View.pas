@@ -14,7 +14,7 @@ uses
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
   dxGDIPlusClasses, Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons, Base.View.Interf,
   TESTORCAMENTO.Entidade.Model, ormbr.container.DataSet.interfaces,
-  ormbr.container.fdmemtable;
+  ormbr.container.fdmemtable, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFEST0002PView = class(TFPesquisaView, IBasePesquisaView)
@@ -35,6 +35,7 @@ type
     procedure BtExcluirClick(Sender: TObject);
     procedure BtDuplicarClick(Sender: TObject);
     procedure BtExportarClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     FContainer: IContainerDataSet<TTESTORCAMENTO>;
     procedure listarRegistros;
@@ -178,10 +179,47 @@ begin
   FContainer := TContainerFDMemTable<TTESTORCAMENTO>.Create(FConexao, FdDados);
 end;
 
+procedure TFEST0002PView.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  inherited;
+
+  case Key of
+    VK_F5:
+      begin
+        incluirRegistro;
+        listarRegistros;
+      end;
+
+    VK_F6:
+      begin
+        alterarRegistro;
+        listarRegistros;
+      end;
+
+    VK_F7:
+      begin
+        consultarRegistro;
+        listarRegistros;
+      end;
+
+    VK_F8:
+      begin
+        excluirRegistro;
+        listarRegistros;
+      end;
+
+    VK_F9:
+      begin
+        duplicarRegistro;
+        listarRegistros;
+      end;
+  end;
+end;
+
 procedure TFEST0002PView.FormShow(Sender: TObject);
 begin
   inherited;
-   FCampoOrdem := 'DESCRICAO';
+   FCampoOrdem := 'DATA_CADASTRO desc';
    listarRegistros;
 end;
 

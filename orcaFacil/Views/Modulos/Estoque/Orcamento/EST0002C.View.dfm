@@ -35,16 +35,6 @@ inherited FEST0002CView: TFEST0002CView
       inherited Panel3: TPanel
         Width = 750
         ExplicitWidth = 750
-        inherited cxLabel1: TcxLabel
-          Caption = 'OR'#199'AMENTOS'
-          Style.IsFontAssigned = True
-          ExplicitWidth = 139
-        end
-        inherited LbOperacao: TcxLabel
-          Left = 646
-          Style.IsFontAssigned = True
-          ExplicitLeft = 646
-        end
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
             Picture.Data = {
@@ -111,11 +101,21 @@ inherited FEST0002CView: TFEST0002CView
               2F60D7700D9F8CFF03A9D4B9392CFE8E0B0000000049454E44AE426082}
           end
         end
+        inherited LbOperacao: TcxLabel
+          Left = 646
+          Style.IsFontAssigned = True
+          ExplicitLeft = 646
+        end
+        inherited PnTituloJanela: TPanel
+          inherited cxLabel1: TcxLabel
+            Caption = 'OR'#199'AMENTOS'
+            Style.IsFontAssigned = True
+          end
+        end
       end
       inherited Panel4: TPanel
         Width = 748
         Height = 314
-        ExplicitTop = 53
         ExplicitWidth = 748
         ExplicitHeight = 314
         inherited Panel5: TPanel
@@ -363,10 +363,13 @@ inherited FEST0002CView: TFEST0002CView
                 end
               end
             end
-            object TbFornecedor: TcxTabSheet
+            object TbFornecedores: TcxTabSheet
               Caption = '   FORNECEDORES   '
               ImageIndex = 1
-              object cxGrid1: TcxGrid
+              ExplicitTop = 0
+              ExplicitWidth = 0
+              ExplicitHeight = 0
+              object DbDadosFornec: TcxGrid
                 AlignWithMargins = True
                 Left = 1
                 Top = 1
@@ -389,8 +392,9 @@ inherited FEST0002CView: TFEST0002CView
                 TabOrder = 0
                 LookAndFeel.Kind = lfStandard
                 LookAndFeel.NativeStyle = False
-                object cxGridDBTableView1: TcxGridDBTableView
+                object VwDadosFornec: TcxGridDBTableView
                   Navigator.Buttons.CustomButtons = <>
+                  DataController.DataSource = DsFornecedores
                   DataController.Summary.DefaultGroupSummaryItems = <>
                   DataController.Summary.FooterSummaryItems = <>
                   DataController.Summary.SummaryGroups = <>
@@ -409,9 +413,27 @@ inherited FEST0002CView: TFEST0002CView
                   OptionsView.ColumnAutoWidth = True
                   OptionsView.GroupByBox = False
                   OptionsView.Indicator = True
+                  Styles.Background = StBackground
+                  Styles.ContentEven = StContentEven
+                  Styles.ContentOdd = StContentOdd
+                  Styles.Header = StHeader
+                  Styles.Inactive = StInactive
+                  Styles.Indicator = StHeader
+                  Styles.Selection = StSelection
+                  object VwDadosFornecIDFORNECEDOR: TcxGridDBColumn
+                    Caption = 'N'#186
+                    DataBinding.FieldName = 'IDFORNECEDOR'
+                    HeaderAlignmentHorz = taCenter
+                    Width = 70
+                  end
+                  object VwDadosFornecNOMEFANTASIA: TcxGridDBColumn
+                    Caption = 'Nome Fantasia'
+                    DataBinding.FieldName = 'NOMEFANTASIA'
+                    Width = 500
+                  end
                 end
-                object cxGridLevel1: TcxGridLevel
-                  GridView = cxGridDBTableView1
+                object LvDadosFornec: TcxGridLevel
+                  GridView = VwDadosFornec
                 end
               end
               object Panel6: TPanel
@@ -463,6 +485,7 @@ inherited FEST0002CView: TFEST0002CView
                   Font.Name = 'Open Sans'
                   Font.Style = []
                   ParentFont = False
+                  OnClick = BtExcluirFornecClick
                 end
                 object BtNovoFornec: TcxButton
                   AlignWithMargins = True
@@ -498,6 +521,7 @@ inherited FEST0002CView: TFEST0002CView
                   Font.Name = 'Open Sans'
                   Font.Style = []
                   ParentFont = False
+                  OnClick = BtNovoFornecClick
                 end
               end
             end
@@ -666,6 +690,36 @@ inherited FEST0002CView: TFEST0002CView
       Font.Name = 'Open Sans SemiBold'
       Font.Style = [fsBold]
       TextColor = clBlack
+    end
+  end
+  object DsFornecedores: TDataSource
+    DataSet = CdFornecedores
+    Left = 436
+    Top = 247
+  end
+  object CdFornecedores: TClientDataSet
+    PersistDataPacket.Data = {
+      770000009619E0BD010000001800000003000000000003000000770006434F44
+      49474F01004900000001000557494454480200020040000C4944464F524E4543
+      45444F520100490000000100055749445448020002000A000C4E4F4D4546414E
+      544153494101004900000001000557494454480200020064000000}
+    Active = True
+    Aggregates = <>
+    Params = <>
+    Left = 364
+    Top = 255
+    object CdFornecedoresCODIGO: TStringField
+      FieldName = 'CODIGO'
+      Size = 64
+    end
+    object CdFornecedoresIDFORNECEDOR: TStringField
+      Alignment = taCenter
+      FieldName = 'IDFORNECEDOR'
+      Size = 10
+    end
+    object CdFornecedoresNOMEFANTASIA: TStringField
+      FieldName = 'NOMEFANTASIA'
+      Size = 100
     end
   end
 end

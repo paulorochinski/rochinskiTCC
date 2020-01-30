@@ -29,11 +29,6 @@ inherited FEST0001PView: TFEST0001PView
       inherited Panel3: TPanel
         Width = 596
         ExplicitWidth = 596
-        inherited cxLabel1: TcxLabel
-          Caption = 'PRODUTOS'
-          Style.IsFontAssigned = True
-          ExplicitWidth = 109
-        end
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
             Picture.Data = {
@@ -97,6 +92,20 @@ inherited FEST0001PView: TFEST0001PView
               BD1D24C2DD223E1B7AA90CD9707A5FDDD5FCD7BD6316D2280CEFAB3F8AEA36D0
               4BB957A5570C359F44F0308B333100ED6AD64EF6DA46D9ACC8B851BACFEC0F65
               6F417E8AFF2BFC075821AAEE8D139C180000000049454E44AE426082}
+          end
+        end
+        inherited PnTituloJanela: TPanel
+          Width = 525
+          ExplicitWidth = 525
+          inherited cxLabel1: TcxLabel
+            Caption = 'PRODUTOS'
+            Style.IsFontAssigned = True
+          end
+          inherited cxLabel3: TcxLabel
+            Caption = 
+              'F5 - INCLUIR,  F6 - ALTERAR,   F7 - CONSULTAR,  F8 - EXCLUIR,  F' +
+              '9 - DUPLICAR, F10 - IMPORTAR'
+            Style.IsFontAssigned = True
           end
         end
       end

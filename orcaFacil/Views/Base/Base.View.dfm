@@ -116,25 +116,6 @@ object FBaseView: TFBaseView
         Color = 16579836
         ParentBackground = False
         TabOrder = 1
-        object cxLabel1: TcxLabel
-          AlignWithMargins = True
-          Left = 55
-          Top = 1
-          Margins.Top = 1
-          Margins.Bottom = 1
-          Align = alLeft
-          Caption = 'BaseView'
-          ParentFont = False
-          Style.Font.Charset = ANSI_CHARSET
-          Style.Font.Color = clWindowText
-          Style.Font.Height = -19
-          Style.Font.Name = 'Open Sans ExtraBold'
-          Style.Font.Style = [fsBold]
-          Style.TextColor = 6050636
-          Style.IsFontAssigned = True
-          ExplicitLeft = 39
-          ExplicitHeight = 30
-        end
         object PnIconeTitulo: TPanel
           Left = 0
           Top = 0
@@ -144,7 +125,7 @@ object FBaseView: TFBaseView
           BevelOuter = bvNone
           Color = 16579836
           ParentBackground = False
-          TabOrder = 1
+          TabOrder = 0
           object ImIconeTitulo: TImage
             Left = 0
             Top = 0
@@ -307,6 +288,36 @@ object FBaseView: TFBaseView
             ExplicitHeight = 32
           end
         end
+        object PnTituloJanela: TPanel
+          Left = 52
+          Top = 0
+          Width = 333
+          Height = 52
+          Align = alLeft
+          BevelOuter = bvNone
+          Color = 16579836
+          ParentBackground = False
+          TabOrder = 1
+          object cxLabel1: TcxLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 0
+            Margins.Top = 0
+            Margins.Bottom = 0
+            Align = alTop
+            Caption = 'BaseView'
+            ParentFont = False
+            Style.Font.Charset = ANSI_CHARSET
+            Style.Font.Color = clWindowText
+            Style.Font.Height = -19
+            Style.Font.Name = 'Open Sans ExtraBold'
+            Style.Font.Style = [fsBold]
+            Style.TextColor = 6050636
+            Style.IsFontAssigned = True
+            ExplicitTop = 1
+            ExplicitWidth = 255
+          end
+        end
       end
       object Panel4: TPanel
         AlignWithMargins = True
@@ -323,8 +334,6 @@ object FBaseView: TFBaseView
         Color = 14537936
         ParentBackground = False
         TabOrder = 2
-        ExplicitTop = 33
-        ExplicitHeight = 137
         object Panel5: TPanel
           AlignWithMargins = True
           Left = 1
@@ -340,7 +349,6 @@ object FBaseView: TFBaseView
           Color = 15658986
           ParentBackground = False
           TabOrder = 0
-          ExplicitHeight = 135
         end
       end
     end

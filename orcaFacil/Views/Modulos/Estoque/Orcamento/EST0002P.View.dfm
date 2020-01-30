@@ -29,12 +29,6 @@ inherited FEST0002PView: TFEST0002PView
       inherited Panel3: TPanel
         Width = 642
         ExplicitWidth = 642
-        inherited cxLabel1: TcxLabel
-          Caption = 'OR'#199'AMENTOS'
-          Style.IsFontAssigned = True
-          ExplicitLeft = 55
-          ExplicitHeight = 50
-        end
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
             Picture.Data = {
@@ -101,11 +95,19 @@ inherited FEST0002PView: TFEST0002PView
               2F60D7700D9F8CFF03A9D4B9392CFE8E0B0000000049454E44AE426082}
           end
         end
+        inherited PnTituloJanela: TPanel
+          inherited cxLabel1: TcxLabel
+            Caption = 'OR'#199'AMENTOS'
+            Style.IsFontAssigned = True
+          end
+          inherited cxLabel3: TcxLabel
+            Style.IsFontAssigned = True
+          end
+        end
       end
       inherited Panel4: TPanel
         Width = 640
         Height = 206
-        ExplicitTop = 53
         ExplicitWidth = 640
         ExplicitHeight = 206
         inherited Panel5: TPanel

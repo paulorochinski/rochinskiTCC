@@ -1,36 +1,61 @@
-inherited FPAG0001PView: TFPAG0001PView
-  Caption = 'Fornecedores'
-  ClientHeight = 252
-  ClientWidth = 561
-  ExplicitWidth = 567
-  ExplicitHeight = 281
+inherited FPAG0001LView: TFPAG0001LView
+  Caption = 'Localizar Fornecedor'
+  FormStyle = fsNormal
+  Position = poScreenCenter
+  Visible = False
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 559
-    Height = 250
-    ExplicitWidth = 559
-    ExplicitHeight = 250
     inherited Panel2: TPanel
-      Width = 557
-      Height = 248
-      ExplicitWidth = 557
-      ExplicitHeight = 248
       inherited PnBotoes: TPanel
-        Top = 202
-        Width = 557
-        ExplicitTop = 202
-        ExplicitWidth = 557
-        inherited BtEncerrar: TcxButton
-          Left = 437
-          ExplicitLeft = 437
+        object BtSalvar: TcxButton
+          AlignWithMargins = True
+          Left = 371
+          Top = 1
+          Width = 120
+          Height = 44
+          Margins.Left = 0
+          Margins.Top = 1
+          Margins.Right = 0
+          Margins.Bottom = 1
+          Align = alRight
+          Caption = 'C&onfirmar'
+          LookAndFeel.Kind = lfFlat
+          LookAndFeel.NativeStyle = True
+          OptionsImage.Glyph.SourceDPI = 96
+          OptionsImage.Glyph.Data = {
+            89504E470D0A1A0A0000000D494844520000002000000020080300000044A48A
+            C60000001974455874536F6674776172650041646F626520496D616765526561
+            647971C9653C00000015744558745469746C6500436865636B3B4D61726B3B54
+            69636B0B00C7240000004B504C5445FFFFFFFFFFFFFCFDFD9FC2B6E4EEEBB1CD
+            C3E0EBE7FEFFFFA0C2B779A99977A89877A79780AD9E7FAD9EA3C4B97EAC9D76
+            A797D4E3DEDFEBE7A2C3B8A6C6BBD5E4DFE3EDE9E3EDEAE2ECE945FDC6340000
+            000174524E530040E6D8660000008449444154785ED5D3370E03310C44518FE2
+            66E770FF931A368BC11058A9B5D9FE07420575E8CFA9393F0EA60E88656D8218
+            F05C15F80E945981EF61D8DD1061DD03DF05CC6E3FBE9D209F47DF05E48AFBA8
+            EF1370AB80097601C7074CB00BA0F0DD00C5855D0005BB000A760526D2A75F1B
+            07B324848D8980E2B5754E6EFAAF7F41D09D37777D319D27A472A00000000049
+            454E44AE426082}
+          SpeedButtonOptions.CanBeFocused = False
+          TabOrder = 1
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Open Sans'
+          Font.Style = []
+          ParentFont = False
+          OnClick = BtSalvarClick
+          ExplicitLeft = 275
+          ExplicitTop = -2
         end
       end
       inherited Panel3: TPanel
-        Width = 557
-        ExplicitWidth = 557
+        Height = 52
+        ExplicitHeight = 52
         inherited PnIconeTitulo: TPanel
+          Height = 52
           inherited ImIconeTitulo: TImage
+            Height = 52
             Picture.Data = {
               0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000030
               0000003008060000005702F987000000097048597300000B1300000B1301009A
@@ -75,111 +100,60 @@ inherited FPAG0001PView: TFPAG0001PView
           end
         end
         inherited PnTituloJanela: TPanel
+          Height = 52
           inherited cxLabel1: TcxLabel
-            Caption = 'Fornecedores'
+            Caption = 'LOCALIZAR FORNECEDOR'
             Style.IsFontAssigned = True
           end
-          inherited cxLabel3: TcxLabel
+        end
+        inherited PnPesquisa: TPanel
+          Top = 12
+          Height = 28
+          Margins.Top = 12
+          Margins.Bottom = 12
+          inherited ImPesquisa: TImage
+            Height = 28
+          end
+          inherited TePesquisa: TcxTextEdit
+            Properties.OnChange = TePesquisaPropertiesChange
+            Style.IsFontAssigned = True
+          end
+          inherited cxLabel2: TcxLabel
             Style.IsFontAssigned = True
           end
         end
       end
       inherited Panel4: TPanel
-        Width = 555
-        Height = 148
-        ExplicitWidth = 555
-        ExplicitHeight = 148
+        Top = 53
+        Height = 162
         inherited Panel5: TPanel
-          Width = 553
-          Height = 102
-          ExplicitWidth = 553
-          ExplicitHeight = 102
-          inherited DbDados: TcxGrid
-            Width = 553
-            Height = 102
-            ExplicitWidth = 553
-            ExplicitHeight = 102
-            inherited VwDados: TcxGridDBTableView
-              DataController.DataSource = DsDados
-              Filtering.ColumnAddValueItems = False
-              Filtering.ColumnMRUItemsList = False
-              OptionsData.CancelOnExit = False
-              OptionsData.Deleting = False
-              OptionsData.DeletingConfirmation = False
-              OptionsData.Editing = False
-              OptionsData.Inserting = False
-              OptionsSelection.CellSelect = False
-              Styles.Indicator = StHeader
-              object VwDadosIDFORNECEDOR: TcxGridDBColumn
-                Caption = 'N'#186
-                DataBinding.FieldName = 'IDFORNECEDOR'
-                HeaderAlignmentHorz = taCenter
-                Width = 70
+          Height = 160
+          inherited Panel6: TPanel
+            Height = 158
+            inherited Panel7: TPanel
+              Height = 156
+              inherited DbDados: TcxGrid
+                Height = 156
+                inherited VwDados: TcxGridDBTableView
+                  DataController.DataSource = DsDados
+                  object VwDadosIDFORNECEDOR: TcxGridDBColumn
+                    Caption = 'N'#186
+                    DataBinding.FieldName = 'IDFORNECEDOR'
+                    HeaderAlignmentHorz = taCenter
+                    Width = 70
+                  end
+                  object VwDadosNOMEFANTASIA: TcxGridDBColumn
+                    Caption = 'Nome Fantasia'
+                    DataBinding.FieldName = 'NOMEFANTASIA'
+                    Width = 350
+                  end
+                end
               end
-              object VwDadosNOMEFANTASIA: TcxGridDBColumn
-                Caption = 'Nome Fantasia'
-                DataBinding.FieldName = 'NOMEFANTASIA'
-                Width = 250
-              end
-              object VwDadosCNPJ: TcxGridDBColumn
-                DataBinding.FieldName = 'CNPJ'
-                Width = 70
-              end
-              object VwDadosIE: TcxGridDBColumn
-                Caption = 'Insc. Estadual'
-                DataBinding.FieldName = 'IE'
-                Width = 135
-              end
-              object VwDadosTELEFONE: TcxGridDBColumn
-                Caption = 'Telefone'
-                DataBinding.FieldName = 'TELEFONE'
-                Width = 80
-              end
-              object VwDadosEMAIL: TcxGridDBColumn
-                Caption = 'E-mail'
-                DataBinding.FieldName = 'EMAIL'
-                Width = 210
-              end
-            end
-          end
-        end
-        inherited PnCrud: TPanel
-          Width = 555
-          ExplicitWidth = 555
-          inherited PnPesquisa: TPanel
-            Left = 232
-            Top = 9
-            Width = 320
-            Height = 26
-            Margins.Top = 9
-            Margins.Bottom = 9
-            ExplicitLeft = 232
-            ExplicitTop = 9
-            ExplicitWidth = 320
-            ExplicitHeight = 26
-            inherited ImPesquisa: TImage
-              Left = 283
-              Height = 26
-              ExplicitLeft = 283
-              ExplicitHeight = 28
-            end
-            inherited TePesquisa: TcxTextEdit
-              Style.IsFontAssigned = True
-              ExplicitWidth = 235
-              ExplicitHeight = 26
-              Width = 235
-            end
-            inherited cxLabel2: TcxLabel
-              Style.IsFontAssigned = True
-              ExplicitHeight = 20
             end
           end
         end
       end
     end
-  end
-  inherited StGrid: TcxStyleRepository
-    PixelsPerInch = 96
   end
   inherited FdDados: TFDMemTable
     object FdDadosCODIGO: TStringField
@@ -187,26 +161,11 @@ inherited FPAG0001PView: TFPAG0001PView
       Size = 64
     end
     object FdDadosIDFORNECEDOR: TIntegerField
+      Alignment = taCenter
       FieldName = 'IDFORNECEDOR'
     end
     object FdDadosNOMEFANTASIA: TStringField
       FieldName = 'NOMEFANTASIA'
-      Size = 100
-    end
-    object FdDadosCNPJ: TStringField
-      FieldName = 'CNPJ'
-      Size = 14
-    end
-    object FdDadosIE: TStringField
-      FieldName = 'IE'
-      Size = 10
-    end
-    object FdDadosTELEFONE: TStringField
-      FieldName = 'TELEFONE'
-      Size = 15
-    end
-    object FdDadosEMAIL: TStringField
-      FieldName = 'EMAIL'
       Size = 100
     end
   end

@@ -4,7 +4,8 @@ interface
 
 uses Orcamento.Controller.interf, Orcamento.Model.interf,
   OrcamentoItens.Model.interf, Generics.Collections, TESTORCAMENTOITENS.Entidade.Model,
-  TESTORCAMENTO.Entidade.Model, System.SysUtils, ormbr.factory.interfaces;
+  TESTORCAMENTO.Entidade.Model, System.SysUtils, ormbr.factory.interfaces,
+  OrcamentoFornecedores.Model.Interf, TESTORCAMENTOFORNECEDORES.Entidade.Model;
 
 type
   TOrcamentoOperacaoAlterarController = class(TInterfacedObject,
@@ -13,15 +14,21 @@ type
     FConexao: IDBConnection;
     FOrcamentoModel: IOrcamentoModel;
     FOrcamentoItensModel: IOrcamentoItensModel;
+    FOrcamentoFornecedoresModel: IOrcamentoFornecedoresModel;
 
     FRegistro: TTESTORCAMENTO;
-    FRegistroItem: TTESTORCAMENTOITENS;
 
     FDescricao: string;
-    FLista: TList<TOrcamentoItens>;
 
-    procedure removerItens;
-    procedure salvarItens;
+    FLista: TList<TOrcamentoItens>;
+    FListaFornecedores: TList<TOrcamentoFornecedores>;
+
+    procedure removerItensOrcamento;
+    procedure removerFornecedoresOrcamento;
+
+    procedure gravarCapaOrcamento;
+    procedure gravarItensOrcamento;
+    procedure gravarFornecedoresOrcamento;
   public
     constructor Create;
     destructor Destroy; override;
@@ -32,11 +39,17 @@ type
       : IOrcamentoOperacaoAlterarController;
     function orcamentoItensModel(AValue: IOrcamentoItensModel)
       : IOrcamentoOperacaoAlterarController;
+    function orcamentoFornecedoresModel(AValue: IOrcamentoFornecedoresModel)
+      : IOrcamentoOperacaoAlterarController;
+
 
     function orcamentoSelecionado(AValue: TTESTORCAMENTO): IOrcamentoOperacaoAlterarController;
 
     function descricao(AValue: string): IOrcamentoOperacaoAlterarController;
+
     function itens(AValue: TList<TOrcamentoItens>)
+      : IOrcamentoOperacaoAlterarController;
+    function fornecedores(AValue: TList<TOrcamentoFornecedores>)
       : IOrcamentoOperacaoAlterarController;
 
     procedure finalizar;
@@ -68,15 +81,47 @@ end;
 
 procedure TOrcamentoOperacaoAlterarController.finalizar;
 begin
-  FOrcamentoModel.DAO.Modify(FRegistro);
-  FRegistro.DESCRICAO := FDescricao;
-  FOrcamentoModel.DAO.Update(FRegistro);
+  {1} gravarCapaOrcamento;
 
-  removerItens;
-  salvarItens;
+  {2} removerItensOrcamento;
+  {3} removerFornecedoresOrcamento;
+
+  {4} gravarItensOrcamento;
+  {5} gravarFornecedoresOrcamento;
 end;
 
-procedure TOrcamentoOperacaoAlterarController.salvarItens;
+function TOrcamentoOperacaoAlterarController.fornecedores(
+  AValue: TList<TOrcamentoFornecedores>): IOrcamentoOperacaoAlterarController;
+begin
+   Result := Self;
+   FListaFornecedores := AValue;
+end;
+
+procedure TOrcamentoOperacaoAlterarController.gravarCapaOrcamento;
+begin
+  FOrcamentoModel.DAO.Modify(FRegistro);
+
+  FRegistro.DESCRICAO := FDescricao;
+
+  FOrcamentoModel.DAO.Update(FRegistro);
+end;
+
+procedure TOrcamentoOperacaoAlterarController.gravarFornecedoresOrcamento;
+var
+  I: Integer;
+begin
+  for I := 0 to Pred(FListaFornecedores.Count) do
+  begin
+   FOrcamentoFornecedoresModel.Entidade(TTESTORCAMENTOFORNECEDORES.Create);
+
+   FOrcamentoFornecedoresModel.Entidade.IDORCAMENTO  := FRegistro.CODIGO;
+   FOrcamentoFornecedoresModel.Entidade.IDFORNECEDOR   := FListaFornecedores[I].codigo;
+
+   FOrcamentoFornecedoresModel.DAO.Insert(FOrcamentoFornecedoresModel.Entidade);
+  end;
+end;
+
+procedure TOrcamentoOperacaoAlterarController.gravarItensOrcamento;
 var
   I: Integer;
 begin
@@ -105,6 +150,13 @@ begin
   Result := Self.Create;
 end;
 
+function TOrcamentoOperacaoAlterarController.orcamentoFornecedoresModel(
+  AValue: IOrcamentoFornecedoresModel): IOrcamentoOperacaoAlterarController;
+begin
+  Result := Self;
+  FOrcamentoFornecedoresModel := AValue;
+end;
+
 function TOrcamentoOperacaoAlterarController.orcamentoItensModel(
   AValue: IOrcamentoItensModel): IOrcamentoOperacaoAlterarController;
 begin
@@ -126,7 +178,16 @@ begin
   FRegistro := AValue;
 end;
 
-procedure TOrcamentoOperacaoAlterarController.removerItens;
+procedure TOrcamentoOperacaoAlterarController.removerFornecedoresOrcamento;
+begin
+   FConexao
+    .ExecuteDirect(
+      Format('Delete from TEstOrcamentoFornecedores Where IdOrcamento = %s',
+        [QuotedStr(FRegistro.CODIGO)]
+        ));
+end;
+
+procedure TOrcamentoOperacaoAlterarController.removerItensOrcamento;
 begin
    FConexao
     .ExecuteDirect(

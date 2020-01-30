@@ -4,7 +4,8 @@ interface
 
 uses Orcamento.Controller.interf, Orcamento.Model.interf,
   OrcamentoItens.Model.interf, TESTORCAMENTOITENS.Entidade.Model,
-  Generics.Collections, TESTORCAMENTO.Entidade.Model;
+  Generics.Collections, TESTORCAMENTO.Entidade.Model,
+  OrcamentoFornecedores.Model.interf, TESTORCAMENTOFORNECEDORES.Entidade.Model;
 
 type
   TOrcamentoOperacaoIncluirController = class(TInterfacedObject,
@@ -12,9 +13,15 @@ type
   private
     FOrcamentoModel: IOrcamentoModel;
     FOrcamentoItensModel: IOrcamentoItensModel;
+    FOrcamentoFornecedoresModel: IOrcamentoFornecedoresModel;
 
     FDescricao: string;
-    FLista: TList<TOrcamentoItens>;
+    FListaItens: TList<TOrcamentoItens>;
+    FListaFornecedores: TList<TOrcamentoFornecedores>;
+
+    procedure gravaCapaOrcamento;
+    procedure gravaItensOrcamento;
+    procedure gravaFornecedoresOrcamento;
   public
     constructor Create;
     destructor Destroy; override;
@@ -25,10 +32,16 @@ type
       : IOrcamentoOperacaoIncluirController;
     function orcamentoItensModel(AValue: IOrcamentoItensModel)
       : IOrcamentoOperacaoIncluirController;
+    function orcamentoFornecedoresModel(AValue: IOrcamentoFornecedoresModel)
+      : IOrcamentoOperacaoIncluirController;
 
     function descricao(AValue: string): IOrcamentoOperacaoIncluirController;
 
-    function itens(AValue: TList<TOrcamentoItens>): IOrcamentoOperacaoIncluirController;
+    function itens(AValue: TList<TOrcamentoItens>)
+      : IOrcamentoOperacaoIncluirController;
+    function fornecedores(AValue: TList<TOrcamentoFornecedores>)
+      : IOrcamentoOperacaoIncluirController;
+
 
     procedure finalizar;
   end;
@@ -56,39 +69,73 @@ begin
 end;
 
 procedure TOrcamentoOperacaoIncluirController.finalizar;
-var
-  I: Integer;
 begin
-  FOrcamentoModel.Entidade(TTESTORCAMENTO.Create);
-
-  FOrcamentoModel.Entidade.DESCRICAO := FDescricao;
-
-  FOrcamentoModel.DAO.Insert(FOrcamentoModel.Entidade);
-
-  for I := 0 to pred(FLista.Count) do
-   begin
-     FOrcamentoItensModel.Entidade(TTESTORCAMENTOITENS.Create);
-
-     FOrcamentoItensModel.Entidade.IDORCAMENTO := FOrcamentoModel.Entidade.CODIGO;
-     FOrcamentoItensModel.Entidade.IDPRODUTO := FLista.Items[I].codigo;
-     FOrcamentoItensModel.Entidade.QTDE := FLista.Items[I].qtde;
-
-     FOrcamentoItensModel.DAO.Insert(FOrcamentoItensModel.Entidade);
-
-   end;
+   {1} gravaCapaOrcamento;
+   {2} gravaItensOrcamento;
+   {3} gravaFornecedoresOrcamento;
 end;
 
-function TOrcamentoOperacaoIncluirController.itens(
-  AValue: TList<TOrcamentoItens>): IOrcamentoOperacaoIncluirController;
+function TOrcamentoOperacaoIncluirController.fornecedores(
+  AValue: TList<TOrcamentoFornecedores>): IOrcamentoOperacaoIncluirController;
 begin
-  Result := self;
-  FLista := AValue;
+  Result := Self;
+  FListaFornecedores := AValue;
+end;
+
+procedure TOrcamentoOperacaoIncluirController.gravaCapaOrcamento;
+begin
+  FOrcamentoModel.Entidade(TTESTORCAMENTO.Create);
+  FOrcamentoModel.Entidade.descricao := FDescricao;
+  FOrcamentoModel.DAO.Insert(FOrcamentoModel.Entidade);
+end;
+
+procedure TOrcamentoOperacaoIncluirController.gravaFornecedoresOrcamento;
+var I: Integer;
+begin
+  for I := 0 to pred(FListaFornecedores.Count) do
+  begin
+    FOrcamentoFornecedoresModel.Entidade(TTESTORCAMENTOFORNECEDORES.Create);
+
+    FOrcamentoFornecedoresModel.Entidade.IDORCAMENTO := FOrcamentoModel.Entidade.CODIGO;
+    FOrcamentoFornecedoresModel.Entidade.IDFORNECEDOR := FListaFornecedores.Items[I].CODIGO;
+
+    FOrcamentoFornecedoresModel.DAO.Insert(FOrcamentoFornecedoresModel.Entidade);
+  end;
+end;
+
+procedure TOrcamentoOperacaoIncluirController.gravaItensOrcamento;
+var I: Integer;
+begin
+  for I := 0 to pred(FListaItens.Count) do
+  begin
+    FOrcamentoItensModel.Entidade(TTESTORCAMENTOITENS.Create);
+
+    FOrcamentoItensModel.Entidade.IDORCAMENTO := FOrcamentoModel.Entidade.CODIGO;
+    FOrcamentoItensModel.Entidade.IDPRODUTO := FListaItens.Items[I].CODIGO;
+    FOrcamentoItensModel.Entidade.QTDE := FListaItens.Items[I].QTDE;
+
+    FOrcamentoItensModel.DAO.Insert(FOrcamentoItensModel.Entidade);
+  end;
+end;
+
+function TOrcamentoOperacaoIncluirController.itens
+  (AValue: TList<TOrcamentoItens>): IOrcamentoOperacaoIncluirController;
+begin
+  Result := Self;
+  FListaItens := AValue;
 end;
 
 class function TOrcamentoOperacaoIncluirController.New
   : IOrcamentoOperacaoIncluirController;
 begin
   Result := Self.Create;
+end;
+
+function TOrcamentoOperacaoIncluirController.orcamentoFornecedoresModel
+  (AValue: IOrcamentoFornecedoresModel): IOrcamentoOperacaoIncluirController;
+begin
+  Result := self;
+  FOrcamentoFornecedoresModel := AValue;
 end;
 
 function TOrcamentoOperacaoIncluirController.orcamentoItensModel

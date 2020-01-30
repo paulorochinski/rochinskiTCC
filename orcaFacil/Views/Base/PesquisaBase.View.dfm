@@ -32,10 +32,32 @@ inherited FPesquisaView: TFPesquisaView
       inherited Panel3: TPanel
         Width = 517
         ExplicitWidth = 517
-        inherited cxLabel1: TcxLabel
-          Caption = 'PesquisaView'
-          Style.IsFontAssigned = True
-          ExplicitWidth = 139
+        inherited PnTituloJanela: TPanel
+          Width = 424
+          ExplicitWidth = 424
+          inherited cxLabel1: TcxLabel
+            Style.IsFontAssigned = True
+            ExplicitWidth = 418
+          end
+          object cxLabel3: TcxLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 31
+            Margins.Top = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = 
+              'F5 - INCLUIR,  F6 - ALTERAR,   F7 - CONSULTAR,  F8 - EXCLUIR,  F' +
+              '9 - DUPLICAR'
+            ParentFont = False
+            Style.Font.Charset = ANSI_CHARSET
+            Style.Font.Color = clSilver
+            Style.Font.Height = -11
+            Style.Font.Name = 'Open Sans'
+            Style.Font.Style = [fsBold]
+            Style.TextColor = clTeal
+            Style.IsFontAssigned = True
+          end
         end
       end
       inherited Panel4: TPanel

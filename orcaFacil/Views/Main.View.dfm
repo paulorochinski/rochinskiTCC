@@ -2,7 +2,7 @@ object FPrincipalView: TFPrincipalView
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Or'#231'a F'#225'cil - Paulo Rochinski TCC'
+  Caption = 'Or'#231'amento F'#225'cil - Paulo Rochinski TCC'
   ClientHeight = 466
   ClientWidth = 577
   Color = clBackground
@@ -22,9 +22,7 @@ object FPrincipalView: TFPrincipalView
     Width = 577
     Height = 157
     ApplicationButton.Menu = BaMenu
-    ApplicationButton.Visible = False
     BarManager = BmMenu
-    Style = rs2016
     ColorSchemeAccent = rcsaBlue
     ColorSchemeName = 'DevExpressStyle'
     QuickAccessToolbar.Toolbar = MbAtalhos
@@ -46,12 +44,27 @@ object FPrincipalView: TFPrincipalView
     Top = 443
     Width = 577
     Height = 23
-    Panels = <>
+    Panels = <
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+        PanelStyle.Font.Charset = ANSI_CHARSET
+        PanelStyle.Font.Color = clDefault
+        PanelStyle.Font.Height = -11
+        PanelStyle.Font.Name = 'Open Sans ExtraBold'
+        PanelStyle.Font.Style = [fsBold]
+        PanelStyle.ParentFont = False
+        Text = 'EMPRESA DEMONSTRA'#199#195'O'
+        Width = 350
+      end
+      item
+        PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
+        Width = 300
+      end>
     Ribbon = RbMenu
-    Font.Charset = DEFAULT_CHARSET
+    Font.Charset = ANSI_CHARSET
     Font.Color = clDefault
     Font.Height = -11
-    Font.Name = 'Tahoma'
+    Font.Name = 'Open Sans'
     Font.Style = []
   end
   object BmMenu: TdxBarManager

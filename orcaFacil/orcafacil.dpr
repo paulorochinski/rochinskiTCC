@@ -95,7 +95,11 @@ uses
   ConfiguracoesExportar.Model.interf in 'Models\Configuracoes\Exportar\ConfiguracoesExportar.Model.interf.pas',
   ConfiguracoesExportar.Model in 'Models\Configuracoes\Exportar\ConfiguracoesExportar.Model.pas',
   ExportarOrcamento.Controller.interf in 'Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.interf.pas',
-  ExportarOrcamento.Controller in 'Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.pas';
+  ExportarOrcamento.Controller in 'Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.pas',
+  PAG0001L.View in 'Views\Modulos\Pagar\Fornecedor\PAG0001L.View.pas' {FPAG0001LView},
+  TESTORCAMENTOFORNECEDORES.Entidade.Model in 'Models\Modulos\Estoque\OrcamentoFornecedores\Entidade\TESTORCAMENTOFORNECEDORES.Entidade.Model.pas',
+  OrcamentoFornecedores.Model.Interf in 'Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.Interf.pas',
+  OrcamentoFornecedores.Model in 'Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.pas';
 
 {$R *.res}
 

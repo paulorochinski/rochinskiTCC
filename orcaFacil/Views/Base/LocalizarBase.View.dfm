@@ -9,14 +9,21 @@ inherited FLocalizarView: TFLocalizarView
   inherited Panel1: TPanel
     Width = 613
     Height = 264
+    ExplicitWidth = 613
+    ExplicitHeight = 264
     inherited Panel2: TPanel
       Width = 611
       Height = 262
+      ExplicitWidth = 611
+      ExplicitHeight = 262
       inherited PnBotoes: TPanel
         Top = 216
         Width = 611
+        ExplicitTop = 216
+        ExplicitWidth = 611
         inherited BtEncerrar: TcxButton
           Left = 491
+          ExplicitLeft = 491
         end
       end
       inherited Panel3: TPanel
@@ -24,18 +31,25 @@ inherited FLocalizarView: TFLocalizarView
         Height = 43
         ExplicitWidth = 611
         ExplicitHeight = 43
-        inherited cxLabel1: TcxLabel
-          Top = 3
-          Margins.Top = 3
-          Margins.Bottom = 3
-          Caption = 'LocalizarBase'
-          Style.IsFontAssigned = True
-          ExplicitWidth = 139
-        end
         inherited PnIconeTitulo: TPanel
           Height = 43
+          ExplicitHeight = 43
           inherited ImIconeTitulo: TImage
             Height = 43
+            ExplicitHeight = 43
+          end
+        end
+        inherited PnTituloJanela: TPanel
+          Height = 43
+          ExplicitHeight = 43
+          inherited cxLabel1: TcxLabel
+            Top = 3
+            Margins.Top = 3
+            Margins.Bottom = 3
+            Caption = 'LocalizarBase'
+            Style.IsFontAssigned = True
+            ExplicitTop = 3
+            ExplicitWidth = 327
           end
         end
         object PnPesquisa: TPanel
@@ -51,8 +65,6 @@ inherited FLocalizarView: TFLocalizarView
           Color = 15658986
           ParentBackground = False
           TabOrder = 2
-          ExplicitLeft = 143
-          ExplicitHeight = 28
           object ImPesquisa: TImage
             Left = 235
             Top = 0
@@ -90,7 +102,6 @@ inherited FLocalizarView: TFLocalizarView
             Style.IsFontAssigned = True
             TabOrder = 0
             ExplicitLeft = 127
-            ExplicitWidth = 108
             ExplicitHeight = 16
             Width = 187
           end
@@ -107,7 +118,6 @@ inherited FLocalizarView: TFLocalizarView
             Style.Font.Name = 'Open Sans SemiBold'
             Style.Font.Style = [fsBold]
             Style.IsFontAssigned = True
-            ExplicitHeight = 10
           end
         end
       end
@@ -115,9 +125,14 @@ inherited FLocalizarView: TFLocalizarView
         Top = 44
         Width = 609
         Height = 171
+        ExplicitTop = 44
+        ExplicitWidth = 609
+        ExplicitHeight = 171
         inherited Panel5: TPanel
           Width = 607
           Height = 169
+          ExplicitWidth = 607
+          ExplicitHeight = 169
           object Panel6: TPanel
             AlignWithMargins = True
             Left = 1

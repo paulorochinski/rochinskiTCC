@@ -13,7 +13,8 @@ uses
   FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client, cxGridLevel, cxClasses,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit,
   dxGDIPlusClasses, Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons,  ormbr.container.DataSet.interfaces,
-  TESTPRODUTO.Entidade.Model, ormbr.container.fdmemtable, Base.View.Interf;
+  TESTPRODUTO.Entidade.Model, ormbr.container.fdmemtable, Base.View.Interf,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFEST0001LView = class(TFLocalizarView, IBaseLocalizarView)

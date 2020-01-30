@@ -20,7 +20,8 @@ uses
   FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Base.View.Interf, Tipos.Controller.Interf, cxLabel, dxGDIPlusClasses, dxSkinDevExpressDarkStyle,
-  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFPesquisaView = class(TFBaseView, IBasePesquisaView)
@@ -46,6 +47,7 @@ type
     StInactive: TcxStyle;
     PnCrud: TPanel;
     cxLabel2: TcxLabel;
+    cxLabel3: TcxLabel;
     procedure FdDadosAfterRefresh(DataSet: TDataSet);
     procedure FormShow(Sender: TObject);
     procedure VwDadosColumnHeaderClick(Sender: TcxGridTableView;

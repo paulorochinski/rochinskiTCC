@@ -2,7 +2,8 @@ unit EstoqueFactory.Model.Interf;
 
 interface
 
-uses Produto.Model.Interf, Orcamento.Model.Interf, OrcamentoItens.Model.Interf;
+uses Produto.Model.Interf, Orcamento.Model.Interf, OrcamentoItens.Model.Interf,
+  OrcamentoFornecedores.Model.Interf;
 
 type
   IEstoqueFactoryModel = interface
@@ -11,6 +12,7 @@ type
 
     function orcamento: IOrcamentoModel;
     function orcamentoItens: IOrcamentoItensModel;
+    function orcamentoFornecedores: IOrcamentoFornecedoresModel;
   end;
 
 implementation

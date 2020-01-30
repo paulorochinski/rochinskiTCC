@@ -22,7 +22,7 @@ uses
   FireDAC.DApt.Intf, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   TESTPRODUTO.Entidade.Model, Vcl.Grids, Vcl.DBGrids, dxBevel, cxLabel,
   dxGDIPlusClasses, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Silver;
+  dxSkinOffice2007Blue, dxSkinOffice2007Silver, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
 
 type
   TFEST0001PView = class(TFPesquisaView, IBasePesquisaView)
@@ -50,11 +50,13 @@ type
     procedure BtExcluirClick(Sender: TObject);
     procedure BtDuplicarClick(Sender: TObject);
     procedure BtImportarClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
     FContainer: IContainerDataSet<TTESTPRODUTO>;
 
     procedure listarRegistros;
+    procedure importarProdutos;
   public
     { Public declarations }
 
@@ -124,12 +126,7 @@ procedure TFEST0001PView.BtImportarClick(Sender: TObject);
 begin
   inherited;
 
-  TFacadeView.New
-    .ModulosFacadeView
-     .EstoqueFactoryView
-      .exibirTelaImportacao(tiProduto)
-       .executar;
-
+  importarProdutos;
   listarRegistros;
 end;
 
@@ -193,11 +190,63 @@ begin
   FContainer := TContainerFDMemTable<TTESTPRODUTO>.Create(FConexao, FdDados);
 end;
 
+procedure TFEST0001PView.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  inherited;
+
+  case Key of
+    VK_F5:
+      begin
+        incluirRegistro;
+        listarRegistros;
+      end;
+
+    VK_F6:
+      begin
+        alterarRegistro;
+        listarRegistros;
+      end;
+
+    VK_F7:
+      begin
+        consultarRegistro;
+        listarRegistros;
+      end;
+
+    VK_F8:
+      begin
+        excluirRegistro;
+        listarRegistros;
+      end;
+
+    VK_F9:
+      begin
+        duplicarRegistro;
+        listarRegistros;
+      end;
+
+    VK_F10:
+      begin
+        importarProdutos;
+        listarRegistros;
+      end;
+  end;
+end;
+
 procedure TFEST0001PView.FormShow(Sender: TObject);
 begin
   inherited;
   FCampoOrdem := 'DESCRICAO';
   listarRegistros;
+end;
+
+procedure TFEST0001PView.importarProdutos;
+begin
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaImportacao(tiProduto)
+       .executar;
 end;
 
 function TFEST0001PView.incluirRegistro: IBasePesquisaView;

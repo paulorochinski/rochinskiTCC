@@ -4,12 +4,15 @@ inherited FM0001ALEView: TFM0001ALEView
   TextHeight = 13
   inherited Panel1: TPanel
     inherited Panel2: TPanel
-      inherited Panel3: TPanel
-        inherited cxLabel1: TcxLabel
-          Caption = 'Alerta'
-          Style.IsFontAssigned = True
-          ExplicitWidth = 66
+      inherited PnBotoes: TPanel
+        inherited BtEncerrar: TcxButton
+          Visible = False
         end
+        inherited BtSalvar: TcxButton
+          Caption = '&Ok'
+        end
+      end
+      inherited Panel3: TPanel
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
             Picture.Data = {
@@ -51,11 +54,18 @@ inherited FM0001ALEView: TFM0001ALEView
               3A0000000049454E44AE426082}
           end
         end
+        inherited PnTituloJanela: TPanel
+          inherited cxLabel1: TcxLabel
+            Caption = 'Alerta'
+            Style.IsFontAssigned = True
+          end
+        end
       end
       inherited Panel4: TPanel
         inherited Panel5: TPanel
           inherited MmMensagem: TcxMemo
             Style.IsFontAssigned = True
+            StyleDisabled.TextColor = clBlack
           end
         end
       end

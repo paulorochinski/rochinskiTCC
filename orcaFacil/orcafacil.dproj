@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>orcafacil.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -259,6 +259,13 @@
         <DCCReference Include="Models\Configuracoes\Exportar\ConfiguracoesExportar.Model.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.interf.pas"/>
         <DCCReference Include="Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.pas"/>
+        <DCCReference Include="Views\Modulos\Pagar\Fornecedor\PAG0001L.View.pas">
+            <Form>FPAG0001LView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Models\Modulos\Estoque\OrcamentoFornecedores\Entidade\TESTORCAMENTOFORNECEDORES.Entidade.Model.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

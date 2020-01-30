@@ -73,14 +73,6 @@ inherited FMensagemView: TFMensagemView
         Height = 34
         ExplicitWidth = 426
         ExplicitHeight = 34
-        inherited cxLabel1: TcxLabel
-          Left = 51
-          Caption = 'MensagemView'
-          Style.IsFontAssigned = True
-          ExplicitLeft = 51
-          ExplicitWidth = 160
-          ExplicitHeight = 32
-        end
         inherited PnIconeTitulo: TPanel
           Width = 48
           Height = 34
@@ -105,6 +97,18 @@ inherited FMensagemView: TFMensagemView
               4E44AE426082}
             ExplicitWidth = 48
             ExplicitHeight = 48
+          end
+        end
+        inherited PnTituloJanela: TPanel
+          Left = 48
+          Height = 34
+          ExplicitLeft = 48
+          ExplicitHeight = 34
+          inherited cxLabel1: TcxLabel
+            Caption = 'MensagemView'
+            Style.IsFontAssigned = True
+            ExplicitTop = 0
+            ExplicitWidth = 327
           end
         end
       end
