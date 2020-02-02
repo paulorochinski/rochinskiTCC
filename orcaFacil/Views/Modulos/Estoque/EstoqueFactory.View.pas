@@ -24,7 +24,9 @@ implementation
 
 { TEstoqueFactoryView }
 
-uses EST0001P.View, EST0001C.View, EST0001I.View, EST0002P.View, EST0002C.View, EST0001L.View;
+uses EST0001P.View, EST0001C.View, EST0001I.View, EST0002P.View, EST0002C.View,
+  EST0001L.View,
+  EST0003P.View;
 
 constructor TEstoqueFactoryView.Create;
 begin
@@ -77,6 +79,9 @@ begin
 
     tlOrcamento:
       Result := TFEST0002PView.New;
+
+    tlCotacao:
+      Result := TFEST0003PView.New;
   end;
 end;
 

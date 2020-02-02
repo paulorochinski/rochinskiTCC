@@ -14,7 +14,7 @@ uses
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, cxTextEdit,
   dxGDIPlusClasses, Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons,  ormbr.container.DataSet.interfaces,
   TESTPRODUTO.Entidade.Model, ormbr.container.fdmemtable, Base.View.Interf,
-  dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
   TFEST0001LView = class(TFLocalizarView, IBaseLocalizarView)
@@ -99,6 +99,9 @@ begin
   inherited;
   FContainer := TContainerFDMemTable<TTESTPRODUTO>.Create(FConexao, FdDados);
   FCampoOrdem := 'DESCRICAO';
+
+  Self.Width := Screen.Width - 300;
+  Self.Height := Screen.Height - 300;
 end;
 
 procedure TFEST0001LView.listarRegistros;

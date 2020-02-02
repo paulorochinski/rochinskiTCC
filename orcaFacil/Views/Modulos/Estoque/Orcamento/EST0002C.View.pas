@@ -24,7 +24,7 @@ uses
   ormbr.container.fdmemtable, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, FireDAC.Stan.Async, FireDAC.DApt, dxSkinOffice2016Colorful,
-  dxSkinOffice2016Dark, Fornecedor.Controller.Interf;
+  dxSkinOffice2016Dark, Fornecedor.Controller.Interf, dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
   TFEST0002CView = class(TFCadastroView, IBaseCadastroView)

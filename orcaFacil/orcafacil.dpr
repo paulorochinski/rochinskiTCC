@@ -99,7 +99,10 @@ uses
   PAG0001L.View in 'Views\Modulos\Pagar\Fornecedor\PAG0001L.View.pas' {FPAG0001LView},
   TESTORCAMENTOFORNECEDORES.Entidade.Model in 'Models\Modulos\Estoque\OrcamentoFornecedores\Entidade\TESTORCAMENTOFORNECEDORES.Entidade.Model.pas',
   OrcamentoFornecedores.Model.Interf in 'Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.Interf.pas',
-  OrcamentoFornecedores.Model in 'Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.pas';
+  OrcamentoFornecedores.Model in 'Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.pas',
+  TESTCOTACAO.Entidade.Model in 'Models\Modulos\Estoque\Cotacao\Entidade\TESTCOTACAO.Entidade.Model.pas',
+  TESTCOTACAOITENS.Entidade.Model in 'Models\Modulos\Estoque\CotacaoItens\Entidade\TESTCOTACAOITENS.Entidade.Model.pas',
+  EST0003P.View in 'Views\Modulos\Estoque\Cotacao\EST0003P.View.pas' {FEST0003PView};
 
 {$R *.res}
 

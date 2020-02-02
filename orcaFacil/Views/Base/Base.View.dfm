@@ -314,8 +314,6 @@ object FBaseView: TFBaseView
             Style.Font.Style = [fsBold]
             Style.TextColor = 6050636
             Style.IsFontAssigned = True
-            ExplicitTop = 1
-            ExplicitWidth = 255
           end
         end
       end

@@ -13,7 +13,8 @@ uses
   cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxClasses,
   cxGridCustomView, cxGrid, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
+  FireDAC.Comp.Client, dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinBlack, dxSkinDarkRoom,
+  dxSkinSilver;
 
 type
   TFLocalizarView = class(TFBaseView)

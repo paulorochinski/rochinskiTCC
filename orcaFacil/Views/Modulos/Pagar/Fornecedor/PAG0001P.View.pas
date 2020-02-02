@@ -22,7 +22,7 @@ uses
   Base.View.Interf, ormbr.container.DataSet.interfaces,
   TPAGFORNECEDOR.Entidade.Model, ormbr.container.fdmemtable, dxSkinDevExpressDarkStyle,
   dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
-  dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
+  dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
   TFPAG0001PView = class(TFPesquisaView, IBasePesquisaView)

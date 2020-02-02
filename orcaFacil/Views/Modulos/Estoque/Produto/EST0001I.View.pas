@@ -17,7 +17,8 @@ uses
   cxGridDBTableView, cxGrid, Vcl.ComCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
   Vcl.ExtCtrls,
   Base.View.Interf, ImportarProduto.Controller.Interf, dxGDIPlusClasses, dxSkinDevExpressDarkStyle,
-  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver;
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
+  dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
   TFEST0001IView = class(TFImportarView, IBaseImportarView)

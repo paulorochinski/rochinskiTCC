@@ -47,10 +47,8 @@ inherited FCadastroView: TFCadastroView
         end
       end
       inherited Panel3: TPanel
-        inherited cxLabel1: TcxLabel
-          Caption = 'CadastroView'
-          Style.IsFontAssigned = True
-          ExplicitWidth = 140
+        inherited PnIconeTitulo: TPanel
+          TabOrder = 2
         end
         object LbOperacao: TcxLabel [1]
           AlignWithMargins = True
@@ -70,8 +68,12 @@ inherited FCadastroView: TFCadastroView
           Style.IsFontAssigned = True
           ExplicitLeft = 300
         end
-        inherited PnIconeTitulo: TPanel
-          TabOrder = 2
+        inherited PnTituloJanela: TPanel
+          TabOrder = 0
+          inherited cxLabel1: TcxLabel
+            Caption = 'CadastroView'
+            Style.IsFontAssigned = True
+          end
         end
       end
     end

@@ -13,7 +13,7 @@ uses
   Tipos.Controller.Interf, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
   dxSkinOffice2007Black,
   dxSkinOffice2007Blue, dxSkinOffice2007Silver, cxTextEdit,
-  Fornecedor.Controller.Interf;
+  Fornecedor.Controller.Interf, dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
   TFPAG0001CView = class(TFCadastroView, IBaseCadastroView)

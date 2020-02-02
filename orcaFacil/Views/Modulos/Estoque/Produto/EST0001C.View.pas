@@ -12,7 +12,7 @@ uses
   Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, Base.View.Interf,
   Tipos.Controller.Interf, Produto.Controller.Interf, cxTextEdit, cxMemo, dxGDIPlusClasses,
   dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue,
-  dxSkinOffice2007Silver;
+  dxSkinOffice2007Silver, dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
   TFEST0001CView = class(TFCadastroView, IBaseCadastroView)

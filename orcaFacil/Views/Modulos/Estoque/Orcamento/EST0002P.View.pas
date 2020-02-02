@@ -14,7 +14,8 @@ uses
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid,
   dxGDIPlusClasses, Vcl.ExtCtrls, cxLabel, Vcl.StdCtrls, cxButtons, Base.View.Interf,
   TESTORCAMENTO.Entidade.Model, ormbr.container.DataSet.interfaces,
-  ormbr.container.fdmemtable, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
+  ormbr.container.fdmemtable, dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinDarkRoom,
+  dxSkinDarkSide, dxSkinMetropolisDark, dxSkinVisualStudio2013Dark, dxSkinBlack, dxSkinSilver;
 
 type
   TFEST0002PView = class(TFPesquisaView, IBasePesquisaView)
@@ -239,6 +240,7 @@ end;
 procedure TFEST0002PView.listarRegistros;
 begin
   FContainer.OpenWhere('', FCampoOrdem);
+
   controlaBotoesAtivos;
 end;
 

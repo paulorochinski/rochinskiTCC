@@ -78,7 +78,7 @@ end;
 
 procedure TExportarOrcamento.exportar;
 var
- vLinha, vCabecalho: string;
+ vLinha, vCabecalho, vOrcamento, vFornecedor: string;
 begin
   FArquivoNome :=  FConfigExportacaoModel.diretorioExportarOrcamentoCsv+'\Orcamento.csv';
 
@@ -86,10 +86,23 @@ begin
 
   Rewrite(FArquivo);
 
-  FLista.First;
+  vOrcamento := 'Orçamento;'+FCodigoOrcamento;
+  Writeln(FArquivo, vOrcamento);
 
-  vCabecalho := 'Codigo Sinapi;Descricao;Unid Medida;Qtde;Preco Unitario;Total';
+  Writeln(FArquivo, '');
+  Writeln(FArquivo, '');
+
+  vFornecedor := 'CNPJ:; INFORME SEU CNPJ AQUI (APENAS NÚMEROS)';
+  Writeln(FArquivo, vFornecedor);
+
+  Writeln(FArquivo, '');
+  Writeln(FArquivo, '');
+
+
+  vCabecalho := 'Código Sinapi;Descrição;Unid. Medida;Qtde;Preço Unitário;Total';
   Writeln(FArquivo, vCabecalho);
+
+  FLista.First;
 
   while not(FLista.Eof) do
   begin

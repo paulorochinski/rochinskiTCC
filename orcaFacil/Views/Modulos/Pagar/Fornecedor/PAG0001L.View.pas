@@ -24,7 +24,7 @@ uses
   cxGridDBTableView, cxGrid, cxTextEdit, cxLabel, dxGDIPlusClasses,
   Vcl.ExtCtrls, Vcl.StdCtrls,
   cxButtons, TPAGFORNECEDOR.Entidade.Model, ormbr.container.DataSet.interfaces,
-  ormbr.container.fdmemtable, Base.View.Interf;
+  ormbr.container.fdmemtable, Base.View.Interf, dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
   TFPAG0001LView = class(TFLocalizarView, IBaseLocalizarView)
@@ -95,6 +95,9 @@ begin
   inherited;
   FContainer := TContainerFDMemTable<TTPAGFORNECEDOR>.Create(FConexao, FdDados);
   FCampoOrdem := 'NOMEFANTASIA';
+
+  Self.Width := Screen.Width - 450;
+  Self.Height := Screen.Height - 450;
 end;
 
 procedure TFPAG0001LView.listarRegistros;

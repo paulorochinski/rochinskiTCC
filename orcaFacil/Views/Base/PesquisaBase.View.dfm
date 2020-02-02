@@ -361,6 +361,7 @@ inherited FPesquisaView: TFPesquisaView
               Style.HotTrack = False
               Style.IsFontAssigned = True
               TabOrder = 0
+              ExplicitHeight = 21
               Width = 144
             end
             object cxLabel2: TcxLabel

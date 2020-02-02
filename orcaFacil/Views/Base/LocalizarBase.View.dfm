@@ -49,7 +49,6 @@ inherited FLocalizarView: TFLocalizarView
             Caption = 'LocalizarBase'
             Style.IsFontAssigned = True
             ExplicitTop = 3
-            ExplicitWidth = 327
           end
         end
         object PnPesquisa: TPanel

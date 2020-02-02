@@ -10,7 +10,9 @@ uses
   dxRibbonCustomizationForm, dxStatusBar, dxRibbonStatusBar, cxClasses,
   dxRibbon, dxBar, dxBarApplicationMenu, Vcl.ExtCtrls, dxSkinDevExpressDarkStyle,
   dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
-  dxSkinsForm, cxContainer, cxEdit, cxLabel, dxSkinOffice2016Colorful, dxSkinOffice2016Dark;
+  dxSkinsForm, cxContainer, cxEdit, cxLabel, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinDarkRoom, dxSkinDarkSide, dxSkinMetropolisDark, dxSkinVisualStudio2013Dark, dxSkinBlack,
+  dxSkinSilver;
 
 type
   TFPrincipalView = class(TForm)
@@ -27,10 +29,15 @@ type
     MbAtalhos: TdxBar;
     LbCotacao: TdxBarLargeButton;
     LbAnaliseCotacao: TdxBarLargeButton;
+    TbParametros: TdxRibbonTab;
+    BmMenuBar1: TdxBar;
+    dxBarLargeButton1: TdxBarLargeButton;
+    dxBarLargeButton2: TdxBarLargeButton;
     procedure TimerJanelasTimer(Sender: TObject);
     procedure LBProdutosClick(Sender: TObject);
     procedure LBFornecedoresClick(Sender: TObject);
     procedure LBOrcamentosClick(Sender: TObject);
+    procedure LbCotacaoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +52,15 @@ implementation
 {$R *.dfm}
 
 uses FacadeView, Tipos.Controller.Interf;
+
+procedure TFPrincipalView.LbCotacaoClick(Sender: TObject);
+begin
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaListagem(tlCotacao)
+       .executar;
+end;
 
 procedure TFPrincipalView.LBFornecedoresClick(Sender: TObject);
 begin

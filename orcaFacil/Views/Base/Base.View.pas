@@ -13,7 +13,8 @@ uses
   cxButtons, ormbr.factory.interfaces, cxControls, cxContainer, cxEdit, cxLabel,
   Tipos.Controller.Interf, dxGDIPlusClasses, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
   dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver, dxSkinOffice2016Colorful,
-  dxSkinOffice2016Dark;
+  dxSkinOffice2016Dark, dxSkinDarkRoom, dxSkinDarkSide, dxSkinMetropolisDark,
+  dxSkinVisualStudio2013Dark, dxSkinBlack, dxSkinSilver;
 
 type
   TFBaseView = class(TForm)
