@@ -20,11 +20,11 @@ object FPrincipalView: TFPrincipalView
     Left = 0
     Top = 0
     Width = 524
-    Height = 157
+    Height = 159
     ApplicationButton.Menu = BaMenu
     BarManager = BmMenu
     ColorSchemeAccent = rcsaBlue
-    ColorSchemeName = 'DevExpressStyle'
+    ColorSchemeName = 'Black'
     QuickAccessToolbar.Toolbar = MbAtalhos
     Contexts = <>
     TabOrder = 0

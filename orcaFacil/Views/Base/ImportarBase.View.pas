@@ -17,7 +17,7 @@ uses
   cxGridTableView, cxGridDBTableView, cxGrid, Datasnap.DBClient, dxGDIPlusClasses,
   dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue,
   dxSkinOffice2007Silver, dxSkinOffice2016Colorful, dxSkinOffice2016Dark, dxSkinBlack,
-  dxSkinDarkRoom, dxSkinSilver;
+  dxSkinDarkRoom, dxSkinSilver, dxSkinVS2010;
 
 type
   TFImportarView = class(TFBaseView)
@@ -37,6 +37,7 @@ type
     StSelection: TcxStyle;
     StInactive: TcxStyle;
     CdDados: TClientDataSet;
+    LbLegenda: TcxLabel;
     procedure BtSalvarClick(Sender: TObject);
   private
     { Private declarations }

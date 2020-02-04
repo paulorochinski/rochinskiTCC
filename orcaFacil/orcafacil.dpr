@@ -102,7 +102,12 @@ uses
   OrcamentoFornecedores.Model in 'Models\Modulos\Estoque\OrcamentoFornecedores\OrcamentoFornecedores.Model.pas',
   TESTCOTACAO.Entidade.Model in 'Models\Modulos\Estoque\Cotacao\Entidade\TESTCOTACAO.Entidade.Model.pas',
   TESTCOTACAOITENS.Entidade.Model in 'Models\Modulos\Estoque\CotacaoItens\Entidade\TESTCOTACAOITENS.Entidade.Model.pas',
-  EST0003P.View in 'Views\Modulos\Estoque\Cotacao\EST0003P.View.pas' {FEST0003PView};
+  EST0003P.View in 'Views\Modulos\Estoque\Cotacao\EST0003P.View.pas' {FEST0003PView},
+  Cotacao.Model.Interf in 'Models\Modulos\Estoque\Cotacao\Cotacao.Model.Interf.pas',
+  Cotacao.Model in 'Models\Modulos\Estoque\Cotacao\Cotacao.Model.pas',
+  EST0003I.View in 'Views\Modulos\Estoque\Cotacao\EST0003I.View.pas' {FEST0003IView},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 

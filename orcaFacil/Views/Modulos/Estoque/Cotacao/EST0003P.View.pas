@@ -28,11 +28,13 @@ type
     cxButton2: TcxButton;
     cxButton3: TcxButton;
     cxButton4: TcxButton;
+    procedure cxButton1Click(Sender: TObject);
   private
     { Private declarations }
+    procedure importarCotacao;
   public
     { Public declarations }
-    class function new: IBasePesquisaView;
+    class function New: IBasePesquisaView;
 
     procedure listarRegistros;
 
@@ -51,6 +53,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses FacadeView, Tipos.Controller.Interf;
 { TFEST0003PView }
 
 function TFEST0003PView.alterarRegistro: IBasePesquisaView;
@@ -61,6 +65,12 @@ end;
 function TFEST0003PView.consultarRegistro: IBasePesquisaView;
 begin
 
+end;
+
+procedure TFEST0003PView.cxButton1Click(Sender: TObject);
+begin
+  inherited;
+  importarCotacao;
 end;
 
 function TFEST0003PView.duplicarRegistro: IBasePesquisaView;
@@ -78,6 +88,15 @@ begin
    Show;
 end;
 
+procedure TFEST0003PView.importarCotacao;
+begin
+  TFacadeView.New
+    .ModulosFacadeView
+     .EstoqueFactoryView
+      .exibirTelaImportacao(tiCotacao)
+       .executar;
+end;
+
 function TFEST0003PView.incluirRegistro: IBasePesquisaView;
 begin
 
@@ -88,7 +107,7 @@ begin
 
 end;
 
-class function TFEST0003PView.new: IBasePesquisaView;
+class function TFEST0003PView.New: IBasePesquisaView;
 begin
   Result := Self.Create(nil);
 end;

@@ -12,7 +12,7 @@ uses
   dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
   dxSkinsForm, cxContainer, cxEdit, cxLabel, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
   dxSkinDarkRoom, dxSkinDarkSide, dxSkinMetropolisDark, dxSkinVisualStudio2013Dark, dxSkinBlack,
-  dxSkinSilver;
+  dxSkinSilver, dxSkinVS2010, dxSkinWhiteprint;
 
 type
   TFPrincipalView = class(TForm)

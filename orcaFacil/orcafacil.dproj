@@ -272,6 +272,12 @@
             <Form>FEST0003PView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Models\Modulos\Estoque\Cotacao\Cotacao.Model.Interf.pas"/>
+        <DCCReference Include="Models\Modulos\Estoque\Cotacao\Cotacao.Model.pas"/>
+        <DCCReference Include="Views\Modulos\Estoque\Cotacao\EST0003I.View.pas">
+            <Form>FEST0003IView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -8,7 +8,8 @@ type
 
   TTelaListagem = (tlProduto, tlFornecedor, tlOrcamento, tlCotacao);
   TTelaCadastro = (tcProduto, tcFornecedor, tcOrcamento);
-  TTelaImportacao = (tiProduto);
+
+  TTelaImportacao = (tiProduto, tiCotacao);
 
   TTelaBusca = (tbProduto, tbFornecedor, tbOrcamento);
 

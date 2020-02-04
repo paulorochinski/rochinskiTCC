@@ -99,7 +99,7 @@ begin
   Writeln(FArquivo, '');
 
 
-  vCabecalho := 'Código Sinapi;Descrição;Unid. Medida;Qtde;Preço Unitário;Total';
+  vCabecalho := 'Código Sinapi;Descrição;Unid. Medida;Qtde;Valor Unitário;Valor Total';
   Writeln(FArquivo, vCabecalho);
 
   FLista.First;

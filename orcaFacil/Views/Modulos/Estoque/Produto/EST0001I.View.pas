@@ -16,8 +16,10 @@ uses
   cxGridTableView,
   cxGridDBTableView, cxGrid, Vcl.ComCtrls, cxLabel, Vcl.StdCtrls, cxButtons,
   Vcl.ExtCtrls,
-  Base.View.Interf, ImportarProduto.Controller.Interf, dxGDIPlusClasses, dxSkinDevExpressDarkStyle,
-  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver,
+  Base.View.Interf, ImportarProduto.Controller.Interf, dxGDIPlusClasses,
+  dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue,
+  dxSkinOffice2007Silver,
   dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
 
 type
@@ -35,6 +37,7 @@ type
     procedure CdDadosBeforeRefresh(DataSet: TDataSet);
     procedure BtBuscarClick(Sender: TObject);
     procedure BtSalvarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     FImportarProduto: IImportarProdutoController;
     procedure habilitaControles;
@@ -47,6 +50,7 @@ type
 
     procedure salvarDados;
     procedure importarArquivo;
+
     procedure &executar;
   end;
 
@@ -83,6 +87,14 @@ begin
   habilitaControles;
 
   ShowModal;
+end;
+
+procedure TFEST0001IView.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+  Self.Width := Screen.Width - 300;
+  Self.Height := Screen.Height - 300;
 end;
 
 procedure TFEST0001IView.habilitaControles;

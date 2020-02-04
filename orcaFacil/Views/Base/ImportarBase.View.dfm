@@ -112,31 +112,49 @@ inherited FImportarView: TFImportarView
             Caption = 'ImportarBase'
             Style.IsFontAssigned = True
           end
+          object LbLegenda: TcxLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 31
+            Margins.Top = 1
+            Margins.Bottom = 1
+            Align = alTop
+            Caption = 'F5 - BUSCAR ARQUIVO'
+            ParentFont = False
+            Style.Font.Charset = ANSI_CHARSET
+            Style.Font.Color = clSilver
+            Style.Font.Height = -11
+            Style.Font.Name = 'Open Sans'
+            Style.Font.Style = [fsBold]
+            Style.TextColor = clTeal
+            Style.IsFontAssigned = True
+          end
         end
       end
       inherited Panel4: TPanel
         Width = 482
         Height = 153
         ExplicitWidth = 482
-        ExplicitHeight = 173
+        ExplicitHeight = 153
         inherited Panel5: TPanel
           Width = 480
-          Height = 171
+          Height = 151
           ExplicitWidth = 480
-          ExplicitHeight = 171
+          ExplicitHeight = 151
           object PbProgresso: TProgressBar
             Left = 0
-            Top = 154
+            Top = 134
             Width = 480
             Height = 17
             Align = alBottom
             TabOrder = 0
+            Visible = False
           end
           object DbDados: TcxGrid
             Left = 0
             Top = 0
             Width = 480
-            Height = 154
+            Height = 134
             Align = alClient
             BevelInner = bvNone
             BevelOuter = bvNone

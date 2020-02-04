@@ -1,43 +1,43 @@
 inherited FEST0001IView: TFEST0001IView
   Caption = 'Importar Produtos SINAPI'
-  ClientHeight = 364
-  ClientWidth = 810
+  ClientHeight = 189
+  ClientWidth = 402
   Visible = False
-  ExplicitWidth = 816
-  ExplicitHeight = 393
+  ExplicitWidth = 408
+  ExplicitHeight = 218
   PixelsPerInch = 96
   TextHeight = 13
   inherited Panel1: TPanel
-    Width = 808
-    Height = 362
-    ExplicitWidth = 808
-    ExplicitHeight = 362
+    Width = 400
+    Height = 187
+    ExplicitWidth = 400
+    ExplicitHeight = 187
     inherited Panel2: TPanel
-      Width = 806
-      Height = 360
-      ExplicitWidth = 806
-      ExplicitHeight = 360
+      Width = 398
+      Height = 185
+      ExplicitWidth = 398
+      ExplicitHeight = 185
       inherited PnBotoes: TPanel
-        Top = 314
-        Width = 806
-        ExplicitTop = 314
-        ExplicitWidth = 806
+        Top = 139
+        Width = 398
+        ExplicitTop = 139
+        ExplicitWidth = 398
         inherited BtEncerrar: TcxButton
-          Left = 686
-          ExplicitLeft = 686
+          Left = 278
+          ExplicitLeft = 278
         end
         inherited BtSalvar: TcxButton
-          Left = 566
+          Left = 158
           Enabled = False
-          ExplicitLeft = 566
+          ExplicitLeft = 158
         end
         inherited BtBuscar: TcxButton
           OnClick = BtBuscarClick
         end
       end
       inherited Panel3: TPanel
-        Width = 806
-        ExplicitWidth = 806
+        Width = 398
+        ExplicitWidth = 398
         inherited PnIconeTitulo: TPanel
           inherited ImIconeTitulo: TImage
             Picture.Data = {
@@ -98,27 +98,27 @@ inherited FEST0001IView: TFEST0001IView
         end
       end
       inherited Panel4: TPanel
-        Width = 804
-        Height = 260
-        ExplicitWidth = 804
-        ExplicitHeight = 260
+        Width = 396
+        Height = 85
+        ExplicitWidth = 396
+        ExplicitHeight = 85
         inherited Panel5: TPanel
-          Width = 802
-          Height = 258
-          ExplicitWidth = 802
-          ExplicitHeight = 258
+          Width = 394
+          Height = 83
+          ExplicitWidth = 394
+          ExplicitHeight = 83
           inherited PbProgresso: TProgressBar
-            Top = 241
-            Width = 802
+            Top = 66
+            Width = 394
             Visible = False
-            ExplicitTop = 241
-            ExplicitWidth = 802
+            ExplicitTop = 66
+            ExplicitWidth = 394
           end
           inherited DbDados: TcxGrid
-            Width = 802
-            Height = 241
-            ExplicitWidth = 802
-            ExplicitHeight = 241
+            Width = 394
+            Height = 66
+            ExplicitWidth = 394
+            ExplicitHeight = 66
             inherited VwDados: TcxGridDBTableView
               DataController.DataSource = DsDados
               object VwDadosCODIGO: TcxGridDBColumn
