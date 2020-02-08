@@ -23,7 +23,7 @@ uses
   TESTPRODUTO.Entidade.Model, Vcl.Grids, Vcl.DBGrids, dxBevel, cxLabel,
   dxGDIPlusClasses, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinOffice2007Black,
   dxSkinOffice2007Blue, dxSkinOffice2007Silver, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
+  dxSkinBlack, dxSkinDarkRoom, dxSkinSilver, dxSkinVS2010;
 
 type
   TFEST0001PView = class(TFPesquisaView, IBasePesquisaView)

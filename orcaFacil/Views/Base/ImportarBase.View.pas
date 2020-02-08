@@ -45,6 +45,7 @@ type
   protected
     function formatarTextoEmValor(AValue: string): string;
     function removerEspacoesExtrasDeUmTexto(AValue: string): string;
+    function removerCaracteresEspeciais(AValue: string): string;
   public
     { Public declarations }
   end;
@@ -67,6 +68,22 @@ function TFImportarView.formatarTextoEmValor(AValue: string): string;
 begin
   AValue := StringReplace(AValue, '.', '', [rfReplaceAll, rfIgnoreCase]);
   AValue := StringReplace(AValue, '', '0,00', [rfReplaceAll, rfIgnoreCase]);
+
+  Result := AValue;
+end;
+
+function TFImportarView.removerCaracteresEspeciais(AValue: string): string;
+var
+  I, tamanhoTexto: Integer;
+begin
+  tamanhoTexto := Length(AValue);
+
+  for I := 0 to Pred(tamanhoTexto) do
+  begin
+    AValue := StringReplace(AValue, '.', '', [rfReplaceAll, rfIgnoreCase]);
+    AValue := StringReplace(AValue, '/', '', [rfReplaceAll, rfIgnoreCase]);
+    AValue := StringReplace(AValue, '-', '', [rfReplaceAll, rfIgnoreCase]);
+  end;
 
   Result := AValue;
 end;

@@ -18,6 +18,7 @@ type
     function duplicar: IFornecedorOperacaoDuplicarController;
 
     function localizar(AValue: string): IFornecedorController;
+    function localizarPeloCNPJ(AValue: string): IFornecedorController;
 
     function idFornecedor: string;
     function nomeFantasia: string;

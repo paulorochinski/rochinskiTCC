@@ -20,7 +20,7 @@ uses
   dxSkinDevExpressDarkStyle,
   dxSkinDevExpressStyle, dxSkinOffice2007Black, dxSkinOffice2007Blue,
   dxSkinOffice2007Silver,
-  dxSkinBlack, dxSkinDarkRoom, dxSkinSilver;
+  dxSkinBlack, dxSkinDarkRoom, dxSkinSilver, dxSkinVS2010;
 
 type
   TFEST0001IView = class(TFImportarView, IBaseImportarView)

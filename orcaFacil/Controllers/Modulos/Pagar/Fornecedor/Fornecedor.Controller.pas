@@ -22,6 +22,7 @@ type
     function duplicar: IFornecedorOperacaoDuplicarController;
 
     function localizar(AValue: string): IFornecedorController;
+    function localizarPeloCNPJ(AValue: string): IFornecedorController;
 
     function idFornecedor: string;
     function nomeFantasia: string;
@@ -104,6 +105,16 @@ begin
   FRegistro := FFornecedorModel
                  .DAO
                  .FindWhere('CODIGO=' + QuotedStr(AValue),'NOMEFANTASIA')
+                 .Items[0];
+end;
+
+function TFornecedorController.localizarPeloCNPJ(AValue: string): IFornecedorController;
+begin
+  Result := Self;
+
+  FRegistro := FFornecedorModel
+                 .DAO
+                 .FindWhere('CNPJ=' + QuotedStr(AValue),'NOMEFANTASIA')
                  .Items[0];
 end;
 

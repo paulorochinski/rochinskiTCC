@@ -14,7 +14,7 @@ uses
   Tipos.Controller.Interf, dxGDIPlusClasses, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle,
   dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Silver, dxSkinOffice2016Colorful,
   dxSkinOffice2016Dark, dxSkinDarkRoom, dxSkinDarkSide, dxSkinMetropolisDark,
-  dxSkinVisualStudio2013Dark, dxSkinBlack, dxSkinSilver;
+  dxSkinVisualStudio2013Dark, dxSkinBlack, dxSkinSilver, dxSkinVS2010;
 
 type
   TFBaseView = class(TForm)
