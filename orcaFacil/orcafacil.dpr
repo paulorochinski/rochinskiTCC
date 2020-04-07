@@ -107,7 +107,8 @@ uses
   Cotacao.Model in 'Models\Modulos\Estoque\Cotacao\Cotacao.Model.pas',
   EST0003I.View in 'Views\Modulos\Estoque\Cotacao\EST0003I.View.pas' {FEST0003IView},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  Cotacao.Controller.interf in 'Controllers\Modulos\Estoque\Cotacao\Cotacao.Controller.interf.pas';
 
 {$R *.res}
 

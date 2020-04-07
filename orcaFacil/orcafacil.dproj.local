@@ -11,8 +11,8 @@
     <Transaction>2020/01/02 16:02:59.000.991,C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\Base.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit2.dfm</Transaction>
     <Transaction>2020/01/02 16:02:59.000.991,C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\Base.View.pas=C:\Projetos\rochinskiTCC\orcaFacil\Unit2.pas</Transaction>
     <Transaction>2020/01/02 16:38:10.000.101,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
-    <Transaction>2020/01/02 16:39:26.000.226,C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\PesquisaBase.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/02 16:39:26.000.226,C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\PesquisaBase.View.pas=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
+    <Transaction>2020/01/02 16:39:26.000.226,C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\PesquisaBase.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/04 08:13:41.000.899,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/04 08:14:06.000.676,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\CadastroBase.View.pas</Transaction>
     <Transaction>2020/01/04 08:14:06.000.676,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\CadastroBase.View.dfm</Transaction>
@@ -124,16 +124,16 @@
     <Transaction>2020/01/10 19:31:38.000.064,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/10 19:31:53.000.564,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\FacadeView.pas</Transaction>
     <Transaction>2020/01/13 18:09:32.000.977,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
-    <Transaction>2020/01/13 18:09:57.000.196,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Produto\EST0001C.View.pas</Transaction>
     <Transaction>2020/01/13 18:09:57.000.196,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Produto\EST0001C.View.dfm</Transaction>
+    <Transaction>2020/01/13 18:09:57.000.196,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Produto\EST0001C.View.pas</Transaction>
     <Transaction>2020/01/14 09:11:19.000.254,C:\Projetos\rochinskiTCC\orcaFacil\Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoConsultar.Controller.pas=</Transaction>
     <Transaction>2020/01/14 12:54:21.000.301,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/14 12:55:18.000.586,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
-    <Transaction>2020/01/14 12:55:43.000.999,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\ImportarBase.View.dfm</Transaction>
     <Transaction>2020/01/14 12:55:43.000.999,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\ImportarBase.View.pas</Transaction>
+    <Transaction>2020/01/14 12:55:43.000.999,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\ImportarBase.View.dfm</Transaction>
     <Transaction>2020/01/14 16:00:44.000.548,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
-    <Transaction>2020/01/14 16:01:19.000.532,C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Produto\EST0001I.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/14 16:01:19.000.532,C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Produto\EST0001I.View.pas=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
+    <Transaction>2020/01/14 16:01:19.000.532,C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Produto\EST0001I.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/15 07:13:24.000.256,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/15 07:14:21.000.538,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Controllers\Modulos\Estoque\Produto\Operacoes\ProdutoOperacaoImportar.Controller.pas</Transaction>
     <Transaction>2020/01/15 09:32:12.000.644,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
@@ -157,19 +157,19 @@
     <Transaction>2020/01/15 20:13:45.000.501,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\MensagemBase.pas</Transaction>
     <Transaction>2020/01/15 20:13:45.000.501,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Base\MensagemBase.dfm</Transaction>
     <Transaction>2020/01/16 05:21:17.000.875,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
-    <Transaction>2020/01/16 05:23:33.000.688,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001INF.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/16 05:23:33.000.688,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001INF.pas=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
+    <Transaction>2020/01/16 05:23:33.000.688,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001INF.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/16 05:36:35.000.674,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/16 05:37:02.000.862,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001CON.pas=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/16 05:37:02.000.862,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001CON.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/16 05:51:45.000.676,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
-    <Transaction>2020/01/16 05:52:08.000.301,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/16 05:52:08.000.301,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.pas=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
+    <Transaction>2020/01/16 05:52:08.000.301,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
     <Transaction>2020/01/16 06:09:37.000.107,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/16 06:11:10.000.357,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ALE.View.pas=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/01/16 06:11:10.000.357,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ALE.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm</Transaction>
-    <Transaction>2020/01/16 06:11:25.000.482,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.dfm</Transaction>
     <Transaction>2020/01/16 06:11:25.000.482,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.View.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.pas</Transaction>
+    <Transaction>2020/01/16 06:11:25.000.482,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001ERR.dfm</Transaction>
     <Transaction>2020/01/16 06:11:38.000.248,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001CON.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001CON.dfm</Transaction>
     <Transaction>2020/01/16 06:11:38.000.248,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001CON.View.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001CON.pas</Transaction>
     <Transaction>2020/01/16 06:11:46.000.607,C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001INF.View.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Mensagens\M0001INF.dfm</Transaction>
@@ -294,6 +294,8 @@
     <Transaction>2020/02/03 09:28:53.000.175,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
     <Transaction>2020/02/03 09:30:42.000.904,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Cotacao\EST0003I.View.pas</Transaction>
     <Transaction>2020/02/03 09:30:42.000.904,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.dfm=C:\Projetos\rochinskiTCC\orcaFacil\Views\Modulos\Estoque\Cotacao\EST0003I.View.dfm</Transaction>
+    <Transaction>2020/02/09 16:14:01.000.329,=C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas</Transaction>
+    <Transaction>2020/02/09 16:15:15.000.351,C:\Projetos\rochinskiTCC\orcaFacil\Unit1.pas=C:\Projetos\rochinskiTCC\orcaFacil\Controllers\Modulos\Estoque\Cotacao\Cotacao.Controller.interf.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Controllers"/>
@@ -302,6 +304,8 @@
     <File Path="Controllers\Conexao\Conexao.Controller.pas"/>
     <File Path="Controllers\Modulos"/>
     <File Path="Controllers\Modulos\Estoque"/>
+    <File Path="Controllers\Modulos\Estoque\Cotacao"/>
+    <File Path="Controllers\Modulos\Estoque\Cotacao\Cotacao.Controller.interf.pas"/>
     <File Path="Controllers\Modulos\Estoque\ExportarOrcamento"/>
     <File Path="Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.interf.pas"/>
     <File Path="Controllers\Modulos\Estoque\ExportarOrcamento\ExportarOrcamento.Controller.pas"/>

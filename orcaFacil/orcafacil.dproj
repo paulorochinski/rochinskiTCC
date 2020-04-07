@@ -278,6 +278,7 @@
             <Form>FEST0003IView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Controllers\Modulos\Estoque\Cotacao\Cotacao.Controller.interf.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

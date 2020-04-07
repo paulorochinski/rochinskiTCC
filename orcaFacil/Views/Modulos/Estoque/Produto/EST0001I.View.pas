@@ -199,13 +199,16 @@ begin
       FImportarProduto := TFacadeController.New.modulosFacadeController.
         estoqueFactoryController.ImportarProduto;
 
-      FImportarProduto.localizar(CdDadosCODIGO.AsInteger)
-        .Importar.produtoSelecionado(FImportarProduto.produtoSelecionado)
-        .codigoSinapi(CdDadosCODIGO.AsString)
-        .descricao(CdDadosDESCRICAO.AsString)
-        .unidMedida(CdDadosUNIDMEDIDA.AsString)
-        .origemPreco(CdDadosPRORIGEM.AsString)
-        .prMedioSinapi(CdDadosPRMEDIOSINAPI.AsCurrency).executar;
+      FImportarProduto
+        .localizar(CdDadosCODIGO.AsInteger)
+         .Importar
+          .produtoSelecionado(FImportarProduto.produtoSelecionado)
+          .codigoSinapi(CdDadosCODIGO.AsString)
+          .descricao(CdDadosDESCRICAO.AsString)
+          .unidMedida(CdDadosUNIDMEDIDA.AsString)
+          .origemPreco(CdDadosPRORIGEM.AsString)
+          .prMedioSinapi(CdDadosPRMEDIOSINAPI.AsCurrency)
+         .executar;
 
     finally
 
